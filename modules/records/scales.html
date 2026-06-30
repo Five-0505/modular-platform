@@ -40,170 +40,162 @@
                 </div>
                 <div class="data-tree-list">
                   <div class="data-tree-group">
-                    <div class="data-tree-group-title" onclick="this.parentElement.classList.toggle('collapsed')">
-                      <span class="tree-arrow">▸</span> 风险评估 <span class="tree-count">12</span>
-                    </div>
-                    <div class="data-tree-items">
-                      <div class="data-tree-item active">Braden 压疮风险评估</div>
-                      <div class="data-tree-item">DVT 风险评估 (Caprini)</div>
-                      <div class="data-tree-item">跌倒风险评估 (Morse)</div>
-                      <div class="data-tree-item">营养风险筛查 (NRS-2002)</div>
-                    </div>
+                    <div class="data-tree-item active" onclick="ScalesModule.selectCategory('医学量表', this)">医学量表 <span class="tree-count" style="float:right">86</span></div>
                   </div>
                   <div class="data-tree-group">
-                    <div class="data-tree-group-title" onclick="this.parentElement.classList.toggle('collapsed')">
-                      <span class="tree-arrow">▸</span> 疾病评分 <span class="tree-count">8</span>
-                    </div>
-                    <div class="data-tree-items">
-                      <div class="data-tree-item">GRACE 评分 (ACS)</div>
-                      <div class="data-tree-item">NIHSS 评分 (卒中)</div>
-                      <div class="data-tree-item">GCS 评分 (意识)</div>
-                      <div class="data-tree-item">Charlson 合并症指数</div>
-                    </div>
+                    <div class="data-tree-item" onclick="ScalesModule.selectCategory('他评评估量表', this)">他评评估量表 <span class="tree-count" style="float:right">68</span></div>
                   </div>
                   <div class="data-tree-group">
-                    <div class="data-tree-group-title" onclick="this.parentElement.classList.toggle('collapsed')">
-                      <span class="tree-arrow">▸</span> 生活质量 <span class="tree-count">5</span>
-                    </div>
-                    <div class="data-tree-items">
-                      <div class="data-tree-item">SF-36 生活质量</div>
-                      <div class="data-tree-item">EQ-5D 健康效用</div>
-                    </div>
-                  </div>
-                  <div class="data-tree-group">
-                    <div class="data-tree-group-title" onclick="this.parentElement.classList.toggle('collapsed')">
-                      <span class="tree-arrow">▸</span> 护理评估 <span class="tree-count">6</span>
-                    </div>
-                    <div class="data-tree-items">
-                      <div class="data-tree-item">疼痛评估 (NRS)</div>
-                      <div class="data-tree-item">Barthel 日常生活指数</div>
-                    </div>
+                    <div class="data-tree-item" onclick="ScalesModule.selectCategory('自评评估量表', this)">自评评估量表 <span class="tree-count" style="float:right">35</span></div>
                   </div>
                 </div>
               </div>
 
-              <!-- 右侧量表详情 -->
+              <!-- 右侧量表列表 -->
               <div class="data-center-content">
-                <div class="card">
+                <div class="card" style="flex:1">
                   <div class="card-header">
-                    <div style="display:flex;align-items:center;gap:12px">
-                      <h3>Braden 压疮风险评估量表</h3>
-                      <span class="tag tag-success">已发布</span>
-                      <span style="font-size:12px;color:var(--gray-400)">v2.0 | 6个评估维度</span>
-                    </div>
+                    <h3 id="scales-list-title">医学量表</h3>
                     <div class="table-filters">
-                      <button class="btn btn-sm btn-outline">编辑</button>
-                      <button class="btn btn-sm btn-outline">版本管理</button>
-                      <button class="btn btn-sm btn-primary">导出量表</button>
+                      <input type="text" placeholder="搜索量表..." style="width:180px">
+                      <select>
+                        <option>所有状态</option>
+                        <option>已发布</option>
+                        <option>草稿</option>
+                      </select>
+                      <button class="btn btn-sm btn-primary">新增量表</button>
                     </div>
                   </div>
                   <div class="card-body">
-                    <!-- 量表结构展示 -->
                     <div class="table-wrapper">
                       <table>
                         <thead>
                           <tr>
                             <th>序号</th>
-                            <th>评估维度</th>
-                            <th>1分</th>
-                            <th>2分</th>
-                            <th>3分</th>
-                            <th>4分</th>
-                            <th>预警阈值</th>
+                            <th>量表名称</th>
+                            <th>分类</th>
+                            <th>评估条目</th>
+                            <th>评分维度</th>
+                            <th>本月使用</th>
+                            <th>完成率</th>
+                            <th>状态</th>
+                            <th>操作</th>
                           </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="scalesTableBody">
                           <tr>
                             <td>1</td>
-                            <td><strong>感知能力</strong></td>
-                            <td>完全受限</td>
-                            <td>严重受限</td>
-                            <td>轻度受限</td>
-                            <td>未受损</td>
-                            <td><span class="tag tag-danger">低风险</span></td>
+                            <td><strong>GRACE 评分 (ACS)</strong></td>
+                            <td>医学量表</td>
+                            <td>9项</td>
+                            <td>年龄、心率、收缩压、肌酐、Killip分级、心脏骤停、ST段偏移、心肌酶升高</td>
+                            <td>1,256</td>
+                            <td><span class="tag tag-success">96.5%</span></td>
+                            <td><span class="tag tag-success">已发布</span></td>
+                            <td><button class="btn btn-sm btn-outline">编辑</button></td>
                           </tr>
                           <tr>
                             <td>2</td>
-                            <td><strong>潮湿程度</strong></td>
-                            <td>持久潮湿</td>
-                            <td>非常潮湿</td>
-                            <td>偶尔潮湿</td>
-                            <td>很少潮湿</td>
-                            <td><span class="tag tag-danger">低风险</span></td>
+                            <td><strong>NIHSS 评分 (卒中)</strong></td>
+                            <td>医学量表</td>
+                            <td>15项</td>
+                            <td>意识水平、凝视、视野、面瘫、上肢运动、下肢运动、肢体共济失调、感觉、语言、构音障碍、忽视</td>
+                            <td>987</td>
+                            <td><span class="tag tag-success">94.2%</span></td>
+                            <td><span class="tag tag-success">已发布</span></td>
+                            <td><button class="btn btn-sm btn-outline">编辑</button></td>
                           </tr>
                           <tr>
                             <td>3</td>
-                            <td><strong>活动能力</strong></td>
-                            <td>卧床不起</td>
-                            <td>局限于轮椅</td>
-                            <td>偶尔步行</td>
-                            <td>经常步行</td>
-                            <td><span class="tag tag-danger">低风险</span></td>
+                            <td><strong>Braden 压疮风险评估</strong></td>
+                            <td>医学量表</td>
+                            <td>6项</td>
+                            <td>感知、潮湿、活动能力、移动能力、营养、摩擦力</td>
+                            <td>892</td>
+                            <td><span class="tag tag-success">93.8%</span></td>
+                            <td><span class="tag tag-success">已发布</span></td>
+                            <td><button class="btn btn-sm btn-outline">编辑</button></td>
                           </tr>
                           <tr>
                             <td>4</td>
-                            <td><strong>移动能力</strong></td>
-                            <td>完全不能</td>
-                            <td>严重受限</td>
-                            <td>轻度受限</td>
-                            <td>不受限</td>
-                            <td><span class="tag tag-danger">低风险</span></td>
+                            <td><strong>GCS 评分 (意识)</strong></td>
+                            <td>医学量表</td>
+                            <td>3项</td>
+                            <td>睁眼反应、语言反应、运动反应</td>
+                            <td>756</td>
+                            <td><span class="tag tag-success">95.1%</span></td>
+                            <td><span class="tag tag-success">已发布</span></td>
+                            <td><button class="btn btn-sm btn-outline">编辑</button></td>
                           </tr>
                           <tr>
                             <td>5</td>
-                            <td><strong>营养摄入</strong></td>
-                            <td>非常差</td>
-                            <td>可能不足</td>
-                            <td>充足</td>
-                            <td>丰富</td>
-                            <td><span class="tag tag-danger">低风险</span></td>
+                            <td><strong>Charlson 合并症指数</strong></td>
+                            <td>医学量表</td>
+                            <td>17项</td>
+                            <td>心肌梗死、充血性心力衰竭、周围血管病、脑血管病、慢性肺病、消化性溃疡、肝脏疾病、糖尿病等</td>
+                            <td>634</td>
+                            <td><span class="tag tag-success">91.3%</span></td>
+                            <td><span class="tag tag-success">已发布</span></td>
+                            <td><button class="btn btn-sm btn-outline">编辑</button></td>
                           </tr>
                           <tr>
                             <td>6</td>
-                            <td><strong>摩擦力/剪切力</strong></td>
-                            <td>存在问题</td>
-                            <td>有潜在问题</td>
-                            <td>无明显问题</td>
-                            <td>--</td>
-                            <td><span class="tag tag-danger">低风险</span></td>
+                            <td><strong>DVT 风险评估 (Caprini)</strong></td>
+                            <td>医学量表</td>
+                            <td>20项</td>
+                            <td>年龄、BMI、手术类型、活动能力、DVT病史、恶性肿瘤等</td>
+                            <td>456</td>
+                            <td><span class="tag tag-success">89.7%</span></td>
+                            <td><span class="tag tag-success">已发布</span></td>
+                            <td><button class="btn btn-sm btn-outline">编辑</button></td>
+                          </tr>
+                          <tr>
+                            <td>7</td>
+                            <td><strong>跌倒风险评估 (Morse)</strong></td>
+                            <td>医学量表</td>
+                            <td>6项</td>
+                            <td>跌倒史、诊断、行走辅助、静脉输液、步态、精神状态</td>
+                            <td>389</td>
+                            <td><span class="tag tag-success">88.4%</span></td>
+                            <td><span class="tag tag-success">已发布</span></td>
+                            <td><button class="btn btn-sm btn-outline">编辑</button></td>
+                          </tr>
+                          <tr>
+                            <td>8</td>
+                            <td><strong>营养风险筛查 (NRS-2002)</strong></td>
+                            <td>医学量表</td>
+                            <td>3项</td>
+                            <td>营养状况、疾病严重程度、年龄</td>
+                            <td>312</td>
+                            <td><span class="tag tag-success">92.6%</span></td>
+                            <td><span class="tag tag-success">已发布</span></td>
+                            <td><button class="btn btn-sm btn-outline">编辑</button></td>
+                          </tr>
+                          <tr>
+                            <td>9</td>
+                            <td><strong>Killip 分级</strong></td>
+                            <td>医学量表</td>
+                            <td>4项</td>
+                            <td>Ⅰ级无心衰、Ⅱ级轻度心衰、Ⅲ级重度心衰、Ⅳ级心源性休克</td>
+                            <td>278</td>
+                            <td><span class="tag tag-success">94.7%</span></td>
+                            <td><span class="tag tag-success">已发布</span></td>
+                            <td><button class="btn btn-sm btn-outline">编辑</button></td>
+                          </tr>
+                          <tr>
+                            <td>10</td>
+                            <td><strong>SYNTAX 评分</strong></td>
+                            <td>医学量表</td>
+                            <td>12项</td>
+                            <td>冠脉病变数量、位置、特征、左主干病变等</td>
+                            <td>198</td>
+                            <td><span class="tag tag-success">90.2%</span></td>
+                            <td><span class="tag tag-success">已发布</span></td>
+                            <td><button class="btn btn-sm btn-outline">编辑</button></td>
                           </tr>
                         </tbody>
                       </table>
                     </div>
-
-                    <!-- 评分阈值与干预 -->
-                    <div style="margin-top:20px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px">
-                      <div style="padding:16px;border-radius:var(--radius);background:var(--success-bg);border:1px solid var(--success)">
-                        <div style="font-size:13px;font-weight:600;color:var(--success);margin-bottom:4px">低风险 (19-23分)</div>
-                        <div style="font-size:12px;color:var(--gray-600)">常规护理, 每周评估1次</div>
-                      </div>
-                      <div style="padding:16px;border-radius:var(--radius);background:var(--warning-bg);border:1px solid var(--warning)">
-                        <div style="font-size:13px;font-weight:600;color:var(--warning);margin-bottom:4px">中风险 (14-18分)</div>
-                        <div style="font-size:12px;color:var(--gray-600)">加用气垫床, 每3天评估</div>
-                      </div>
-                      <div style="padding:16px;border-radius:var(--radius);background:var(--danger-bg);border:1px solid var(--danger)">
-                        <div style="font-size:13px;font-weight:600;color:var(--danger);margin-bottom:4px">高风险 (< 14分)</div>
-                        <div style="font-size:12px;color:var(--gray-600)">专人护理, 每日评估, 触发预警</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- 量表完成率趋势 -->
-                <div class="card">
-                  <div class="card-header">
-                    <h3>量表完成率趋势</h3>
-                    <div class="table-filters">
-                      <select>
-                        <option>所有量表</option>
-                        <option>Braden 压疮评估</option>
-                        <option>DVT 风险评估</option>
-                        <option>GRACE 评分</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div class="card-body">
-                    <div class="chart-placeholder" style="height:180px">量表评分趋势折线图</div>
                   </div>
                 </div>
               </div>
@@ -211,62 +203,71 @@
 
 <script>
 (function() {
-  function init() {
-    if (typeof DiseaseContext === 'undefined') return;
-    var d = DiseaseContext.get();
-    var data = DiseaseContext.getData();
-    var stats = DiseaseContext.getStats();
-    var scales = DiseaseContext.getScales();
-    // 更新页面标题
-    var titleEl = document.querySelector('.page-header-left h2');
-    if (titleEl) titleEl.textContent = '评估量表管理';
-    // 更新统计卡片
-    var statValues = document.querySelectorAll('.stats-row .stat-info .value');
-    if (statValues.length >= 1 && stats.scaleCount !== undefined) statValues[0].textContent = stats.scaleCount;
-    if (statValues.length >= 2 && stats.scaleCompletion !== undefined) statValues[1].textContent = stats.scaleCompletion + '%';
-    if (statValues.length >= 3 && stats.missRate !== undefined) statValues[2].textContent = stats.missRate + '%';
-    if (statValues.length >= 4 && stats.alertCount !== undefined) statValues[3].textContent = stats.alertCount;
-    // 动态填充左侧量表分类树
-    if (scales && scales.length > 0) {
-      var treeList = document.querySelector('.data-tree-list');
-      if (treeList) {
-        var groups = {};
-        scales.forEach(function(s) {
-          var type = s.type || '其他';
-          if (!groups[type]) groups[type] = [];
-          groups[type].push(s);
-        });
-        var html = '';
-        for (var type in groups) {
-          html += '<div class="data-tree-group">' +
-            '<div class="data-tree-group-title" onclick="this.parentElement.classList.toggle(\'collapsed\')">' +
-            '<span class="tree-arrow">&#9656;</span> ' + type + ' <span class="tree-count">' + groups[type].length + '</span>' +
-            '</div><div class="data-tree-items">';
-          groups[type].forEach(function(s, i) {
-            html += '<div class="data-tree-item' + (i === 0 ? ' active' : '') + '">' + s.name + '</div>';
-          });
-          html += '</div></div>';
-        }
-        treeList.innerHTML = html;
-      }
-      // 更新右侧量表详情卡片头部（使用第一个量表）
-      var firstScale = scales[0];
-      var detailHeader = document.querySelector('.data-center-content .card-header');
-      if (detailHeader && firstScale) {
-        var h3 = detailHeader.querySelector('h3');
-        var tag = detailHeader.querySelector('.tag');
-        var versionSpan = detailHeader.querySelector('span[style*="gray-400"]');
-        if (h3) h3.textContent = firstScale.name;
-        if (tag) {
-          tag.textContent = firstScale.status;
-          tag.className = 'tag ' + (firstScale.status === '已发布' ? 'tag-success' : 'tag-warning');
-        }
-        if (versionSpan) versionSpan.textContent = firstScale.type + ' | ' + firstScale.items + '个评估条目';
-      }
+  var scalesData = {
+    '医学量表': [
+      { name: 'GRACE 评分 (ACS)', type: '医学量表', items: '9项', dims: '年龄、心率、收缩压、肌酐、Killip分级、心脏骤停、ST段偏移、心肌酶升高', usage: 1256, rate: '96.5%', status: '已发布' },
+      { name: 'NIHSS 评分 (卒中)', type: '医学量表', items: '15项', dims: '意识水平、凝视、视野、面瘫、上肢运动、下肢运动等', usage: 987, rate: '94.2%', status: '已发布' },
+      { name: 'Braden 压疮风险评估', type: '医学量表', items: '6项', dims: '感知、潮湿、活动能力、移动能力、营养、摩擦力', usage: 892, rate: '93.8%', status: '已发布' },
+      { name: 'GCS 评分 (意识)', type: '医学量表', items: '3项', dims: '睁眼反应、语言反应、运动反应', usage: 756, rate: '95.1%', status: '已发布' },
+      { name: 'Charlson 合并症指数', type: '医学量表', items: '17项', dims: '心肌梗死、充血性心力衰竭、周围血管病等', usage: 634, rate: '91.3%', status: '已发布' },
+      { name: 'DVT 风险评估 (Caprini)', type: '医学量表', items: '20项', dims: '年龄、BMI、手术类型、活动能力、DVT病史等', usage: 456, rate: '89.7%', status: '已发布' },
+      { name: '跌倒风险评估 (Morse)', type: '医学量表', items: '6项', dims: '跌倒史、诊断、行走辅助、静脉输液、步态、精神状态', usage: 389, rate: '88.4%', status: '已发布' },
+      { name: '营养风险筛查 (NRS-2002)', type: '医学量表', items: '3项', dims: '营养状况、疾病严重程度、年龄', usage: 312, rate: '92.6%', status: '已发布' },
+      { name: 'Killip 分级', type: '医学量表', items: '4项', dims: 'Ⅰ级无心衰、Ⅱ级轻度心衰、Ⅲ级重度心衰、Ⅳ级心源性休克', usage: 278, rate: '94.7%', status: '已发布' },
+      { name: 'SYNTAX 评分', type: '医学量表', items: '12项', dims: '冠脉病变数量、位置、特征、左主干病变等', usage: 198, rate: '90.2%', status: '已发布' }
+    ],
+    '他评评估量表': [
+      { name: '疼痛评估 (NRS)', type: '他评评估量表', items: '1项', dims: '数字评分0-10', usage: 2345, rate: '97.2%', status: '已发布' },
+      { name: 'Barthel 日常生活指数', type: '他评评估量表', items: '10项', dims: '进食、穿衣、洗澡、如厕、行走等', usage: 1876, rate: '95.6%', status: '已发布' },
+      { name: 'mRS 改良Rankin量表', type: '他评评估量表', items: '1项', dims: '0-6级功能残疾评估', usage: 1234, rate: '93.1%', status: '已发布' },
+      { name: 'COPD 评估测试 (CAT)', type: '他评评估量表', items: '8项', dims: '咳嗽、咳痰、胸闷、气喘等', usage: 567, rate: '88.9%', status: '已发布' },
+      { name: 'MELD 评分', type: '他评评估量表', items: '3项', dims: '胆红素、INR、肌酐', usage: 345, rate: '91.4%', status: '已发布' },
+      { name: 'APACHE II 评分', type: '他评评估量表', items: '14项', dims: '急性生理、年龄、慢性健康', usage: 234, rate: '89.5%', status: '已发布' },
+      { name: 'SOFA 评分', type: '他评评估量表', items: '6项', dims: '呼吸、凝血、肝脏、循环、神经、肾脏', usage: 189, rate: '90.8%', status: '已发布' },
+      { name: 'Waterlow 压疮评估', type: '他评评估量表', items: '7项', dims: '体重、皮肤类型、性别、年龄、活动等', usage: 456, rate: '87.3%', status: '已发布' }
+    ],
+    '自评评估量表': [
+      { name: 'SF-36 生活质量', type: '自评评估量表', items: '36项', dims: '生理功能、生理职能、躯体疼痛、总体健康、活力、社会功能、情感职能、精神健康', usage: 876, rate: '92.4%', status: '已发布' },
+      { name: 'EQ-5D 健康效用', type: '自评评估量表', items: '5项', dims: '活动能力、自我照顾、日常活动、疼痛/不适、焦虑/抑郁', usage: 654, rate: '91.7%', status: '已发布' },
+      { name: 'PHQ-9 抑郁筛查', type: '自评评估量表', items: '9项', dims: '兴趣、情绪、睡眠、精力、食欲、自我评价、注意力、精神运动、自杀意念', usage: 1234, rate: '95.3%', status: '已发布' },
+      { name: 'GAD-7 焦虑筛查', type: '自评评估量表', items: '7项', dims: '紧张、无法停止担忧、坐立不安、易怒、害怕、回避、噩梦', usage: 1123, rate: '94.8%', status: '已发布' },
+      { name: 'PSQI 睡眠质量', type: '自评评估量表', items: '19项', dims: '入睡时间、睡眠时长、睡眠效率、睡眠障碍、催眠药物使用等', usage: 567, rate: '89.2%', status: '已发布' },
+      { name: '日常生活能力量表 (ADL)', type: '自评评估量表', items: '10项', dims: '进食、穿衣、洗澡、如厕、行走等', usage: 890, rate: '93.5%', status: '已发布' }
+    ]
+  };
+
+  function renderTable(category) {
+    var scales = scalesData[category] || [];
+    var tbody = document.getElementById('scalesTableBody');
+    var titleEl = document.getElementById('scales-list-title');
+    if (titleEl) titleEl.textContent = category;
+    if (tbody) {
+      tbody.innerHTML = scales.map(function(s, i) {
+        var statusClass = s.status === '已发布' ? 'tag-success' : 'tag-warning';
+        return '<tr>' +
+          '<td>' + (i + 1) + '</td>' +
+          '<td><strong>' + s.name + '</strong></td>' +
+          '<td>' + s.type + '</td>' +
+          '<td>' + s.items + '</td>' +
+          '<td style="max-width:200px;font-size:12px;color:var(--gray-600)">' + s.dims + '</td>' +
+          '<td>' + s.usage.toLocaleString() + '</td>' +
+          '<td><span class="tag tag-success">' + s.rate + '</span></td>' +
+          '<td><span class="tag ' + statusClass + '">' + s.status + '</span></td>' +
+          '<td><button class="btn btn-sm btn-outline">编辑</button></td>' +
+        '</tr>';
+      }).join('');
     }
   }
-  init();
-  document.addEventListener('module:loaded', function(e) { if (e.detail && e.detail.pageId === 'records/scales') init(); });
+
+  window.ScalesModule = {
+    selectCategory: function(category, el) {
+      document.querySelectorAll('.data-tree-item').forEach(function(item) { item.classList.remove('active'); });
+      if (el) el.classList.add('active');
+      renderTable(category);
+    }
+  };
+
+  renderTable('医学量表');
 })();
 </script>
 
