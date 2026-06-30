@@ -289,6 +289,9 @@ input:focus,select:focus,textarea:focus{border-color:var(--primary);box-shadow:0
 /* Grid cards equal height */
 [style*="display:grid"] > .card{height:100%;display:flex;flex-direction:column}
 [style*="display:grid"] > .card > .card-body{flex:1}
+[style*="display:grid"] > div{display:flex;flex-direction:column;gap:16px;min-height:0}
+[style*="display:grid"] > div > .card{display:flex;flex-direction:column;flex:1}
+[style*="display:grid"] > div > .card > .card-body{flex:1}
 .page-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:24px;flex-wrap:wrap;gap:16px}
 .page-header-left h2{font-size:20px;font-weight:700;color:var(--gray-900);margin-bottom:4px}
 .page-header-left p{font-size:13px;color:var(--gray-500)}
@@ -463,9 +466,14 @@ tbody tr:hover{background:var(--primary-bg)}
 @media (max-width:992px){.two-col{grid-template-columns:1fr}}
 .two-col > .card{display:flex;flex-direction:column}
 .two-col > .card > .card-body{flex:1;overflow:auto}
-.two-col > .card:last-child,.two-col > div > .card:last-child{flex:1}
-.two-col > div:only-child > .card,.two-col > div:first-child > .card:last-child{flex:1}
-.two-col > .card-body:last-child,.two-col > div:last-child > .card-body:last-child{flex:1}
+.two-col > div{display:flex;flex-direction:column;gap:14px;min-height:0}
+.two-col > div > .card{display:flex;flex-direction:column;flex:1}
+.two-col > div > .card > .card-body{flex:1;overflow:auto}
+
+/* Data center layout equal height */
+.data-center-layout > .card{display:flex;flex-direction:column}
+.data-center-layout > .card > .card-body{flex:1;overflow:auto}
+.data-center-layout > div{display:flex;flex-direction:column;gap:20px;min-height:0}
 
 /* Chart Placeholder */
 .chart-placeholder{height:200px;background:linear-gradient(15deg,var(--gray-50),var(--gray-100));border-radius:var(--radius-lg);display:flex;align-items:center;justify-content:center;color:var(--gray-400);font-size:14px}
