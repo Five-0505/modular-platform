@@ -338,7 +338,7 @@
         templateTbody.innerHTML = templateNames.map(function(t, i) {
           var monthly = Math.floor(totalTemplates * (0.08 + Math.random() * 0.06));
           var cumulative = Math.floor(totalTemplates * (0.3 + i * 0.12));
-          return '<tr><td>' + d.name + t + '</td><td>' + templateTypes[i] + '</td><td>2025-03-' + (15 + i) + '</td><td>' + monthly.toLocaleString() + '</td><td>' + cumulative.toLocaleString() + '</td><td><span class="tag ' + (parseFloat(templateRates[i]) >= 80 ? 'tag-success' : 'tag-warning') + '">' + templateRates[i] + '</span></td></tr>';
+          return '<tr><td>' + (i + 1) + '</td><td>' + d.name + t + '</td><td>' + templateTypes[i] + '</td><td>2025-03-' + (15 + i) + '</td><td>' + monthly.toLocaleString() + '</td><td>' + cumulative.toLocaleString() + '</td><td><span class="tag ' + (parseFloat(templateRates[i]) >= 80 ? 'tag-success' : 'tag-warning') + '">' + templateRates[i] + '</span></td></tr>';
         }).join('');
       }
 
@@ -352,7 +352,7 @@
         scaleTbody.innerHTML = scaleNames.map(function(s, i) {
           var monthly = Math.floor(totalScales * (0.06 + Math.random() * 0.05));
           var cumulative = Math.floor(totalScales * (0.25 + i * 0.15));
-          return '<tr><td>' + s + '</td><td>' + scaleTypes[i] + '</td><td>2025-03-' + (15 + i) + '</td><td>' + monthly.toLocaleString() + '</td><td>' + cumulative.toLocaleString() + '</td><td><span class="tag ' + (parseFloat(scaleRates[i]) >= 80 ? 'tag-success' : 'tag-warning') + '">' + scaleRates[i] + '</span></td></tr>';
+          return '<tr><td>' + (i + 1) + '</td><td>' + s + '</td><td>' + scaleTypes[i] + '</td><td>2025-03-' + (15 + i) + '</td><td>' + monthly.toLocaleString() + '</td><td>' + cumulative.toLocaleString() + '</td><td><span class="tag ' + (parseFloat(scaleRates[i]) >= 80 ? 'tag-success' : 'tag-warning') + '">' + scaleRates[i] + '</span></td></tr>';
         }).join('');
       }
     }
