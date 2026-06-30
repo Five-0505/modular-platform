@@ -175,8 +175,9 @@
       var countEl = document.getElementById('diseaseTotalCount');
       if (countEl) countEl.textContent = filtered.length;
 
-      tbody.innerHTML = filtered.map(d => `
+      tbody.innerHTML = filtered.map((d, index) => `
         <tr>
+          <td>${index + 1}</td>
           <td><input type="checkbox" class="disease-checkbox" value="${d.name}" onchange="DiseaseModule.toggleSelect('${d.name}')"></td>
           <td><strong style="color:var(--primary);cursor:pointer;text-decoration:underline" onclick="DiseaseModule.showDetail('${d.name}')">${d.name}</strong></td>
           <td style="font-family:monospace;font-size:12px;color:var(--gray-600)">${d.code}</td>
