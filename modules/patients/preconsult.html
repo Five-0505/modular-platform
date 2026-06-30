@@ -71,14 +71,14 @@
       var firstRow = tbody.querySelector('tr:first-child');
       if (firstRow) {
         var cells = firstRow.querySelectorAll('td');
-        if (cells.length >= 8) {
-          cells[0].innerHTML = '<strong>' + tplName + '</strong>';
-          cells[1].textContent = d.dept;
-          cells[2].textContent = '门诊' + d.dept + '全科医师';
-          cells[3].textContent = tplFields;
-          cells[4].textContent = d.patientCount.toLocaleString();
-          cells[5].textContent = tplVersion;
-          cells[6].innerHTML = '<span class="tag tag-success">已发布</span>';
+        if (cells.length >= 9) {
+          cells[1].innerHTML = '<strong>' + tplName + '</strong>';
+          cells[2].textContent = d.dept;
+          cells[3].textContent = '门诊' + d.dept + '全科医师';
+          cells[4].textContent = tplFields;
+          cells[5].textContent = d.patientCount.toLocaleString();
+          cells[6].textContent = tplVersion;
+          cells[7].innerHTML = '<span class="tag tag-success">已发布</span>';
         }
       }
     }
