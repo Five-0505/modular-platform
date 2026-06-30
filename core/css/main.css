@@ -182,7 +182,7 @@ input:focus,select:focus,textarea:focus{border-color:var(--primary);box-shadow:0
 }
 
 /* ===== DATA CENTER LAYOUT ===== */
-.data-center-layout{display:grid;grid-template-columns:260px 1fr;grid-template-rows:1fr;gap:20px;flex:1;min-height:0}
+.data-center-layout{display:grid;grid-template-columns:260px 1fr;grid-template-rows:1fr;gap:14px;flex:1;min-height:0}
 @media (max-width:992px){.data-center-layout{grid-template-columns:1fr}}
 .data-center-sidebar{background:#fff;border-radius:var(--radius-lg);box-shadow:var(--shadow);overflow:hidden;display:flex;flex-direction:column;min-height:0}
 .data-tree-header{padding:14px 16px;border-bottom:1px solid var(--gray-100);display:flex;justify-content:space-between;align-items:center}
@@ -248,7 +248,7 @@ input:focus,select:focus,textarea:focus{border-color:var(--primary);box-shadow:0
 .graph-treat{background:#fff;border-color:var(--info);color:var(--info)}
 
 /* ===== PATHWAY PAGE ===== */
-.pathway-kpi-charts{display:grid;grid-template-columns:1fr 1.5fr 1fr;gap:16px;margin-top:16px}
+.pathway-kpi-charts{display:grid;grid-template-columns:1fr 1.5fr 1fr;gap:14px;margin-top:16px}
 @media (max-width:1100px){.pathway-kpi-charts{grid-template-columns:1fr}}
 .pathway-ranking-list{display:flex;flex-direction:column;gap:10px}
 .pathway-ranking-item{display:flex;align-items:center;gap:12px}
@@ -308,7 +308,7 @@ input:focus,select:focus,textarea:focus{border-color:var(--primary);box-shadow:0
 .btn-lg{padding:10px 24px;font-size:14px}
 
 /* Stat Cards */
-.stats-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-bottom:14px}
+.stats-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-bottom:14px}
 .stat-card{background:#fff;border-radius:var(--radius-lg);padding:20px;box-shadow:var(--shadow);display:flex;align-items:center;gap:16px;transition:transform .2s,box-shadow .2s}
 .stat-card:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg)}
 .stat-icon{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0}.stat-icon svg{display:block}
@@ -363,7 +363,7 @@ tbody tr:hover{background:var(--primary-bg)}
 .tab.active{color:var(--primary);border-bottom-color:var(--primary);background:var(--primary-bg);font-weight:600}
 
 /* Cards Grid */
-.cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+.cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
 .disease-card{background:#fff;border-radius:var(--radius-lg);padding:20px;box-shadow:var(--shadow);cursor:pointer;transition:all .2s;border:2px solid transparent;position:relative}
 .disease-card:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg);border-color:var(--primary-light)}
 .disease-card .card-top{display:flex;align-items:center;gap:12px;margin-bottom:12px}
@@ -423,7 +423,7 @@ tbody tr:hover{background:var(--primary-bg)}
 .drawer-close:hover{background:var(--gray-100);color:var(--gray-700)}
 
 /* Patient Card */
-.patient-card{background:#fff;border-radius:var(--radius-lg);padding:16px;box-shadow:var(--shadow);display:flex;gap:16px;align-items:flex-start;margin-bottom:12px;transition:transform .2s}
+.patient-card{background:#fff;border-radius:var(--radius-lg);padding:16px;box-shadow:var(--shadow);display:flex;gap:16px;align-items:flex-start;margin-bottom:14px;transition:transform .2s}
 .patient-card:hover{transform:translateX(4px);box-shadow:var(--shadow-lg)}
 .patient-avatar{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--primary),var(--info));color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:20px;flex-shrink:0}
 .patient-info{flex:1}
@@ -445,7 +445,7 @@ tbody tr:hover{background:var(--primary-bg)}
 .todo-meta{display:flex;gap:12px;font-size:11px;color:var(--gray-400);flex-wrap:wrap}
 
 /* Quick Actions */
-.quick-actions{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.quick-actions{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px}
 .quick-action{background:#fff;border-radius:var(--radius-lg);padding:20px;text-align:center;cursor:pointer;transition:all .2s;box-shadow:var(--shadow-sm);border:2px solid transparent}
 .quick-action:hover{transform:translateY(-2px);box-shadow:var(--shadow);border-color:var(--primary-light);background:var(--primary-bg)}
 .quick-action .icon{font-size:32px;margin-bottom:10px}
@@ -468,7 +468,7 @@ tbody tr:hover{background:var(--primary-bg)}
 /* Data center layout equal height */
 .data-center-layout > .card{display:flex;flex-direction:column}
 .data-center-layout > .card > .card-body{flex:1;overflow:auto}
-.data-center-layout > div{display:flex;flex-direction:column;gap:20px;min-height:0}
+.data-center-layout > div{display:flex;flex-direction:column;gap:14px;min-height:0}
 
 /* Chart Placeholder */
 .chart-placeholder{height:200px;background:linear-gradient(15deg,var(--gray-50),var(--gray-100));border-radius:var(--radius-lg);display:flex;align-items:center;justify-content:center;color:var(--gray-400);font-size:14px}
