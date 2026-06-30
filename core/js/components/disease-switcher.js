@@ -66,6 +66,7 @@ const DiseaseSwitcher = {
         this.state.selectedDept = this.getDepartments().find(d => d.id === this.state.selectedDisease.deptId) || null;
       }
     }
+    this.render();
   },
 
   // 绑定事件
