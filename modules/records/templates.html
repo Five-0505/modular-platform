@@ -39,67 +39,25 @@
                 <div class="card-body" style="padding:0">
                   <div class="data-tree-list">
                     <div class="data-tree-group">
-                      <div class="data-tree-group-title" onclick="this.parentElement.classList.toggle('collapsed')">
-                        <span class="tree-arrow">▸</span> 门(急)诊病历 <span class="tree-count">52</span>
-                      </div>
-                      <div class="data-tree-items">
-                        <div class="data-tree-item active">冠心病门诊病历</div>
-                        <div class="data-tree-item">高血压门诊病历</div>
-                        <div class="data-tree-item">脑梗死门诊病历</div>
-                        <div class="data-tree-item">骨折急诊病历</div>
-                        <div class="data-tree-item">肾癌门诊病历</div>
-                      </div>
+                      <div class="data-tree-item active" style="cursor:pointer">门(急)诊病历 <span class="tree-count" style="float:right">52</span></div>
                     </div>
                     <div class="data-tree-group">
-                      <div class="data-tree-group-title" onclick="this.parentElement.classList.toggle('collapsed')">
-                        <span class="tree-arrow">▸</span> 入院记录 <span class="tree-count">68</span>
-                      </div>
-                      <div class="data-tree-items">
-                        <div class="data-tree-item">急性心肌梗死入院记录</div>
-                        <div class="data-tree-item">高血压入院记录</div>
-                        <div class="data-tree-item">脑梗死入院记录</div>
-                        <div class="data-tree-item">脑出血入院记录</div>
-                        <div class="data-tree-item">髋关节置换入院记录</div>
-                      </div>
+                      <div class="data-tree-item" style="cursor:pointer">入院记录 <span class="tree-count" style="float:right">68</span></div>
                     </div>
                     <div class="data-tree-group">
-                      <div class="data-tree-group-title" onclick="this.parentElement.classList.toggle('collapsed')">
-                        <span class="tree-arrow">▸</span> 出院记录 <span class="tree-count">45</span>
-                      </div>
-                      <div class="data-tree-items">
-                        <div class="data-tree-item">冠心病出院记录</div>
-                        <div class="data-tree-item">心力衰竭出院记录</div>
-                        <div class="data-tree-item">脑梗死出院记录</div>
-                        <div class="data-tree-item">结肠癌出院记录</div>
-                      </div>
+                      <div class="data-tree-item" style="cursor:pointer">出院记录 <span class="tree-count" style="float:right">45</span></div>
                     </div>
                     <div class="data-tree-group">
-                      <div class="data-tree-group-title" onclick="this.parentElement.classList.toggle('collapsed')">
-                        <span class="tree-arrow">▸</span> 首次病程记录 <span class="tree-count">38</span>
-                      </div>
-                      <div class="data-tree-items">
-                        <div class="data-tree-item">急性心肌梗死首次病程</div>
-                        <div class="data-tree-item">脑梗死首次病程</div>
-                        <div class="data-tree-item">骨折首次病程</div>
-                        <div class="data-tree-item">肾癌首次病程</div>
-                      </div>
+                      <div class="data-tree-item" style="cursor:pointer">首次病程记录 <span class="tree-count" style="float:right">38</span></div>
                     </div>
                     <div class="data-tree-group">
-                      <div class="data-tree-group-title" onclick="this.parentElement.classList.toggle('collapsed')">
-                        <span class="tree-arrow">▸</span> 日常病程记录 <span class="tree-count">53</span>
-                      </div>
-                      <div class="data-tree-items">
-                        <div class="data-tree-item">冠心病日常病程</div>
-                        <div class="data-tree-item">心律失常日常病程</div>
-                        <div class="data-tree-item">脑出血术后病程</div>
-                        <div class="data-tree-item">膝关节术后病程</div>
-                      </div>
+                      <div class="data-tree-item" style="cursor:pointer">日常病程记录 <span class="tree-count" style="float:right">53</span></div>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div style="display:flex;flex-direction:column;gap:16px">
+              <div style="display:flex;flex-direction:column;gap:16px;overflow:auto;min-height:0">
                 <div class="card">
                   <div class="card-header">
                     <h3>模板列表</h3>
@@ -318,8 +276,9 @@
     if (statValues.length >= 4 && stats.structuredRate !== undefined) statValues[3].textContent = stats.structuredRate + '%';
     var tbody = document.querySelector('.card table tbody');
     if (tbody && data.templates && data.templates.length > 0) {
-      tbody.innerHTML = data.templates.map(function(t) {
+      tbody.innerHTML = data.templates.map(function(t, i) {
         return '<tr>' +
+          '<td>' + (i + 1) + '</td>' +
           '<td><strong>' + t.name + '</strong></td>' +
           '<td>' + d.dept + '</td>' +
           '<td>' + d.name + '</td>' +
