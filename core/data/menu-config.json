@@ -13,7 +13,7 @@
       { "id": "disease-knowledge", "name": "疾病知识管理", "pageId": "knowledge/disease" },
       { "id": "knowledge-graph", "name": "AI知识图谱", "pageId": "knowledge/graph" },
       { "id": "contraindication", "name": "禁忌证清单", "pageId": "knowledge/contraindication" },
-      { "id": "pre-consultation", "name": "专科预问诊配置", "pageId": "patients/preconsult" }
+      { "id": "pre-consultation", "name": "专科预问诊问卷", "pageId": "patients/preconsult" }
     ]},
     { "id": "records", "name": "专科病历管理", "icon": "file-text", "pageId": "records/templates", "children": [
       { "id": "templates", "name": "病历模板管理", "pageId": "records/templates" },
@@ -22,13 +22,10 @@
     ]},
     { "id": "pathways", "name": "专病诊疗路径", "icon": "git-branch", "pageId": "pathways/overview", "children": [
       { "id": "pathway-overview", "name": "诊疗路径总览", "pageId": "pathways/overview" },
-      { "id": "pathway-manage", "name": "诊疗路径管理", "pageId": "pathways/manage" },
-      { "id": "pathway-nodes", "name": "节点规则配置", "pageId": "pathways/nodes" }
+      { "id": "pathway-manage", "name": "诊疗路径管理", "pageId": "pathways/manage" }
     ]},
-    { "id": "ai", "name": "专科AI管理", "icon": "cpu", "pageId": "ai/monitor", "children": [
-      { "id": "ai-monitor", "name": "智能体运行监控", "pageId": "ai/monitor" },
-      { "id": "ai-config", "name": "Dify智能体配置", "pageId": "ai/config" },
-      { "id": "ai-prompt", "name": "提示词动态维护", "pageId": "ai/prompt" }
+    { "id": "ai", "name": "专科智能体管理", "icon": "cpu", "pageId": "ai/monitor", "children": [
+      { "id": "ai-monitor", "name": "智能体运行监控", "pageId": "ai/monitor" }
     ]},
     { "id": "patients", "name": "患者管理中心", "icon": "users", "pageId": "patients/records", "children": [
       { "id": "records-folder", "name": "专科病历夹", "pageId": "patients/records" },
