@@ -745,3 +745,112 @@ tbody tr:hover{background:var(--primary-bg)}
   margin-top: 6px;
   flex-shrink: 0;
 }
+
+/* Template Tree */
+.template-tree {
+  padding: 8px;
+  max-height: 500px;
+  overflow-y: auto;
+}
+.template-tree::-webkit-scrollbar {
+  width: 4px;
+}
+.template-tree::-webkit-scrollbar-thumb {
+  background: var(--gray-300);
+  border-radius: 4px;
+}
+.tree-node {
+  margin-bottom: 2px;
+}
+.tree-node-header {
+  display: flex;
+  align-items: center;
+  padding: 6px 8px;
+  cursor: pointer;
+  border-radius: 4px;
+  gap: 6px;
+  font-size: 13px;
+  transition: all 0.2s;
+}
+.tree-node-header:hover {
+  background: var(--gray-100);
+}
+.tree-node-header.active {
+  background: var(--primary-bg);
+  color: var(--primary);
+}
+.tree-node-icon {
+  font-size: 14px;
+  width: 20px;
+  flex-shrink: 0;
+}
+.tree-node-label {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.tree-node-count {
+  font-size: 11px;
+  color: var(--gray-500);
+  background: var(--gray-100);
+  padding: 1px 6px;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+.tree-children {
+  display: none;
+  padding-left: 20px;
+}
+.tree-children .tree-node-header {
+  padding-left: 16px;
+}
+.tree-children .tree-children .tree-node-header {
+  padding-left: 32px;
+}
+.tree-children .tree-children .tree-children .tree-node-header {
+  padding-left: 48px;
+}
+
+/* Bar Chart */
+.bar-chart-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  max-width: 90px;
+}
+.bar-chart-bar {
+  width: 100%;
+  max-width: 60px;
+  min-height: 10px;
+  border-radius: 6px 6px 0 0;
+  position: relative;
+  transition: height 0.3s ease;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 6px;
+  min-width: 40px;
+}
+.bar-chart-bar:hover {
+  opacity: 0.85;
+  transform: scaleY(1.02);
+}
+.bar-chart-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  white-space: nowrap;
+}
+.bar-chart-name {
+  font-size: 11px;
+  color: var(--gray-600);
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 80px;
+}
