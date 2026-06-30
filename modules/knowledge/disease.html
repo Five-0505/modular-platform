@@ -157,13 +157,13 @@
     html += '<div class="card"><div class="card-header"><h3>' + d.name + ' - ' + mod.name + '</h3>';
     html += '<div class="table-filters"><button class="btn btn-sm btn-outline">批量导出</button><button class="btn btn-sm btn-primary">新增知识</button></div></div>';
     html += '<div class="card-body"><div class="table-wrapper"><table><thead><tr>';
-    html += '<th>知识名称</th><th>版本</th><th>状态</th><th>更新时间</th><th>操作</th>';
+    html += '<th>序号</th><th>知识名称</th><th>版本</th><th>状态</th><th>更新时间</th><th>操作</th>';
     html += '</tr></thead><tbody>';
     for (var j = 0; j < samples.length; j++) {
       var s = samples[j];
       var statusClass = s.status === '已发布' ? 'tag-success' : 'tag-warning';
-      html += '<tr><td>1</td>
-<td><strong>' + s.title + '</strong></td><td>' + s.version + '</td>';
+      html += '<tr><td>' + (j + 1) + '</td>';
+      html += '<td><strong>' + s.title + '</strong></td><td>' + s.version + '</td>';
       html += '<td><span class="tag ' + statusClass + '">' + s.status + '</span></td>';
       html += '<td>' + s.updated + '</td>';
       html += '<td><button class="btn btn-sm btn-outline">查看</button> <button class="btn btn-sm btn-outline">编辑</button></td></tr>';
