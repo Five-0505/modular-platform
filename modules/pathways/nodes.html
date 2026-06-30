@@ -104,9 +104,12 @@
 
     // 质控规则
     html += '<div class="card" style="margin-top:16px"><div class="card-header"><h3>质控规则</h3><button class="btn btn-sm btn-primary">新增规则</button></div><div class="card-body">';
-    html += '<div class="table-wrapper"><table><thead><tr><th>规则名称</th><th>规则类型</th><th>阈值</th><th>预警级别</th><th>状态</th><th>操作</th></tr></thead><tbody>';
-    html += '<tr><td><strong>' + node.title + '时限监控</strong></td><td><span class="tag tag-info">时效</span></td><td>' + node.limit + '</td><td><span class="tag tag-danger">严重</span></td><td><span class="tag tag-success">启用</span></td><td><button class="btn btn-sm btn-outline">编辑</button></td></tr>';
-    html += '<tr><td><strong>' + node.title + '必填字段检查</strong></td><td><span class="tag tag-warning">完整性</span></td><td>必填</td><td><span class="tag tag-warning">警告</span></td><td><span class="tag tag-success">启用</span></td><td><button class="btn btn-sm btn-outline">编辑</button></td></tr>';
+    html += '<div class="table-wrapper"><table><thead><tr><th>序号</th>
+<th>规则名称</th><th>规则类型</th><th>阈值</th><th>预警级别</th><th>状态</th><th>操作</th></tr></thead><tbody>';
+    html += '<tr><td>1</td>
+<td><strong>' + node.title + '时限监控</strong></td><td><span class="tag tag-info">时效</span></td><td>' + node.limit + '</td><td><span class="tag tag-danger">严重</span></td><td><span class="tag tag-success">启用</span></td><td><button class="btn btn-sm btn-outline">编辑</button></td></tr>';
+    html += '<tr><td>2</td>
+<td><strong>' + node.title + '必填字段检查</strong></td><td><span class="tag tag-warning">完整性</span></td><td>必填</td><td><span class="tag tag-warning">警告</span></td><td><span class="tag tag-success">启用</span></td><td><button class="btn btn-sm btn-outline">编辑</button></td></tr>';
     html += '</tbody></table></div>';
     html += '</div></div>';
 
