@@ -1,0 +1,202 @@
+<div data-module-id="page-data-center-rdr">
+
+          <div class="page-header">
+            <div class="page-header-left">
+              <h2>RDR 数据仓库</h2>
+            </div>
+          </div>
+
+            <div class="stats-row">
+              <div class="stat-card">
+                <div class="stat-icon blue"><svg viewBox="0 0 20 20" width="20" height="20"><circle cx="10" cy="10" r="7" fill="none" stroke="currentColor" stroke-width="1.5"/><ellipse cx="10" cy="10" rx="3.5" ry="7" fill="none" stroke="currentColor" stroke-width="1.2"/><path d="M3 10h14" stroke="currentColor" stroke-width="1.2"/></svg></div>
+                <div class="stat-info">
+                  <div class="value">1,245,680</div>
+                  <div class="label">全院标准库记录数</div>
+                </div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon green"><svg viewBox="0 0 20 20" width="20" height="20"><path d="M10 2l2.5 5 5.5.8-4 3.9.9 5.3L10 14.5 5.1 17l.9-5.3-4-3.9 5.5-.8L10 2z" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg></div>
+                <div class="stat-info">
+                  <div class="value">10</div>
+                  <div class="label">专科库数量</div>
+                </div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon yellow"><svg viewBox="0 0 20 20" width="20" height="20"><path d="M10 17s-7-4.5-7-9a4 4 0 017-2.5 4 4 0 017 2.5c0 4.5-7 9-7 9z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></div>
+                <div class="stat-info">
+                  <div class="value">48</div>
+                  <div class="label">专病库数量</div>
+                </div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon purple"><svg viewBox="0 0 20 20" width="20" height="20"><path d="M3 10a7 7 0 0112.5-4.3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M17 10a7 7 0 01-12.5 4.3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+                <div class="stat-info">
+                  <div class="value">98.5%</div>
+                  <div class="label">ETL 同步成功率</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ETL 同步流程监控 -->
+            <div class="card">
+              <div class="card-header">
+                <h3>ETL 同步流程监控</h3>
+                <div class="table-filters">
+                  <select>
+                    <option>所有源系统</option>
+                    <option>HIS</option>
+                    <option>LIS</option>
+                    <option>PACS</option>
+                    <option>EMR</option>
+                  </select>
+                  <select>
+                    <option>所有状态</option>
+                    <option>运行中</option>
+                    <option>已完成</option>
+                    <option>失败</option>
+                  </select>
+                  <button class="btn btn-sm btn-primary">全部重跑</button>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="table-wrapper">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>任务名称</th>
+                        <th>源系统</th>
+                        <th>目标库</th>
+                        <th>记录数</th>
+                        <th>耗时</th>
+                        <th>最后运行</th>
+                        <th>状态</th>
+                        <th>操作</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><strong>HIS -> RDR 入院记录</strong></td>
+                        <td>HIS</td>
+                        <td>全院标准库</td>
+                        <td>32,456</td>
+                        <td>4m 23s</td>
+                        <td>2026-06-26 08:00</td>
+                        <td><span class="tag tag-success">已完成</span></td>
+                        <td><button class="btn btn-sm btn-outline">详情</button></td>
+                      </tr>
+                      <tr>
+                        <td><strong>LIS -> RDR 检验结果</strong></td>
+                        <td>LIS</td>
+                        <td>全院标准库</td>
+                        <td>156,789</td>
+                        <td>12m 45s</td>
+                        <td>2026-06-26 09:00</td>
+                        <td><span class="tag tag-success">已完成</span></td>
+                        <td><button class="btn btn-sm btn-outline">详情</button></td>
+                      </tr>
+                      <tr>
+                        <td><strong>PACS -> RDR 影像报告</strong></td>
+                        <td>PACS</td>
+                        <td>全院标准库</td>
+                        <td>8,234</td>
+                        <td>--</td>
+                        <td>2026-06-26 07:30</td>
+                        <td><span class="tag tag-danger">失败</span></td>
+                        <td><button class="btn btn-sm btn-danger">重跑</button></td>
+                      </tr>
+                      <tr>
+                        <td><strong>EMR -> RDR 病历文书</strong></td>
+                        <td>EMR</td>
+                        <td>全院标准库</td>
+                        <td>45,678</td>
+                        <td>8m 12s</td>
+                        <td>2026-06-26 08:30</td>
+                        <td><span class="tag tag-success">已完成</span></td>
+                        <td><button class="btn btn-sm btn-outline">详情</button></td>
+                      </tr>
+                      <tr>
+                        <td><strong>RDR -> 专病库(心肌梗死)</strong></td>
+                        <td>RDR</td>
+                        <td>专病库</td>
+                        <td>1,256</td>
+                        <td>2m 05s</td>
+                        <td>2026-06-26 09:30</td>
+                        <td><span class="tag tag-primary">运行中</span></td>
+                        <td><button class="btn btn-sm btn-outline">监控</button></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <!-- ETL 链路拓扑 -->
+            <div class="card">
+              <div class="card-header">
+                <h3>数据流向拓扑</h3>
+              </div>
+              <div class="card-body">
+                <div class="etl-topology">
+                  <div class="etl-node etl-source">
+                    <div class="etl-node-title">源系统层</div>
+                    <div class="etl-node-items">
+                      <div class="etl-item">HIS</div>
+                      <div class="etl-item">LIS</div>
+                      <div class="etl-item">PACS</div>
+                      <div class="etl-item">EMR</div>
+                    </div>
+                  </div>
+                  <div class="etl-arrow">→ ETL →</div>
+                  <div class="etl-node etl-rdr">
+                    <div class="etl-node-title">RDR 分层库</div>
+                    <div class="etl-node-items">
+                      <div class="etl-item">ODS层</div>
+                      <div class="etl-item">DWD层</div>
+                      <div class="etl-item">DWS层</div>
+                      <div class="etl-item">ADS层</div>
+                    </div>
+                  </div>
+                  <div class="etl-arrow">→ 标准化 →</div>
+                  <div class="etl-node etl-standard">
+                    <div class="etl-node-title">标准库</div>
+                    <div class="etl-node-items">
+                      <div class="etl-item">全院库</div>
+                      <div class="etl-item">专科库</div>
+                      <div class="etl-item">专病库</div>
+                    </div>
+                  </div>
+                  <div class="etl-arrow">→ 分发 →</div>
+                  <div class="etl-node etl-consume">
+                    <div class="etl-node-title">消费层</div>
+                    <div class="etl-node-items">
+                      <div class="etl-item">质控</div>
+                      <div class="etl-item">科研</div>
+                      <div class="etl-item">上报</div>
+                      <div class="etl-item">分析</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+</div>
+
+<script>
+(function() {
+  function init() {
+    if (typeof DiseaseContext === 'undefined') return;
+    var d = DiseaseContext.get();
+    var stats = DiseaseContext.getStats();
+    var h2 = document.querySelector('h2');
+    if (h2) h2.textContent = 'RDR 数据仓库';
+    var vals = document.querySelectorAll('.stat-info .value');
+    if (vals.length > 0) { vals[0].textContent = (d.patientCount * 150).toLocaleString(); }
+    if (vals.length > 1) { vals[1].textContent = stats.diseaseCount; }
+    if (vals.length > 2) { vals[2].textContent = stats.templateCount; }
+  }
+  init();
+  document.addEventListener('module:loaded', function(e) {
+    if (e.detail && e.detail.pageId === 'data-center/rdr') init();
+  });
+})();
+</script>

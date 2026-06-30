@@ -1,0 +1,251 @@
+<div data-module-id="page-patients-preconsult">
+
+          <div class="page-header">
+            <div class="page-header-left">
+              <h2 id="patients-preconsult-title">患者管理中心</h2>
+              <p id="patients-preconsult-subtitle">覆盖患者诊前、诊中、出院后全生命周期管理</p>
+            </div>
+          </div>
+
+            <div class="stats-row">
+              <div class="stat-card">
+                <div class="stat-icon blue"><svg viewBox="0 0 20 20" width="20" height="20"><path d="M5 4h10a2 2 0 012 2v2a2 2 0 01-2 2H7a2 2 0 00-2 2v2a2 2 0 002 2h8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="14" cy="14" r="2" fill="none" stroke="currentColor" stroke-width="1.3"/></svg></div>
+                <div class="stat-info">
+                  <div class="value">24</div>
+                  <div class="label">问卷模板数</div>
+                </div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon green"><svg viewBox="0 0 20 20" width="20" height="20"><path d="M13.5 3.5l3 3L7 16H4v-3L13.5 3.5z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M11 6l3 3" stroke="currentColor" stroke-width="1.3"/></svg></div>
+                <div class="stat-info">
+                  <div class="value">92.3%</div>
+                  <div class="label">问卷填写率</div>
+                </div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon yellow"><svg viewBox="0 0 20 20" width="20" height="20"><path d="M7 10a3 3 0 013-3h3a3 3 0 010 6h-3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M13 10a3 3 0 01-3 3H7a3 3 0 010-6h3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+                <div class="stat-info">
+                  <div class="value">87.6%</div>
+                  <div class="label">数据带入率</div>
+                </div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon purple"><svg viewBox="0 0 20 20" width="20" height="20"><rect x="3" y="3" width="14" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 6v8M6 10h8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+                <div class="stat-info">
+                  <div class="value">10</div>
+                  <div class="label">已配置科室</div>
+              </div>
+            </div>
+
+</div>
+<script>
+(function() {
+  function init() {
+    if (typeof DiseaseContext === 'undefined') return;
+    var d = DiseaseContext.get();
+    var data = DiseaseContext.getData();
+
+    // 标题/副标题
+    var t = document.getElementById('patients-preconsult-title');
+    var s = document.getElementById('patients-preconsult-subtitle');
+    if (t) t.textContent = '患者管理';
+    if (s) s.textContent = d.dept + ' | 覆盖患者诊前、诊中、出院后全生命周期管理';
+    var bc = document.getElementById('breadcrumb');
+    if (bc) bc.innerHTML = '<span>专科预问诊配置</span>';
+
+    // 更新统计卡片
+    var statVals = document.querySelectorAll('.stat-card .stat-info .value');
+    if (statVals.length >= 4) {
+      statVals[0].textContent = Math.floor(d.patientCount * 0.02);
+      statVals[1].textContent = (88 + Math.random() * 12).toFixed(1) + '%';
+      statVals[2].textContent = (82 + Math.random() * 18).toFixed(1) + '%';
+      statVals[3].textContent = Math.floor(5 + Math.random() * 10);
+    }
+
+    // 更新第一个下拉筛选为当前病种科室
+    var filterSelects = document.querySelectorAll('.table-filters select');
+    if (filterSelects.length > 0) {
+      filterSelects[0].innerHTML = '<option value="">' + d.dept + '</option>';
+    }
+
+    // 更新表格第一行：当前病种的问卷信息
+    var templates = data.templates || [];
+    var tplName = templates.length > 0 ? templates[0].name : (d.name + '预问诊问卷');
+    var tplFields = templates.length > 0 ? templates[0].fields : 28;
+    var tplVersion = templates.length > 0 ? templates[0].version : 'v1.0';
+    var tbody = document.querySelector('.table-wrapper table tbody');
+    if (tbody) {
+      var firstRow = tbody.querySelector('tr:first-child');
+      if (firstRow) {
+        var cells = firstRow.querySelectorAll('td');
+        if (cells.length >= 8) {
+          cells[0].innerHTML = '<strong>' + tplName + '</strong>';
+          cells[1].textContent = d.dept;
+          cells[2].textContent = '门诊' + d.dept + '全科医师';
+          cells[3].textContent = tplFields;
+          cells[4].textContent = d.patientCount.toLocaleString();
+          cells[5].textContent = tplVersion;
+          cells[6].innerHTML = '<span class="tag tag-success">已发布</span>';
+        }
+      }
+      // 隐藏除第一行以外的其他行
+      var rows = tbody.querySelectorAll('tr');
+      for (var i = 1; i < rows.length; i++) {
+        rows[i].style.display = 'none';
+      }
+    }
+
+    // 更新问卷结构预览标题
+    var previewHeaders = document.querySelectorAll('.card');
+    for (var j = 0; j < previewHeaders.length; j++) {
+      var h3 = previewHeaders[j].querySelector('.card-header h3');
+      if (h3 && h3.textContent.indexOf('问卷结构预览') > -1) {
+        h3.textContent = '问卷结构预览 - ' + tplName;
+        break;
+      }
+    }
+  }
+  init();
+  document.addEventListener('module:loaded', function(e) { if (e.detail && e.detail.pageId === 'patients/preconsult') init(); });
+})();
+</script>
+
+            <div class="card">
+              <div class="card-header">
+                <h3>预问诊问卷列表</h3>
+                <div class="table-filters">
+                  <select>
+                    <option>所有专科</option>
+                    <option>心血管内科</option>
+                    <option>神经内科</option>
+                    <option>结直肠外科</option>
+                    <option>骨科</option>
+                    <option>泌尿外科</option>
+                  </select>
+                  <select>
+                    <option>所有状态</option>
+                    <option>已发布</option>
+                    <option>草稿</option>
+                  </select>
+                  <button class="btn btn-sm btn-outline">批量导出</button>
+                  <button class="btn btn-sm btn-primary">新增问卷</button>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="table-wrapper">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>问卷名称</th>
+                        <th>关联专科</th>
+                        <th>关联门诊医师</th>
+                        <th>题目数量</th>
+                        <th>填写量</th>
+                        <th>版本</th>
+                        <th>状态</th>
+                        <th>操作</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><strong>冠心病首次就诊预问诊</strong></td>
+                        <td>心血管内科</td>
+                        <td>门诊心内科全科医师</td>
+                        <td>28</td>
+                        <td>3,456</td>
+                        <td>v2.1</td>
+                        <td><span class="tag tag-success">已发布</span></td>
+                        <td>
+                          <button class="btn btn-sm btn-outline">预览</button>
+                          <button class="btn btn-sm btn-outline">编辑</button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><strong>脑梗死门诊预问诊</strong></td>
+                        <td>神经内科</td>
+                        <td>门诊神经内科全科医师</td>
+                        <td>22</td>
+                        <td>2,178</td>
+                        <td>v1.5</td>
+                        <td><span class="tag tag-success">已发布</span></td>
+                        <td>
+                          <button class="btn btn-sm btn-outline">预览</button>
+                          <button class="btn btn-sm btn-outline">编辑</button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><strong>髋关节疼痛评估预问诊</strong></td>
+                        <td>骨科</td>
+                        <td>门诊骨科全科医师</td>
+                        <td>18</td>
+                        <td>1,023</td>
+                        <td>v1.2</td>
+                        <td><span class="tag tag-success">已发布</span></td>
+                        <td>
+                          <button class="btn btn-sm btn-outline">预览</button>
+                          <button class="btn btn-sm btn-outline">编辑</button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><strong>结肠癌筛查预问诊</strong></td>
+                        <td>结直肠外科</td>
+                        <td>门诊结直肠外科医师</td>
+                        <td>25</td>
+                        <td>--</td>
+                        <td>v1.0</td>
+                        <td><span class="tag tag-warning">草稿</span></td>
+                        <td>
+                          <button class="btn btn-sm btn-outline">预览</button>
+                          <button class="btn btn-sm btn-outline">编辑</button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <!-- 问卷结构预览 -->
+            <div class="card">
+              <div class="card-header">
+                <h3>问卷结构预览 - 冠心病首次就诊预问诊</h3>
+              </div>
+              <div class="card-body">
+                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px">
+                  <div class="patient-question-section">
+                    <h4 style="font-size:13px;font-weight:600;color:var(--primary);margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--gray-100)">基本信息 (6题)</h4>
+                    <div style="font-size:12px;color:var(--gray-600);display:flex;flex-direction:column;gap:4px">
+                      <span>1. 主诉症状 [单选]</span>
+                      <span>2. 胸痛持续时间 [数值/分钟]</span>
+                      <span>3. 胸痛程度(NRS评分) [数值/0-10]</span>
+                      <span>4. 伴随症状 [多选]</span>
+                      <span>5. 既往病史 [多选]</span>
+                      <span>6. 用药情况 [多选/文本]</span>
+                    </div>
+                  </div>
+                  <div class="patient-question-section">
+                    <h4 style="font-size:13px;font-weight:600;color:var(--primary);margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--gray-100)">风险因素 (8题)</h4>
+                    <div style="font-size:12px;color:var(--gray-600);display:flex;flex-direction:column;gap:4px">
+                      <span>7. 高血压病史 [是/否]</span>
+                      <span>8. 糖尿病病史 [是/否]</span>
+                      <span>9. 血脂异常 [是/否]</span>
+                      <span>10. 吸烟史 [单选]</span>
+                      <span>11. 家族心血管病史 [是/否]</span>
+                      <span>12. 体重指数(BMI) [数值]</span>
+                      <span>13. 日常活动量 [单选]</span>
+                      <span>14. 精神状态 [单选]</span>
+                    </div>
+                  </div>
+                  <div class="patient-question-section">
+                    <h4 style="font-size:13px;font-weight:600;color:var(--primary);margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--gray-100)">检查结果 (14题)</h4>
+                    <div style="font-size:12px;color:var(--gray-600);display:flex;flex-direction:column;gap:4px">
+                      <span>15. 最近血压值 [数值]</span>
+                      <span>16. 最近心率 [数值]</span>
+                      <span>17-28. 检查报告上传 [文件]</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+</div>

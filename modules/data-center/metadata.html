@@ -1,0 +1,137 @@
+<div data-module-id="page-data-center-metadata">
+
+          <div class="page-header">
+            <div class="page-header-left">
+              <h2>元数据管理</h2>
+            </div>
+
+<script>
+(function() {
+  function init() {
+    if (typeof DiseaseContext === 'undefined') return;
+    var d = DiseaseContext.get();
+    var h2 = document.querySelector('h2');
+    if (h2) h2.textContent = '元数据管理';
+  }
+  init();
+  document.addEventListener('module:loaded', function(e) {
+    if (e.detail && e.detail.pageId === 'data-center/metadata') init();
+  });
+})();
+</script>
+          </div>
+
+            <div class="stats-row">
+              <div class="stat-card">
+                <div class="stat-icon blue"><svg viewBox="0 0 20 20" width="20" height="20"><path d="M10 3S5 8.5 5 12a5 5 0 0010 0c0-3.5-5-9-5-9z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></div>
+                <div class="stat-info">
+                  <div class="value">156</div>
+                  <div class="label">血缘链路数</div>
+                </div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon green"><svg viewBox="0 0 20 20" width="20" height="20"><path d="M14.5 3.5a3.5 3.5 0 00-4.2 5.3L4 15v2h2l6.2-6.2a3.5 3.5 0 002.3-3.3z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></div>
+                <div class="stat-info">
+                  <div class="value">89</div>
+                  <div class="label">技术元数据</div>
+                </div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon yellow"><svg viewBox="0 0 20 20" width="20" height="20"><rect x="2" y="7" width="16" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M7 7V5a2 2 0 012-2h2a2 2 0 012 2v2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M2 11h16" stroke="currentColor" stroke-width="1.2"/></svg></div>
+                <div class="stat-info">
+                  <div class="value">234</div>
+                  <div class="label">业务元数据</div>
+                </div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon purple"><svg viewBox="0 0 20 20" width="20" height="20"><circle cx="10" cy="10" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 2v2M10 16v2M2 10h2M16 10h2M4.2 4.2l1.4 1.4M14.4 14.4l1.4 1.4M15.8 4.2l-1.4 1.4M5.6 14.4l-1.4 1.4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+                <div class="stat-info">
+                  <div class="value">1,024</div>
+                  <div class="label">操作审计日志</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="data-center-layout">
+              <div class="data-center-sidebar">
+                <div class="data-tree-header">
+                  <span style="font-weight:600;font-size:13px;color:var(--gray-700)">元数据分类</span>
+                </div>
+                <div class="data-tree-list">
+                  <div class="data-tree-group">
+                    <div class="data-tree-group-title" onclick="this.parentElement.classList.toggle('collapsed')">
+                      <span class="tree-arrow">▸</span> 技术元数据
+                    </div>
+                    <div class="data-tree-items">
+                      <div class="data-tree-item active">表结构定义</div>
+                      <div class="data-tree-item">字段映射关系</div>
+                      <div class="data-tree-item">ETL作业配置</div>
+                    </div>
+                  </div>
+                  <div class="data-tree-group">
+                    <div class="data-tree-group-title" onclick="this.parentElement.classList.toggle('collapsed')">
+                      <span class="tree-arrow">▸</span> 业务元数据
+                    </div>
+                    <div class="data-tree-items">
+                      <div class="data-tree-item">数据字典</div>
+                      <div class="data-tree-item">业务术语</div>
+                      <div class="data-tree-item">指标定义</div>
+                    </div>
+                  </div>
+                  <div class="data-tree-group">
+                    <div class="data-tree-group-title" onclick="this.parentElement.classList.toggle('collapsed')">
+                      <span class="tree-arrow">▸</span> 操作元数据
+                    </div>
+                    <div class="data-tree-items">
+                      <div class="data-tree-item">操作日志</div>
+                      <div class="data-tree-item">变更记录</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="data-center-content">
+                <div class="card">
+                  <div class="card-header">
+                    <h3>数据血缘链路 - 可视化追溯</h3>
+                    <div class="table-filters">
+                      <input type="text" placeholder="搜索指标或表名..." style="width:200px">
+                      <button class="btn btn-sm btn-primary">刷新血缘</button>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <div class="blood-line-canvas">
+                      <div class="blood-node">
+                        <div class="blood-node-header">HIS.入院登记表</div>
+                        <div class="blood-node-fields">patient_id, admit_date, dept_code</div>
+                      </div>
+                      <div class="blood-arrow">→ ETL →</div>
+                      <div class="blood-node">
+                        <div class="blood-node-header">ODS.入院登记</div>
+                        <div class="blood-node-fields">patient_id, admit_date, dept_code</div>
+                      </div>
+                      <div class="blood-arrow">→ 清洗 →</div>
+                      <div class="blood-node">
+                        <div class="blood-node-header">DWD.入院明细</div>
+                        <div class="blood-node-fields">patient_id, admit_date, dept_name</div>
+                      </div>
+                      <div class="blood-arrow">→ 汇总 →</div>
+                      <div class="blood-node blood-node-alert">
+                        <div class="blood-node-header">DWS.科室入院统计</div>
+                        <div class="blood-node-fields">dept_name, daily_count, monthly_count</div>
+                      </div>
+                      <div class="blood-arrow">→ 映射 →</div>
+                      <div class="blood-node">
+                        <div class="blood-node-header">ADS.数据质量报表</div>
+                        <div class="blood-node-fields">dept_name, completeness_rate</div>
+                      </div>
+                    </div>
+                    <div style="margin-top:16px;padding:12px;background:var(--warning-bg);border-radius:var(--radius);border:1px solid var(--warning);display:flex;align-items:center;gap:8px">
+                      <span style="font-size:14px">!</span>
+                      <span style="font-size:12px;color:var(--warning)">DWS.科室入院统计 → ADS.数据质量报表 链路延迟 15 分钟，受影响报表 3 个</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+</div>

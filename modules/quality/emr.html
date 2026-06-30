@@ -1,0 +1,59 @@
+<div data-module-id="page-quality-emr">
+
+          <div class="page-header">
+            <div class="page-header-left">
+              <h2>病历文书质控</h2>
+            </div>
+          </div>
+
+            <div class="stats-row">
+              <div class="stat-card">
+                <div class="stat-icon blue"><svg viewBox="0 0 20 20" width="20" height="20"><circle cx="10" cy="10" r="7" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M7 10h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+                <div class="stat-info"><div class="value">1,234</div><div class="label">本月缺陷总条数</div></div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon green"><svg viewBox="0 0 20 20" width="20" height="20"><rect x="5" y="7" width="10" height="6" rx="3" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 7v6" stroke="currentColor" stroke-width="1.2"/></svg></div>
+                <div class="stat-info"><div class="value">92.5%</div><div class="label">甲级病案占比</div></div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon purple"><svg viewBox="0 0 20 20" width="20" height="20"><path d="M4 10a6 6 0 0110.5-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M16 10a6 6 0 01-10.5 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M13 3.5l1.5 2.5H12M7 16.5l-1.5-2.5H8" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                <div class="stat-info"><div class="value">95.2%</div><div class="label">整改闭环率</div></div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header"><h3>病历缺陷明细</h3></div>
+              <div class="card-body">
+                <div class="table-wrapper">
+                  <table>
+                    <thead><tr><th>患者</th><th>缺陷内容</th><th>等级</th><th>提交医师</th><th>状态</th><th>操作</th></tr></thead>
+                    <tbody>
+                      <tr>
+                        <td><strong>王建国</strong></td>
+                        <td>入院记录主诉过于简单</td>
+                        <td><span class="tag tag-warning">乙级</span></td>
+                        <td>李医生</td>
+                        <td><span class="tag tag-primary">待整改</span></td>
+                        <td><button class="btn btn-sm btn-success">复核通过</button></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+<script>
+(function() {
+  function init() {
+    if (typeof DiseaseContext === 'undefined') return;
+    var d = DiseaseContext.get();
+    var h2 = document.querySelector('h2');
+    if (h2) h2.textContent = '病历文书质控';
+  }
+  init();
+  document.addEventListener('module:loaded', function(e) {
+    if (e.detail && e.detail.pageId === 'quality/emr') init();
+  });
+})();
+</script>
+</div>

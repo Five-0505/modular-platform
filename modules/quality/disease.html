@@ -1,0 +1,75 @@
+<div data-module-id="page-quality-disease">
+
+          <div class="page-header">
+            <div class="page-header-left">
+              <h2 id="------title">单病种质控</h2>
+            </div>
+          </div>
+
+            <div class="stats-row">
+              <div class="stat-card">
+                <div class="stat-icon blue"><svg viewBox="0 0 20 20" width="20" height="20"><circle cx="10" cy="10" r="7" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="10" cy="10" r="4" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="10" cy="10" r="1" fill="currentColor"/></svg></div>
+                <div class="stat-info"><div class="value">91.2%</div><div class="label">平均达标率</div></div>
+              </div>
+            </div>
+
+            <div class="two-col">
+              <div class="card">
+                <div class="card-header"><h3>科室达标率排行</h3></div>
+                <div class="card-body"><div class="dept-ranking-chart"></div></div>
+              </div>
+              <div class="card">
+                <div class="card-header"><h3>单病种指标明细</h3></div>
+                <div class="card-body">
+                  <div class="table-wrapper">
+                    <table>
+                      <thead><tr><th>病种</th><th>核心指标</th><th>达标率</th><th>趋势</th></tr></thead>
+                      <tbody>
+                        <tr>
+                          <td><strong>急性心肌梗死</strong></td>
+                          <td>再灌注治疗率</td>
+                          <td><span class="tag tag-success">96.5%</span></td>
+                          <td>上升</td>
+                        </tr>
+                        <tr>
+                          <td><strong>急性心肌梗死</strong></td>
+                          <td>平均住院日</td>
+                          <td><span class="tag tag-success">8.5天</span></td>
+                          <td>下降</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+<script>
+(function() {
+  function init() {
+    if (typeof DiseaseContext === 'undefined') return;
+    var d = DiseaseContext.get();
+    var stats = DiseaseContext.getStats();
+    var t = document.getElementById('quality-disease-title');
+    var s = document.getElementById('quality-disease-subtitle');
+    if (t) t.textContent = '单病种质控';
+    if (s) s.textContent = d.dept + ' | 在管患者 ' + d.patientCount.toLocaleString() + ' 人';
+    var bc = document.getElementById('breadcrumb');
+    if (bc) bc.innerHTML = '<span>单病种质控</span>';
+    var vals = document.querySelectorAll('.stat-info .value');
+    if (vals.length > 0) { vals[0].textContent = d.patientCount.toLocaleString(); }
+    if (vals.length > 1) { vals[1].textContent = stats.templateCount; }
+    if (vals.length > 2) { vals[2].textContent = stats.scaleCount; }
+    // 渲染图表
+    if (typeof ChartRenderer !== 'undefined') {
+      ChartRenderer.renderQualityDisease();
+    }
+  }
+  init();
+  document.addEventListener('module:loaded', function(e) {
+    if (e.detail && e.detail.pageId === 'quality/disease') init();
+  });
+})();
+</script>
+</div>

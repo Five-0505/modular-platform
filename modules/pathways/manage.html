@@ -1,0 +1,174 @@
+<div data-module-id="pathways/manage">
+  <div class="page-header">
+    <div class="page-header-left">
+      <h2>诊疗路径管理</h2>
+      <p>管理各专科诊疗路径的版本、节点配置与审批状态</p>
+    </div>
+  </div>
+
+          <!-- === 路径配置管理 === -->
+          <div class="card">
+            <div class="card-header">
+              <h3>诊疗路径配置</h3>
+              <div class="table-filters">
+                <select>
+                  <option>所有专科</option>
+                  <option>心血管内科</option>
+                  <option>神经内科</option>
+                  <option>结直肠外科</option>
+                  <option>骨科</option>
+                  <option>泌尿外科</option>
+                </select>
+                <select>
+                  <option>所有状态</option>
+                  <option>已发布</option>
+                  <option>草稿</option>
+                  <option>已停用</option>
+                </select>
+                <button class="btn btn-sm btn-primary" onclick="showModal('pathway-modal')">新建路径</button>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="table-wrapper">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>路径名称</th>
+                      <th>关联病种</th>
+                      <th>主路径节点</th>
+                      <th>分支路径</th>
+                      <th>在径人数</th>
+                      <th>变异率</th>
+                      <th>平均住院日</th>
+                      <th>版本</th>
+                      <th>状态</th>
+                      <th>操作</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>STEMI 诊疗路径</strong></td>
+                      <td>冠心病/急性心肌梗死</td>
+                      <td>12</td>
+                      <td>3</td>
+                      <td>156</td>
+                      <td><span class="tag tag-success">3.8%</span></td>
+                      <td>8.2天</td>
+                      <td>v3.1</td>
+                      <td><span class="tag tag-success">已发布</span></td>
+                      <td>
+                        <button class="btn btn-sm btn-outline" onclick="showDrawer('pathway-config-drawer')">配置</button>
+                        <button class="btn btn-sm btn-outline">停用</button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><strong>缺血性脑卒中诊疗路径</strong></td>
+                      <td>脑梗死</td>
+                      <td>12</td>
+                      <td>2</td>
+                      <td>89</td>
+                      <td><span class="tag tag-success">4.1%</span></td>
+                      <td>9.5天</td>
+                      <td>v2.5</td>
+                      <td><span class="tag tag-success">已发布</span></td>
+                      <td>
+                        <button class="btn btn-sm btn-outline" onclick="showDrawer('pathway-config-drawer')">配置</button>
+                        <button class="btn btn-sm btn-outline">停用</button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><strong>髋关节置换诊疗路径</strong></td>
+                      <td>髋关节</td>
+                      <td>12</td>
+                      <td>1</td>
+                      <td>45</td>
+                      <td><span class="tag tag-success">2.9%</span></td>
+                      <td>10.2天</td>
+                      <td>v2.0</td>
+                      <td><span class="tag tag-success">已发布</span></td>
+                      <td>
+                        <button class="btn btn-sm btn-outline" onclick="showDrawer('pathway-config-drawer')">配置</button>
+                        <button class="btn btn-sm btn-outline">停用</button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><strong>结肠癌诊疗路径</strong></td>
+                      <td>结肠癌</td>
+                      <td>12</td>
+                      <td>2</td>
+                      <td>32</td>
+                      <td><span class="tag tag-warning">5.6%</span></td>
+                      <td>12.8天</td>
+                      <td>v1.8</td>
+                      <td><span class="tag tag-success">已发布</span></td>
+                      <td>
+                        <button class="btn btn-sm btn-outline" onclick="showDrawer('pathway-config-drawer')">配置</button>
+                        <button class="btn btn-sm btn-outline">停用</button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><strong>膝关节置换诊疗路径</strong></td>
+                      <td>膝关节</td>
+                      <td>12</td>
+                      <td>1</td>
+                      <td>28</td>
+                      <td><span class="tag tag-success">3.2%</span></td>
+                      <td>9.8天</td>
+                      <td>v1.5</td>
+                      <td><span class="tag tag-success">已发布</span></td>
+                      <td>
+                        <button class="btn btn-sm btn-outline" onclick="showDrawer('pathway-config-drawer')">配置</button>
+                        <button class="btn btn-sm btn-outline">停用</button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+<script>
+(function() {
+  function initPathwayManage() {
+    if (typeof DiseaseContext === 'undefined') return;
+    var d = DiseaseContext.get();
+    var pathways = DiseaseContext.getPathways();
+    var stats = DiseaseContext.getStats();
+
+    var titleEl = document.querySelector('.page-header h2');
+    if (titleEl) titleEl.textContent = '诊疗路径管理';
+    var subEl = document.querySelector('.page-header p');
+    if (subEl) subEl.textContent = d.dept + ' | 管理各专科诊疗路径的版本、节点配置与审批状态';
+
+    var thead = document.querySelector('table thead');
+    if (thead) {
+      thead.innerHTML = '<tr>' +
+        '<th>路径名称</th>' +
+        '<th>节点数</th>' +
+        '<th>符合率</th>' +
+        '<th>更新时间</th>' +
+        '<th>状态</th>' +
+        '<th>操作</th>' +
+      '</tr>';
+    }
+
+    var tbody = document.querySelector('table tbody');
+    if (tbody && pathways) {
+      tbody.innerHTML = pathways.map(function(p) {
+        return '<tr><td><strong>' + p.name + '</strong></td>' +
+          '<td>' + p.nodes + '</td>' +
+          '<td><div class="progress-bar" style="width:120px"><div class="fill" style="width:' + p.compliance + '%"></div></div> ' + p.compliance + '%</td>' +
+          '<td>' + p.updated + '</td>' +
+          '<td><span class="tag tag-success">' + p.status + '</span></td>' +
+          '<td><button class="btn btn-sm btn-outline">详情</button></td></tr>';
+      }).join('');
+    }
+  }
+
+  initPathwayManage();
+  document.addEventListener('module:loaded', function(e) {
+    if (e.detail && e.detail.pageId === 'pathways/manage') initPathwayManage();
+  });
+})();
+</script>
+</div>

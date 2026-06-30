@@ -1,0 +1,258 @@
+<div data-module-id="page-research-analysis">
+
+  <!-- 页面头部 -->
+  <div class="page-header">
+    <div class="page-header-left">
+      <h2>科研数据分析</h2>
+      <p class="desc">提供从描述性统计到高级建模的全链路分析能力</p>
+    </div>
+  </div>
+
+  <!-- 统计概览 -->
+  <div class="stats-row">
+    <div class="stat-card">
+      <div class="stat-icon">
+        <svg viewBox="0 0 20 20" stroke="currentColor" fill="none" stroke-width="1.5"><rect x="3" y="3" width="14" height="14" rx="2"/><path d="M7 10h6M10 7v6"/></svg>
+      </div>
+      <div class="stat-info">
+        <span class="value">12</span>
+        <span class="label">分析工具</span>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">
+        <svg viewBox="0 0 20 20" stroke="currentColor" fill="none" stroke-width="1.5"><path d="M3 10l4 4 10-10"/></svg>
+      </div>
+      <div class="stat-info">
+        <span class="value">156</span>
+        <span class="label">已完成分析</span>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">
+        <svg viewBox="0 0 20 20" stroke="currentColor" fill="none" stroke-width="1.5"><circle cx="10" cy="10" r="7"/><path d="M10 6v4l3 2"/></svg>
+      </div>
+      <div class="stat-info">
+        <span class="value">3</span>
+        <span class="label">运行中任务</span>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">
+        <svg viewBox="0 0 20 20" stroke="currentColor" fill="none" stroke-width="1.5"><path d="M6 2l2 4h4l2 4-6 8-6-8h4l-2-4z"/></svg>
+      </div>
+      <div class="stat-info">
+        <span class="value">28</span>
+        <span class="label">已发表成果</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 分析工具箱 -->
+  <div class="card">
+    <div class="card-header"><h3>分析工具箱</h3></div>
+    <div class="card-body">
+      <div class="quick-actions">
+        <div class="quick-action">
+          <div class="icon">
+            <svg viewBox="0 0 20 20" stroke="currentColor" fill="none" stroke-width="1.5"><rect x="2" y="10" width="3" height="8"/><rect x="7" y="6" width="3" height="12"/><rect x="12" y="2" width="3" height="16"/><line x1="2" y1="18" x2="15" y2="18"/></svg>
+          </div>
+          <div class="label">统计描述</div>
+          <div class="desc">均值/中位数/频数/百分位</div>
+        </div>
+        <div class="quick-action">
+          <div class="icon">
+            <svg viewBox="0 0 20 20" stroke="currentColor" fill="none" stroke-width="1.5"><circle cx="7" cy="8" r="4"/><circle cx="13" cy="12" r="4"/><line x1="10" y1="4" x2="10" y2="16" stroke-dasharray="2 2"/></svg>
+          </div>
+          <div class="label">差异分析</div>
+          <div class="desc">t检验/卡方检验/Mann-Whitney</div>
+        </div>
+        <div class="quick-action">
+          <div class="icon">
+            <svg viewBox="0 0 20 20" stroke="currentColor" fill="none" stroke-width="1.5"><circle cx="6" cy="14" r="2"/><circle cx="10" cy="8" r="2"/><circle cx="14" cy="12" r="2"/><line x1="6" y1="14" x2="10" y2="8"/><line x1="10" y1="8" x2="14" y2="12"/></svg>
+          </div>
+          <div class="label">相关分析</div>
+          <div class="desc">Pearson/Spearman/偏相关</div>
+        </div>
+        <div class="quick-action">
+          <div class="icon">
+            <svg viewBox="0 0 20 20" stroke="currentColor" fill="none" stroke-width="1.5"><line x1="3" y1="16" x2="3" y2="4"/><line x1="3" y1="16" x2="17" y2="16"/><path d="M4 14l4-4 3 2 5-8"/></svg>
+          </div>
+          <div class="label">回归模型</div>
+          <div class="desc">线性/Logistic/Cox回归</div>
+        </div>
+        <div class="quick-action">
+          <div class="icon">
+            <svg viewBox="0 0 20 20" stroke="currentColor" fill="none" stroke-width="1.5"><path d="M3 3v14h14"/><path d="M3 14c3-2 5-8 8-8s3 6 6 6"/></svg>
+          </div>
+          <div class="label">生存分析</div>
+          <div class="desc">Kaplan-Meier/Cox回归/Log-rank</div>
+        </div>
+        <div class="quick-action">
+          <div class="icon">
+            <svg viewBox="0 0 20 20" stroke="currentColor" fill="none" stroke-width="1.5"><path d="M10 3v10M6 9l4 4 4-4"/><path d="M3 14v3h14v-3"/></svg>
+          </div>
+          <div class="label">数据导出</div>
+          <div class="desc">CSV/SAS/SPSS/R格式</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 双栏布局：任务列表 + 最近报告 -->
+  <div class="two-col">
+    <!-- 分析任务列表 -->
+    <div class="card">
+      <div class="card-header"><h3>分析任务列表</h3></div>
+      <div class="card-body">
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>任务名称</th>
+                <th>分析类型</th>
+                <th>数据集</th>
+                <th>方法</th>
+                <th>提交人</th>
+                <th>状态</th>
+                <th>完成时间</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>糖尿病患者血糖控制分析</td>
+                <td>统计描述</td>
+                <td>患者血糖数据集</td>
+                <td>均值/标准差/百分位</td>
+                <td>张教授</td>
+                <td><span class="tag">已完成</span></td>
+                <td>2026-06-25</td>
+              </tr>
+              <tr>
+                <td>术后并发症风险因素筛选</td>
+                <td>差异分析</td>
+                <td>术后随访数据</td>
+                <td>卡方检验/Fisher精确</td>
+                <td>李博士</td>
+                <td><span class="tag">已完成</span></td>
+                <td>2026-06-24</td>
+              </tr>
+              <tr>
+                <td>肿瘤标志物相关性研究</td>
+                <td>相关分析</td>
+                <td>肿瘤标志物检测</td>
+                <td>Pearson/Spearman</td>
+                <td>王研究员</td>
+                <td><span class="tag">运行中</span></td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>高血压药物疗效回归模型</td>
+                <td>回归模型</td>
+                <td>临床试验数据</td>
+                <td>多元线性回归</td>
+                <td>赵医生</td>
+                <td><span class="tag">运行中</span></td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>肝癌患者生存期分析</td>
+                <td>生存分析</td>
+                <td>肝癌随访队列</td>
+                <td>Kaplan-Meier/Cox</td>
+                <td>刘主任</td>
+                <td><span class="tag">运行中</span></td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>院内感染影响因素建模</td>
+                <td>回归模型</td>
+                <td>院感监测数据</td>
+                <td>Logistic回归</td>
+                <td>陈教授</td>
+                <td><span class="tag">已完成</span></td>
+                <td>2026-06-22</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- 最近分析报告 -->
+    <div class="card">
+      <div class="card-header"><h3>最近分析报告</h3></div>
+      <div class="card-body">
+        <div class="quick-actions">
+          <div class="quick-action">
+            <div class="icon">
+              <svg viewBox="0 0 20 20" stroke="currentColor" fill="none" stroke-width="1.5"><rect x="4" y="2" width="12" height="16" rx="1"/><line x1="7" y1="7" x2="13" y2="7"/><line x1="7" y1="10" x2="13" y2="10"/><line x1="7" y1="13" x2="10" y2="13"/></svg>
+            </div>
+            <div class="label">糖尿病血糖控制分析报告</div>
+            <div class="desc">统计描述 | 2026-06-25</div>
+            <button class="btn btn-sm btn-outline">下载报告</button>
+          </div>
+          <div class="quick-action">
+            <div class="icon">
+              <svg viewBox="0 0 20 20" stroke="currentColor" fill="none" stroke-width="1.5"><rect x="4" y="2" width="12" height="16" rx="1"/><line x1="7" y1="7" x2="13" y2="7"/><line x1="7" y1="10" x2="13" y2="10"/><line x1="7" y1="13" x2="10" y2="13"/></svg>
+            </div>
+            <div class="label">术后并发症风险因素报告</div>
+            <div class="desc">差异分析 | 2026-06-24</div>
+            <button class="btn btn-sm btn-outline">下载报告</button>
+          </div>
+          <div class="quick-action">
+            <div class="icon">
+              <svg viewBox="0 0 20 20" stroke="currentColor" fill="none" stroke-width="1.5"><rect x="4" y="2" width="12" height="16" rx="1"/><line x1="7" y1="7" x2="13" y2="7"/><line x1="7" y1="10" x2="13" y2="10"/><line x1="7" y1="13" x2="10" y2="13"/></svg>
+            </div>
+            <div class="label">院内感染影响因素建模报告</div>
+            <div class="desc">Logistic回归 | 2026-06-22</div>
+            <button class="btn btn-sm btn-outline">下载报告</button>
+          </div>
+          <div class="quick-action">
+            <div class="icon">
+              <svg viewBox="0 0 20 20" stroke="currentColor" fill="none" stroke-width="1.5"><rect x="4" y="2" width="12" height="16" rx="1"/><line x1="7" y1="7" x2="13" y2="7"/><line x1="7" y1="10" x2="13" y2="10"/><line x1="7" y1="13" x2="10" y2="13"/></svg>
+            </div>
+            <div class="label">冠心病危险因素回归分析</div>
+            <div class="desc">Cox回归 | 2026-06-20</div>
+            <button class="btn btn-sm btn-outline">下载报告</button>
+          </div>
+          <div class="quick-action">
+            <div class="icon">
+              <svg viewBox="0 0 20 20" stroke="currentColor" fill="none" stroke-width="1.5"><rect x="4" y="2" width="12" height="16" rx="1"/><line x1="7" y1="7" x2="13" y2="7"/><line x1="7" y1="10" x2="13" y2="10"/><line x1="7" y1="13" x2="10" y2="13"/></svg>
+            </div>
+            <div class="label">脑卒中患者预后生存分析</div>
+            <div class="desc">Kaplan-Meier | 2026-06-18</div>
+            <button class="btn btn-sm btn-outline">下载报告</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 分析结果展示 -->
+  <div class="card">
+    <div class="card-header"><h3>分析结果展示</h3></div>
+    <div class="card-body">
+      <div class="chart-placeholder" style="height: 280px;">
+        <svg viewBox="0 0 20 20" stroke="currentColor" fill="none" stroke-width="1.5"><line x1="3" y1="17" x2="3" y2="3"/><line x1="3" y1="17" x2="17" y2="17"/><path d="M5 13l3-4 2 2 5-8"/></svg>
+        <p>图表区域 - 分析结果可视化</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      function init() {
+        setTimeout(() => {
+          if (typeof ChartRenderer !== 'undefined') {
+            ChartRenderer.renderResearchAnalysis();
+          }
+        }, 100);
+      }
+      init();
+      document.addEventListener('module:loaded', () => {
+        init();
+      });
+    })();
+  </script>
+</div>

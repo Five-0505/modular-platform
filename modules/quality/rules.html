@@ -1,0 +1,268 @@
+<div data-module-id="page-quality-rules">
+
+          <div class="page-header">
+            <div class="page-header-left">
+              <h2 id="quality-rules-title">专科质控中心</h2>
+              <p id="quality-rules-subtitle">全院专病医疗质量统一监管平台，实现质控规则标准化下发与整改闭环</p>
+            </div>
+          </div>
+
+            <div class="stats-row">
+              <div class="stat-card">
+                <div class="stat-icon blue"><svg viewBox="0 0 20 20" width="20" height="20"><path d="M4 5h2M4 10h2M4 15h2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M8 5h8M8 10h8M8 15h8" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></div>
+                <div class="stat-info">
+                  <div class="value">156</div>
+                  <div class="label">规则总数</div>
+                </div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon green"><svg viewBox="0 0 20 20" width="20" height="20"><path d="M10 17s-7-4.5-7-9a4 4 0 017-2.5a4 4 0 017 2.5c0 4.5-7 9-7 9z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></div>
+                <div class="stat-info">
+                  <div class="value">19</div>
+                  <div class="label">覆盖病种</div>
+                </div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon yellow"><svg viewBox="0 0 20 20" width="20" height="20"><path d="M6 4l10 6-10 6V4z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+                <div class="stat-info">
+                  <div class="value">142</div>
+                  <div class="label">已启用规则</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 质控中心图表区域 -->
+            <div class="two-col">
+              <div class="card">
+                <div class="card-header"><h3>月度预警趋势</h3></div>
+                <div class="card-body">
+                  <div class="quality-trend-chart"></div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header"><h3>高频预警Top5</h3></div>
+                <div class="card-body">
+                  <div class="quality-top-chart"></div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header"><h3>处理量趋势</h3></div>
+              <div class="card-body">
+                <div class="quality-volume-chart"></div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header">
+                <h3>质控规则列表</h3>
+                <div class="table-filters">
+                  <select>
+                    <option>所有类型</option>
+                    <option>文书质控</option>
+                    <option>单病种质控</option>
+                    <option>时效质控</option>
+                  </select>
+                  <select>
+                    <option>所有病种</option>
+                    <option>冠心病/急性心肌梗死</option>
+                    <option>脑梗死</option>
+                    <option>结肠癌</option>
+                  </select>
+                  <button class="btn btn-sm btn-outline">批量导入</button>
+                  <button class="btn btn-sm btn-primary">新增规则</button>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="table-wrapper">
+                  <table>
+                        <thead>
+                          <tr>
+                            <th>规则名称</th>
+                            <th>类型</th>
+                            <th>适用病种</th>
+                            <th>预警阈值</th>
+                            <th>预警级别</th>
+                            <th>状态</th>
+                            <th>操作</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td><strong>D-to-B时间 ≤ 90分钟</strong></td>
+                            <td><span class="tag tag-info">时效质控</span></td>
+                            <td>冠心病/急性心肌梗死</td>
+                            <td>90分钟</td>
+                            <td><span class="tag tag-danger">严重</span></td>
+                            <td><span class="tag tag-success">已启用</span></td>
+                            <td><button class="btn btn-sm btn-outline">编辑</button></td>
+                          </tr>
+                          <tr>
+                            <td><strong>病历首页主要诊断必填</strong></td>
+                            <td><span class="tag tag-warning">文书质控</span></td>
+                            <td>全部病种</td>
+                            <td>必填</td>
+                            <td><span class="tag tag-danger">严重</span></td>
+                            <td><span class="tag tag-success">已启用</span></td>
+                            <td><button class="btn btn-sm btn-outline">编辑</button></td>
+                          </tr>
+                          <tr>
+                            <td><strong>NIHSS评分入院24h内完成</strong></td>
+                            <td><span class="tag tag-info">时效质控</span></td>
+                            <td>脑梗死</td>
+                            <td>24小时</td>
+                            <td><span class="tag tag-warning">警告</span></td>
+                            <td><span class="tag tag-success">已启用</span></td>
+                            <td><button class="btn btn-sm btn-outline">编辑</button></td>
+                          </tr>
+                          <tr>
+                            <td><strong>溶栓时间窗4.5小时内</strong></td>
+                            <td><span class="tag tag-info">时效质控</span></td>
+                            <td>脑梗死</td>
+                            <td>4.5小时</td>
+                            <td><span class="tag tag-danger">严重</span></td>
+                            <td><span class="tag tag-success">已启用</span></td>
+                            <td><button class="btn btn-sm btn-outline">编辑</button></td>
+                          </tr>
+                          <tr>
+                            <td><strong>心肌损伤标志物检测时间</strong></td>
+                            <td><span class="tag tag-info">时效质控</span></td>
+                            <td>冠心病/急性心肌梗死</td>
+                            <td>20分钟</td>
+                            <td><span class="tag tag-warning">警告</span></td>
+                            <td><span class="tag tag-success">已启用</span></td>
+                            <td><button class="btn btn-sm btn-outline">编辑</button></td>
+                          </tr>
+                          <tr>
+                            <td><strong>首次医疗接触到首份心电图时间</strong></td>
+                            <td><span class="tag tag-info">时效质控</span></td>
+                            <td>冠心病/急性心肌梗死</td>
+                            <td>10分钟</td>
+                            <td><span class="tag tag-warning">警告</span></td>
+                            <td><span class="tag tag-success">已启用</span></td>
+                            <td><button class="btn btn-sm btn-outline">编辑</button></td>
+                          </tr>
+                          <tr>
+                            <td><strong>病程记录术后24小时内完成</strong></td>
+                            <td><span class="tag tag-warning">文书质控</span></td>
+                            <td>全部病种</td>
+                            <td>24小时</td>
+                            <td><span class="tag tag-info">一般</span></td>
+                            <td><span class="tag tag-success">已启用</span></td>
+                            <td><button class="btn btn-sm btn-outline">编辑</button></td>
+                          </tr>
+                          <tr>
+                            <td><strong>首次病程记录入院8小时内完成</strong></td>
+                            <td><span class="tag tag-warning">文书质控</span></td>
+                            <td>全部病种</td>
+                            <td>8小时</td>
+                            <td><span class="tag tag-danger">严重</span></td>
+                            <td><span class="tag tag-success">已启用</span></td>
+                            <td><button class="btn btn-sm btn-outline">编辑</button></td>
+                          </tr>
+                          <tr>
+                            <td><strong>出院记录24小时内完成</strong></td>
+                            <td><span class="tag tag-warning">文书质控</span></td>
+                            <td>全部病种</td>
+                            <td>24小时</td>
+                            <td><span class="tag tag-info">一般</span></td>
+                            <td><span class="tag tag-success">已启用</span></td>
+                            <td><button class="btn btn-sm btn-outline">编辑</button></td>
+                          </tr>
+                          <tr>
+                            <td><strong>术前讨论记录完成时限</strong></td>
+                            <td><span class="tag tag-warning">文书质控</span></td>
+                            <td>全部病种</td>
+                            <td>术前24小时</td>
+                            <td><span class="tag tag-warning">警告</span></td>
+                            <td><span class="tag tag-success">已启用</span></td>
+                            <td><button class="btn btn-sm btn-outline">编辑</button></td>
+                          </tr>
+                          <tr>
+                            <td><strong>深静脉血栓预防措施落实</strong></td>
+                            <td><span class="tag tag-success">单病种质控</span></td>
+                            <td>髋关节、膝关节</td>
+                            <td>术后24小时</td>
+                            <td><span class="tag tag-warning">警告</span></td>
+                            <td><span class="tag tag-success">已启用</span></td>
+                            <td><button class="btn btn-sm btn-outline">编辑</button></td>
+                          </tr>
+                          <tr>
+                            <td><strong>术后镇痛评估时间</strong></td>
+                            <td><span class="tag tag-info">时效质控</span></td>
+                            <td>全部病种</td>
+                            <td>术后4小时</td>
+                            <td><span class="tag tag-info">一般</span></td>
+                            <td><span class="tag tag-success">已启用</span></td>
+                            <td><button class="btn btn-sm btn-outline">编辑</button></td>
+                          </tr>
+                          <tr>
+                            <td><strong>抗生素使用指征评估</strong></td>
+                            <td><span class="tag tag-success">单病种质控</span></td>
+                            <td>全部病种</td>
+                            <td>术前48小时</td>
+                            <td><span class="tag tag-info">一般</span></td>
+                            <td><span class="tag tag-success">已启用</span></td>
+                            <td><button class="btn btn-sm btn-outline">编辑</button></td>
+                          </tr>
+                          <tr>
+                            <td><strong>血糖监测频率</strong></td>
+                            <td><span class="tag tag-success">单病种质控</span></td>
+                            <td>糖尿病足</td>
+                            <td>每日2次</td>
+                            <td><span class="tag tag-info">一般</span></td>
+                            <td><span class="tag tag-warning">已停用</span></td>
+                            <td><button class="btn btn-sm btn-outline">编辑</button></td>
+                          </tr>
+                          <tr>
+                            <td><strong>肺功能检查完成率</strong></td>
+                            <td><span class="tag tag-success">单病种质控</span></td>
+                            <td>慢性阻塞性肺疾病</td>
+                            <td>入院48小时</td>
+                            <td><span class="tag tag-warning">警告</span></td>
+                            <td><span class="tag tag-success">已启用</span></td>
+                            <td><button class="btn btn-sm btn-outline">编辑</button></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                </div>
+              </div>
+            </div>
+
+
+<script>
+(function() {
+  function init() {
+    if (typeof DiseaseContext === 'undefined') return;
+    var d = DiseaseContext.get();
+    var stats = DiseaseContext.getStats();
+    var rules = DiseaseContext.getQualityRules();
+    var t = document.getElementById('quality-rules-title');
+    var s = document.getElementById('quality-rules-subtitle');
+    if (t) t.textContent = '质控规则配置';
+    if (s) s.textContent = d.dept + ' | 在管患者 ' + d.patientCount.toLocaleString() + ' 人';
+    var vals = document.querySelectorAll('.stat-info .value');
+    if (vals.length > 0) { vals[0].textContent = rules ? rules.length : d.patientCount.toLocaleString(); }
+    if (vals.length > 1) { vals[1].textContent = stats.diseaseCount || 19; }
+    if (vals.length > 2) { vals[2].textContent = stats.activeRuleCount || 142; }
+    var tbody = document.querySelector('table tbody');
+    if (tbody && rules && rules.length) {
+      tbody.innerHTML = rules.map(function(r) {
+        var statusClass = r.status === '达标' ? 'tag-success' : 'tag-warning';
+        var levelClass = r.status === '达标' ? 'tag-info' : 'tag-danger';
+        var levelText = r.status === '达标' ? '一般' : '严重';
+        return '<tr><td><strong>' + r.name + '</strong></td><td><span class="tag tag-info">' + r.type + '</span></td><td>' + d.name + '</td><td>' + r.compliance + '%</td><td><span class="tag ' + levelClass + '">' + levelText + '</span></td><td><span class="tag ' + statusClass + '">' + r.status + '</span></td><td><button class="btn btn-sm btn-outline">编辑</button></td></tr>';
+      }).join('');
+    }
+    // 渲染图表
+    if (typeof ChartRenderer !== 'undefined') {
+      ChartRenderer.renderQualityRules();
+    }
+  }
+  init();
+  document.addEventListener('module:loaded', function(e) {
+    if (e.detail && e.detail.pageId === 'quality/rules') init();
+  });
+})();
+</script>
+</div>

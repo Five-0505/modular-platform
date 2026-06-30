@@ -1,0 +1,374 @@
+<div data-module-id="page-patients-followup">
+
+            <div class="page-header">
+              <div class="page-header-left">
+                <h2>患者随访管理</h2>
+              </div>
+            </div>
+
+            <!-- 随访统计看板 -->
+            <div class="stats-row">
+              <div class="stat-card">
+                <div class="stat-icon blue"><svg viewBox="0 0 20 20" width="20" height="20"><circle cx="10" cy="7" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M4 17c0-3.3 2.7-6 6-6s6 2.7 6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+                <div class="stat-info">
+                  <div class="value">8,562</div>
+                  <div class="label">随访在管患者</div>
+                </div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon green"><svg viewBox="0 0 20 20" width="20" height="20"><circle cx="10" cy="10" r="7" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M7 10l2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                <div class="stat-info">
+                  <div class="value">89.5%</div>
+                  <div class="label">随访总完成率</div>
+                  <div class="trend up"><span class="arrow">↑</span> 2.3%</div>
+                </div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon red"><svg viewBox="0 0 20 20" width="20" height="20"><circle cx="10" cy="10" r="7" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M5 15L15 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+                <div class="stat-info">
+                  <div class="value">342</div>
+                  <div class="label">失访人数</div>
+                </div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon yellow"><svg viewBox="0 0 20 20" width="20" height="20"><path d="M3 10a7 7 0 0112.5-4.3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M17 10a7 7 0 01-12.5 4.3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M15.5 3v2.5H13M4.5 17v-2.5H7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                <div class="stat-info">
+                  <div class="value">5.8%</div>
+                  <div class="label">30天再入院率</div>
+                  <div class="trend down"><span class="arrow">↓</span> 1.2%</div>
+                </div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon purple"><svg viewBox="0 0 20 20" width="20" height="20"><circle cx="10" cy="10" r="7" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M7 10l2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                <div class="stat-info">
+                  <div class="value">92.1%</div>
+                  <div class="label">患者满意度</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 随访图表 -->
+            <div class="two-col">
+              <div class="card">
+                <div class="card-header">
+                  <h3>随访完成率趋势</h3>
+                </div>
+                <div class="card-body">
+                  <div class="followup-trend-chart"></div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header">
+                  <h3>失访原因分布</h3>
+                </div>
+                <div class="card-body">
+                  <div style="font-size:13px">
+                    <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--gray-100)">
+                      <span style="display:flex;align-items:center;gap:6px"><span style="width:10px;height:10px;border-radius:50%;background:var(--primary);display:inline-block"></span> 电话无人接听</span>
+                      <span style="font-weight:600">38%</span>
+                    </div>
+                    <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--gray-100)">
+                      <span style="display:flex;align-items:center;gap:6px"><span style="width:10px;height:10px;border-radius:50%;background:var(--warning);display:inline-block"></span> 患者拒绝随访</span>
+                      <span style="font-weight:600">28%</span>
+                    </div>
+                    <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--gray-100)">
+                      <span style="display:flex;align-items:center;gap:6px"><span style="width:10px;height:10px;border-radius:50%;background:var(--success);display:inline-block"></span> 联系方式变更</span>
+                      <span style="font-weight:600">18%</span>
+                    </div>
+                    <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--gray-100)">
+                      <span style="display:flex;align-items:center;gap:6px"><span style="width:10px;height:10px;border-radius:50%;background:var(--danger);display:inline-block"></span> 外地就诊</span>
+                      <span style="font-weight:600">10%</span>
+                    </div>
+                    <div style="display:flex;justify-content:space-between;padding:8px 0">
+                      <span style="display:flex;align-items:center;gap:6px"><span style="width:10px;height:10px;border-radius:50%;background:var(--gray-400);display:inline-block"></span> 其他</span>
+                      <span style="font-weight:600">6%</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 随访计划管理 -->
+            <div class="card">
+              <div class="card-header">
+                <h3>随访计划管理</h3>
+                <div class="table-filters">
+                  <select>
+                    <option>所有病种</option>
+                    <option>冠心病/急性心肌梗死</option>
+                    <option>脑梗死</option>
+                    <option>髋关节</option>
+                    <option>结肠癌</option>
+                  </select>
+                  <select>
+                    <option>所有状态</option>
+                    <option>进行中</option>
+                    <option>已完成</option>
+                    <option>已暂停</option>
+                  </select>
+                  <button class="btn btn-sm btn-outline">导出台账</button>
+                  <button class="btn btn-sm btn-primary">新增计划</button>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="table-wrapper">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>计划名称</th>
+                        <th>关联病种</th>
+                        <th>随访节点</th>
+                        <th>绑定患者</th>
+                        <th>完成率</th>
+                        <th>失访率</th>
+                        <th>状态</th>
+                        <th>操作</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><strong>AMI 出院随访方案</strong></td>
+                        <td>冠心病/急性心肌梗死</td>
+                        <td>7个 (出院后7天/14天/1月/3月/6月/1年/2年)</td>
+                        <td>156</td>
+                        <td><span class="tag tag-success">91.2%</span></td>
+                        <td><span class="tag tag-success">4.5%</span></td>
+                        <td><span class="tag tag-success">进行中</span></td>
+                        <td>
+                          <button class="btn btn-sm btn-outline">详情</button>
+                          <button class="btn btn-sm btn-outline">暂停</button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><strong>脑梗死出院随访方案</strong></td>
+                        <td>脑梗死</td>
+                        <td>6个 (出院后14天/1月/3月/6月/1年/2年)</td>
+                        <td>89</td>
+                        <td><span class="tag tag-success">88.7%</span></td>
+                        <td><span class="tag tag-warning">6.7%</span></td>
+                        <td><span class="tag tag-success">进行中</span></td>
+                        <td>
+                          <button class="btn btn-sm btn-outline">详情</button>
+                          <button class="btn btn-sm btn-outline">暂停</button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><strong>髋关节置换术后随访</strong></td>
+                        <td>髋关节</td>
+                        <td>5个 (术后1月/3月/6月/1年/2年)</td>
+                        <td>45</td>
+                        <td><span class="tag tag-success">93.3%</span></td>
+                        <td><span class="tag tag-success">2.2%</span></td>
+                        <td><span class="tag tag-success">进行中</span></td>
+                        <td>
+                          <button class="btn btn-sm btn-outline">详情</button>
+                          <button class="btn btn-sm btn-outline">暂停</button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><strong>高血压慢病管理随访</strong></td>
+                        <td>高血压</td>
+                        <td>持续 (每月1次)</td>
+                        <td>865</td>
+                        <td><span class="tag tag-warning">78.5%</span></td>
+                        <td><span class="tag tag-danger">12.3%</span></td>
+                        <td><span class="tag tag-success">进行中</span></td>
+                        <td>
+                          <button class="btn btn-sm btn-outline">详情</button>
+                          <button class="btn btn-sm btn-outline">暂停</button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <!-- 随访执行列表 -->
+            <div class="card">
+              <div class="card-header">
+                <h3>待执行随访任务</h3>
+                <div class="table-filters">
+                  <input type="text" placeholder="患者姓名/住院号..." style="width:160px">
+                  <select>
+                    <option>所有状态</option>
+                    <option>待执行</option>
+                    <option>逾期未完成</option>
+                    <option>已执行</option>
+                    <option>已失访</option>
+                  </select>
+                  <button class="btn btn-sm btn-outline">批量推送提醒</button>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="table-wrapper">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>患者信息</th>
+                        <th>病种</th>
+                        <th>随访方案</th>
+                        <th>随访节点</th>
+                        <th>计划时间</th>
+                        <th>责任护士</th>
+                        <th>状态</th>
+                        <th>操作</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <div style="font-weight:600">张伟</div>
+                          <div style="font-size:11px;color:var(--gray-500)">男 72岁 | 202606003</div>
+                        </td>
+                        <td>冠心病/急性心肌梗死</td>
+                        <td>AMI出院随访</td>
+                        <td>出院后14天</td>
+                        <td>2026-06-27</td>
+                        <td>王护士</td>
+                        <td><span class="tag tag-danger">逾期</span></td>
+                        <td>
+                          <button class="btn btn-sm btn-success">执行随访</button>
+                          <button class="btn btn-sm btn-outline">标记失访</button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div style="font-weight:600">李雪梅</div>
+                          <div style="font-size:11px;color:var(--gray-500)">女 58岁 | 202606002</div>
+                        </td>
+                        <td>脑梗死</td>
+                        <td>脑梗死出院随访</td>
+                        <td>出院后14天</td>
+                        <td>2026-07-05</td>
+                        <td>赵护士</td>
+                        <td><span class="tag tag-primary">待执行</span></td>
+                        <td>
+                          <button class="btn btn-sm btn-success">执行随访</button>
+                          <button class="btn btn-sm btn-outline">标记失访</button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div style="font-weight:600">赵丽华</div>
+                          <div style="font-size:11px;color:var(--gray-500)">女 68岁 | 202606004</div>
+                        </td>
+                        <td>髋关节</td>
+                        <td>髋关节置换术后随访</td>
+                        <td>术后1月</td>
+                        <td>2026-07-25</td>
+                        <td>王护士</td>
+                        <td><span class="tag tag-gray">待执行</span></td>
+                        <td>
+                          <button class="btn btn-sm btn-success">执行随访</button>
+                          <button class="btn btn-sm btn-outline">标记失访</button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div style="font-weight:600">刘秀英</div>
+                          <div style="font-size:11px;color:var(--gray-500)">女 58岁 | 202606006</div>
+                        </td>
+                        <td>高血压</td>
+                        <td>高血压慢病管理</td>
+                        <td>月度随访</td>
+                        <td>2026-06-28</td>
+                        <td>赵护士</td>
+                        <td><span class="tag tag-primary">待执行</span></td>
+                        <td>
+                          <button class="btn btn-sm btn-success">执行随访</button>
+                          <button class="btn btn-sm btn-outline">标记失访</button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-top:12px;padding-top:12px;border-top:1px solid var(--gray-100)">
+                  <span style="font-size:12px;color:var(--gray-500)">共 2,345 条待执行任务 | 逾期 56 | 今日到期 23</span>
+                  <div style="display:flex;gap:4px">
+                    <button class="btn btn-sm btn-outline" disabled>上一页</button>
+                    <button class="btn btn-sm btn-primary">1</button>
+                    <button class="btn btn-sm btn-outline">2</button>
+                    <button class="btn btn-sm btn-outline">3</button>
+                    <button class="btn btn-sm btn-outline">下一页</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+<script>
+(function() {
+  function init() {
+    if (typeof DiseaseContext === 'undefined') return;
+    var d = DiseaseContext.get();
+    var data = DiseaseContext.getData();
+
+    // 更新 h2 标题
+    var title = document.querySelector('.page-header-left h2');
+    if (title) title.textContent = '患者随访管理';
+
+    // 更新统计卡片
+    var statVals = document.querySelectorAll('.stat-card .stat-info .value');
+    if (statVals.length >= 5) {
+      statVals[0].textContent = d.patientCount.toLocaleString();
+      statVals[1].textContent = (85 + Math.random() * 15).toFixed(1) + '%';
+      statVals[2].textContent = Math.floor(d.patientCount * 0.04);
+      statVals[3].textContent = (3 + Math.random() * 5).toFixed(1) + '%';
+      statVals[4].textContent = (88 + Math.random() * 12).toFixed(1) + '%';
+    }
+
+    // 更新第一个下拉筛选选项（随访计划管理）
+    var planSelects = document.querySelectorAll('.card .table-filters select');
+    if (planSelects.length > 0) {
+      planSelects[0].innerHTML = '<option>' + d.name + '</option>';
+    }
+
+    // 筛选随访计划表格：只显示当前病种的计划
+    var cards = document.querySelectorAll('.card');
+    // 随访计划管理表格
+    for (var i = 0; i < cards.length; i++) {
+      var h3 = cards[i].querySelector('.card-header h3');
+      if (!h3) continue;
+
+      if (h3.textContent.indexOf('随访计划管理') > -1) {
+        var planRows = cards[i].querySelectorAll('.table-wrapper table tbody tr');
+        planRows.forEach(function(row) {
+          var cells = row.querySelectorAll('td');
+          if (cells.length >= 2) {
+            var diseaseCell = cells[1].textContent.trim();
+            if (diseaseCell.indexOf(d.name) === -1 && d.name.indexOf(diseaseCell) === -1) {
+              row.style.display = 'none';
+            } else {
+              row.style.display = '';
+            }
+          }
+        });
+      }
+
+      // 筛选待执行随访任务表格
+      if (h3.textContent.indexOf('待执行随访任务') > -1) {
+        var taskRows = cards[i].querySelectorAll('.table-wrapper table tbody tr');
+        taskRows.forEach(function(row) {
+          var cells = row.querySelectorAll('td');
+          if (cells.length >= 2) {
+            var taskDisease = cells[1].textContent.trim();
+            if (taskDisease.indexOf(d.name) === -1 && d.name.indexOf(taskDisease) === -1) {
+              row.style.display = 'none';
+            } else {
+              row.style.display = '';
+            }
+          }
+        });
+      }
+    }
+    // 渲染图表
+    if (typeof ChartRenderer !== 'undefined') {
+      ChartRenderer.renderFollowup();
+    }
+  }
+  init();
+  document.addEventListener('module:loaded', function(e) { if (e.detail && e.detail.pageId === 'patients/followup') init(); });
+})();
+</script>
+
+</div>

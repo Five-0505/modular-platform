@@ -1,0 +1,361 @@
+<div data-module-id="page-research-distribution">
+
+  <!-- 面包屑导航 -->
+  <div class="breadcrumb-path">
+    <span class="breadcrumb-path-item">数据中心</span>
+    <span class="breadcrumb-path-item">数据特征分布</span>
+  </div>
+
+  <!-- 页面标题 -->
+  <div class="page-header">
+    <div class="page-header-left">
+      <h2>数据特征分布</h2>
+      <p id="research-distribution-subtitle">多维度可视化分析科研数据特征，支持按队列、病种、时间段筛选</p>
+    </div>
+  </div>
+
+  <!-- 标签页切换 -->
+  <div class="tabs">
+    <span class="tab active">基本特征</span>
+    <span class="tab">临床特征</span>
+    <span class="tab">实验室指标</span>
+    <span class="tab">预后指标</span>
+  </div>
+
+  <!-- 筛选栏 -->
+  <div class="card">
+    <div class="card-header" style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+      <div style="display:flex;align-items:center;gap:6px;">
+        <svg viewBox="0 0 20 20" stroke="currentColor" fill="none" width="16" height="16" stroke-width="1.5">
+          <circle cx="8" cy="8" r="5"/>
+          <path d="M12 12l5 5"/>
+        </svg>
+        <span style="font-size:13px;color:var(--text-secondary);">筛选</span>
+      </div>
+      <select class="btn btn-outline btn-sm" style="min-width:140px;">
+        <option>队列选择</option>
+        <option>AMI临床研究队列</option>
+        <option>脑梗死预后研究队列</option>
+        <option>心衰管理队列</option>
+        <option>糖尿病并发症队列</option>
+      </select>
+      <select class="btn btn-outline btn-sm" style="min-width:130px;">
+        <option>时间范围</option>
+        <option>近3个月</option>
+        <option>近6个月</option>
+        <option>近1年</option>
+        <option>近3年</option>
+        <option>全部</option>
+      </select>
+      <button class="btn btn-primary btn-sm">
+        <svg viewBox="0 0 20 20" stroke="currentColor" fill="none" width="14" height="14" stroke-width="1.5">
+          <path d="M3 17v-5a2 2 0 012-2h10a2 2 0 012 2v5M6 9V3h8v6"/>
+          <path d="M10 13v4"/>
+        </svg>
+        导出
+      </button>
+    </div>
+  </div>
+
+  <!-- 统计卡片 -->
+  <div class="stats-row">
+    <div class="stat-card">
+      <div class="stat-icon">
+        <svg viewBox="0 0 20 20" stroke="currentColor" fill="none" width="20" height="20" stroke-width="1.5">
+          <rect x="3" y="3" width="6" height="6" rx="1"/>
+          <rect x="11" y="3" width="6" height="6" rx="1"/>
+          <rect x="3" y="11" width="6" height="6" rx="1"/>
+          <rect x="11" y="11" width="6" height="6" rx="1"/>
+        </svg>
+      </div>
+      <div class="stat-info">
+        <div class="value">56</div>
+        <div class="label">数据维度</div>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">
+        <svg viewBox="0 0 20 20" stroke="currentColor" fill="none" width="20" height="20" stroke-width="1.5">
+          <circle cx="10" cy="6" r="3"/>
+          <path d="M3 17c0-3.3 3.1-6 7-6s7 2.7 7 6"/>
+        </svg>
+      </div>
+      <div class="stat-info">
+        <div class="value">12,580</div>
+        <div class="label">覆盖患者</div>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">
+        <svg viewBox="0 0 20 20" stroke="currentColor" fill="none" width="20" height="20" stroke-width="1.5">
+          <path d="M4 4h12v12H4z"/>
+          <path d="M7 8l2 2 4-4"/>
+        </svg>
+      </div>
+      <div class="stat-info">
+        <div class="value">11,486</div>
+        <div class="label">完整记录</div>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">
+        <svg viewBox="0 0 20 20" stroke="currentColor" fill="none" width="20" height="20" stroke-width="1.5">
+          <path d="M3 17V7l4-4 4 4 6-6v16H3z"/>
+        </svg>
+      </div>
+      <div class="stat-info">
+        <div class="value">24</div>
+        <div class="label">分析图表</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 图表区域 - 第一行 -->
+  <div class="two-col">
+    <div class="card">
+      <div class="card-header">
+        <h3>年龄分布</h3>
+        <span class="tag">连续变量</span>
+      </div>
+      <div class="card-body">
+        <div class="chart-placeholder" style="height:260px;">
+          <svg viewBox="0 0 20 20" stroke="currentColor" fill="none" width="32" height="32" stroke-width="1" opacity="0.35">
+            <path d="M3 17V7l4-4 4 4 6-6v16H3z"/>
+            <path d="M3 13h4V17H3zM8 9h4v8H8zM13 5h4v12h-4z" fill="currentColor" opacity="0.15"/>
+          </svg>
+          <p style="margin-top:8px;font-size:13px;color:var(--text-tertiary);">年龄分布直方图</p>
+          <p style="font-size:12px;color:var(--text-tertiary);">均值 58.3 岁 | 中位数 60 岁 | 标准差 12.7</p>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <h3>性别构成</h3>
+        <span class="tag">分类变量</span>
+      </div>
+      <div class="card-body">
+        <div class="chart-placeholder" style="height:260px;">
+          <svg viewBox="0 0 20 20" stroke="currentColor" fill="none" width="32" height="32" stroke-width="1" opacity="0.35">
+            <circle cx="10" cy="10" r="7"/>
+            <path d="M10 3v7l5 5"/>
+          </svg>
+          <p style="margin-top:8px;font-size:13px;color:var(--text-tertiary);">性别占比饼图</p>
+          <p style="font-size:12px;color:var(--text-tertiary);">男性 58.2% | 女性 41.8%</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 图表区域 - 第二行 -->
+  <div class="two-col">
+    <div class="card">
+      <div class="card-header">
+        <h3>住院天数分布</h3>
+        <span class="tag">连续变量</span>
+      </div>
+      <div class="card-body">
+        <div class="chart-placeholder" style="height:240px;">
+          <svg viewBox="0 0 20 20" stroke="currentColor" fill="none" width="32" height="32" stroke-width="1" opacity="0.35">
+            <path d="M3 17V7l4-4 4 4 6-6v16H3z"/>
+            <path d="M3 15h4V17H3zM8 11h4v6H8zM13 7h4v10h-4z" fill="currentColor" opacity="0.15"/>
+          </svg>
+          <p style="margin-top:8px;font-size:13px;color:var(--text-tertiary);">住院天数分布图</p>
+          <p style="font-size:12px;color:var(--text-tertiary);">均值 9.6 天 | 中位数 8 天 | 标准差 5.3</p>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <h3>合并症分布</h3>
+        <span class="tag">分类变量</span>
+      </div>
+      <div class="card-body">
+        <div class="chart-placeholder" style="height:240px;">
+          <svg viewBox="0 0 20 20" stroke="currentColor" fill="none" width="32" height="32" stroke-width="1" opacity="0.35">
+            <rect x="2" y="14" width="3" height="3"/>
+            <rect x="6" y="10" width="3" height="7"/>
+            <rect x="10" y="6" width="3" height="11"/>
+            <rect x="14" y="2" width="3" height="15"/>
+          </svg>
+          <p style="margin-top:8px;font-size:13px;color:var(--text-tertiary);">合并症频率分布</p>
+          <p style="font-size:12px;color:var(--text-tertiary);">高血压 62.4% | 糖尿病 38.7% | 冠心病 29.5%</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 数据特征统计表 -->
+  <div class="card">
+    <div class="card-header">
+      <h3>数据特征统计表</h3>
+      <span class="tag">基本特征</span>
+    </div>
+    <div class="card-body">
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>特征维度</th>
+              <th>数据元数</th>
+              <th>完整率</th>
+              <th>均值/占比</th>
+              <th>中位数</th>
+              <th>标准差</th>
+              <th>分布类型</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div style="display:flex;align-items:center;gap:6px;">
+                  <svg viewBox="0 0 20 20" stroke="currentColor" fill="none" width="14" height="14" stroke-width="1.5">
+                    <circle cx="10" cy="6" r="3"/>
+                    <path d="M3 17c0-3.3 3.1-6 7-6s7 2.7 7 6"/>
+                  </svg>
+                  年龄
+                </div>
+              </td>
+              <td>12,580</td>
+              <td>
+                <div style="display:flex;align-items:center;gap:6px;">
+                  <div class="progress-bar" style="width:80px;"><div class="fill" style="width:98.2%;"></div></div>
+                  98.2%
+                </div>
+              </td>
+              <td>58.3 岁</td>
+              <td>60</td>
+              <td>12.7</td>
+              <td><span class="tag">近似正态</span></td>
+            </tr>
+            <tr>
+              <td>
+                <div style="display:flex;align-items:center;gap:6px;">
+                  <svg viewBox="0 0 20 20" stroke="currentColor" fill="none" width="14" height="14" stroke-width="1.5">
+                    <rect x="3" y="3" width="14" height="14" rx="2"/>
+                    <path d="M3 7h14"/>
+                  </svg>
+                  住院天数
+                </div>
+              </td>
+              <td>12,580</td>
+              <td>
+                <div style="display:flex;align-items:center;gap:6px;">
+                  <div class="progress-bar" style="width:80px;"><div class="fill" style="width:100%;"></div></div>
+                  100%
+                </div>
+              </td>
+              <td>9.6 天</td>
+              <td>8</td>
+              <td>5.3</td>
+              <td><span class="tag">右偏分布</span></td>
+            </tr>
+            <tr>
+              <td>
+                <div style="display:flex;align-items:center;gap:6px;">
+                  <svg viewBox="0 0 20 20" stroke="currentColor" fill="none" width="14" height="14" stroke-width="1.5">
+                    <path d="M3 17V7l4-4 4 4 6-6v16H3z"/>
+                  </svg>
+                  入院收缩压
+                </div>
+              </td>
+              <td>12,136</td>
+              <td>
+                <div style="display:flex;align-items:center;gap:6px;">
+                  <div class="progress-bar" style="width:80px;"><div class="fill" style="width:96.5%;"></div></div>
+                  96.5%
+                </div>
+              </td>
+              <td>138.2 mmHg</td>
+              <td>136</td>
+              <td>18.6</td>
+              <td><span class="tag">近似正态</span></td>
+            </tr>
+            <tr>
+              <td>
+                <div style="display:flex;align-items:center;gap:6px;">
+                  <svg viewBox="0 0 20 20" stroke="currentColor" fill="none" width="14" height="14" stroke-width="1.5">
+                    <circle cx="10" cy="10" r="7"/>
+                    <path d="M7 10h6"/>
+                  </svg>
+                  BMI
+                </div>
+              </td>
+              <td>11,486</td>
+              <td>
+                <div style="display:flex;align-items:center;gap:6px;">
+                  <div class="progress-bar" style="width:80px;"><div class="fill" style="width:91.3%;"></div></div>
+                  91.3%
+                </div>
+              </td>
+              <td>24.8 kg/m2</td>
+              <td>24.5</td>
+              <td>3.6</td>
+              <td><span class="tag">正态分布</span></td>
+            </tr>
+            <tr>
+              <td>
+                <div style="display:flex;align-items:center;gap:6px;">
+                  <svg viewBox="0 0 20 20" stroke="currentColor" fill="none" width="14" height="14" stroke-width="1.5">
+                    <circle cx="6" cy="10" r="2"/>
+                    <circle cx="10" cy="10" r="2"/>
+                    <circle cx="14" cy="10" r="2"/>
+                  </svg>
+                  白细胞计数
+                </div>
+              </td>
+              <td>11,892</td>
+              <td>
+                <div style="display:flex;align-items:center;gap:6px;">
+                  <div class="progress-bar" style="width:80px;"><div class="fill" style="width:94.5%;"></div></div>
+                  94.5%
+                </div>
+              </td>
+              <td>7.2 x10^9/L</td>
+              <td>6.8</td>
+              <td>2.9</td>
+              <td><span class="tag">右偏分布</span></td>
+            </tr>
+            <tr>
+              <td>
+                <div style="display:flex;align-items:center;gap:6px;">
+                  <svg viewBox="0 0 20 20" stroke="currentColor" fill="none" width="14" height="14" stroke-width="1.5">
+                    <path d="M4 4h12v12H4z"/>
+                    <path d="M4 12h12M10 4v12"/>
+                  </svg>
+                  低密度脂蛋白
+                </div>
+              </td>
+              <td>10,234</td>
+              <td>
+                <div style="display:flex;align-items:center;gap:6px;">
+                  <div class="progress-bar" style="width:80px;"><div class="fill" style="width:81.4%;"></div></div>
+                  81.4%
+                </div>
+              </td>
+              <td>3.1 mmol/L</td>
+              <td>3.0</td>
+              <td>0.9</td>
+              <td><span class="tag">正态分布</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      function init() {
+        setTimeout(() => {
+          if (typeof ChartRenderer !== 'undefined') {
+            ChartRenderer.renderResearchDistribution();
+          }
+        }, 100);
+      }
+      init();
+      document.addEventListener('module:loaded', () => {
+        init();
+      });
+    })();
+  </script>
+</div>

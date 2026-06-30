@@ -1,0 +1,269 @@
+<div data-module-id="page-knowledge-disease">
+
+          <div class="page-header">
+            <div class="page-header-left">
+              <h2>疾病知识管理</h2>
+              <p id="knowledge-disease-subtitle">维护全院专科医学知识、指南、禁忌规则，诊疗标准化规则库</p>
+            </div>
+          </div>
+
+            <!-- 统计卡片 -->
+            <div class="stats-row">
+              <div class="stat-card">
+                <div class="stat-icon blue"><svg viewBox="0 0 20 20" width="20" height="20"><path d="M3 4h14l-5 6v5l-4 2v-7L3 4z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></div>
+                <div class="stat-info">
+                  <div class="value">14</div>
+                  <div class="label">知识模块数</div>
+                </div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon green"><svg viewBox="0 0 20 20" width="20" height="20"><path d="M10 2l7 3v5c0 4.4-3 7.5-7 9-4-1.5-7-4.6-7-9V5l7-3z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></div>
+                <div class="stat-info">
+                  <div class="value">1,256</div>
+                  <div class="label">知识条目总数</div>
+                </div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon yellow"><svg viewBox="0 0 20 20" width="20" height="20"><circle cx="8.5" cy="8.5" r="5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M12.5 12.5L17 17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+                <div class="stat-info">
+                  <div class="value">8,342</div>
+                  <div class="label">本月知识查询频次</div>
+                </div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon purple"><svg viewBox="0 0 20 20" width="20" height="20"><path d="M3 10a7 7 0 0112.5-4.3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M17 10a7 7 0 01-12.5 4.3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M15.5 3v2.5H13M4.5 17v-2.5H7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                <div class="stat-info">
+                  <div class="value">94.7%</div>
+                  <div class="label">病种知识覆盖率</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 分隔线和标题 -->
+            <div style="display:flex;align-items:center;justify-content:space-between;margin:24px 0 16px;padding-bottom:12px;border-bottom:1px solid var(--gray-200,#e2e8f0)">
+              <h3 style="font-size:15px;font-weight:600;color:var(--text-primary,#1e293b)">知识模块</h3>
+              <span id="knowledge-disease-label" style="font-size:12px;color:var(--text-tertiary,#94a3b8)">当前病种: 冠心病 / 急性心肌梗死</span>
+            </div>
+
+            <!-- 知识模块列表视图（默认） -->
+            <div id="knowledge-module-list"></div>
+
+            <!-- 知识详情视图（点击卡片后显示） -->
+            <div id="knowledge-detail-view" style="display:none"></div>
+
+<script>
+(function() {
+  var currentModule = null;
+
+  var knowledgeModules = [
+    { id:'disease', name:'专科疾病知识', desc:'疾病诊断、鉴别诊断、临床表现、流行病学', icon:'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2' },
+    { id:'drug', name:'药品说明书', desc:'西药说明书、用法用量、不良反应、药物相互作用', icon:'M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14H7v-2h5zm5-4H7v-2h10zm0-4H7V7h10z' },
+    { id:'tcm', name:'中药知识', desc:'中药方剂、中药饮片、中成药、配伍禁忌', icon:'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z' },
+    { id:'lab', name:'检验知识', desc:'检验项目、参考范围、临床意义、标本采集', icon:'M7 2v2h1v14a4 4 0 008 0V4h1V2H7zm4 16c-1.1 0-2-.9-2-2V8h4v8c0 1.1-.9 2-2 2z' },
+    { id:'exam', name:'检查知识', desc:'影像检查、超声、内镜、功能检查', icon:'M21 3H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H3V5h18v14zm-10-7l-3 3.5L9 13l-2 2.5h10L14 12l-3 4z' },
+    { id:'symptom', name:'症状知识', desc:'症状鉴别、伴随症状、问诊要点、体征', icon:'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z' },
+    { id:'pathway', name:'临床路径知识', desc:'诊疗路径、标准流程、变异管理、入径标准', icon:'M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zm0-10v2h14V7H7z' },
+    { id:'guide', name:'临床指南知识', desc:'临床指南、专家共识、诊疗规范、循证依据', icon:'M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z' },
+    { id:'surgery', name:'手术知识', desc:'手术适应症、禁忌症、术前准备、术后管理', icon:'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z' },
+    { id:'treatment', name:'治疗知识', desc:'治疗方案、药物治疗、非药物治疗、康复方案', icon:'M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14H7v-2h5zm5-4H7v-2h10zm0-4H7V7h10z' },
+    { id:'anesthesia', name:'麻醉知识', desc:'麻醉方式、麻醉评估、术后镇痛、麻醉风险', icon:'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z' },
+    { id:'blood', name:'输血知识', desc:'输血适应症、输血反应、血液制品、配血规则', icon:'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z' },
+    { id:'nursing', name:'护理知识', desc:'护理常规、护理操作、健康教育、护理评估', icon:'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z' },
+    { id:'system', name:'医疗核心制度', desc:'18项核心制度、医疗质量安全、病历书写规范', icon:'M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z' }
+  ];
+
+  function getKnowledgeSamples(modId, d) {
+    var samples = {
+      disease: [
+        { title: d.name + '诊断标准', status:'已发布', version:'v3.2', updated:'2026-06-20' },
+        { title: d.name + '鉴别诊断要点', status:'已发布', version:'v2.1', updated:'2026-06-15' },
+        { title: d.name + '临床分期与分型', status:'已发布', version:'v1.8', updated:'2026-05-28' },
+        { title: d.name + '实验室检查指标解读', status:'审核中', version:'v1.0', updated:'2026-06-22' }
+      ],
+      drug: [
+        { title: d.name + '一线用药方案', status:'已发布', version:'v4.1', updated:'2026-06-18' },
+        { title: d.name + '药物剂量调整指南', status:'已发布', version:'v2.3', updated:'2026-06-10' },
+        { title: d.name + '药物不良反应监测', status:'已发布', version:'v1.5', updated:'2026-05-20' }
+      ],
+      tcm: [
+        { title: d.name + '中医辨证施治方案', status:'已发布', version:'v2.0', updated:'2026-06-12' },
+        { title: d.name + '常用方剂汇编', status:'已发布', version:'v1.6', updated:'2026-05-25' }
+      ],
+      lab: [
+        { title: d.name + '常规检验项目', status:'已发布', version:'v3.0', updated:'2026-06-15' },
+        { title: d.name + '特异性标志物解读', status:'已发布', version:'v2.2', updated:'2026-06-08' }
+      ],
+      exam: [
+        { title: d.name + '影像学检查规范', status:'已发布', version:'v2.5', updated:'2026-06-14' },
+        { title: d.name + '超声检查标准', status:'已发布', version:'v1.8', updated:'2026-05-30' }
+      ],
+      symptom: [
+        { title: d.name + '典型症状识别', status:'已发布', version:'v2.1', updated:'2026-06-16' },
+        { title: d.name + '急症症状处理流程', status:'已发布', version:'v1.4', updated:'2026-06-01' }
+      ],
+      pathway: [
+        { title: d.name + '标准诊疗路径', status:'已发布', version:'v3.0', updated:'2026-06-18' },
+        { title: d.name + '路径变异管理规范', status:'已发布', version:'v1.2', updated:'2026-05-22' }
+      ],
+      guide: [
+        { title: d.name + '最新临床指南摘要', status:'已发布', version:'v2.4', updated:'2026-06-20' },
+        { title: d.name + '专家共识汇编', status:'审核中', version:'v1.0', updated:'2026-06-25' }
+      ],
+      surgery: [
+        { title: d.name + '手术适应症与禁忌症', status:'已发布', version:'v2.2', updated:'2026-06-12' },
+        { title: d.name + '术前评估标准', status:'已发布', version:'v1.7', updated:'2026-05-28' }
+      ],
+      treatment: [
+        { title: d.name + '综合治疗方案', status:'已发布', version:'v3.1', updated:'2026-06-19' },
+        { title: d.name + '康复治疗指南', status:'已发布', version:'v1.5', updated:'2026-06-05' }
+      ],
+      anesthesia: [
+        { title: d.name + '麻醉方式选择', status:'已发布', version:'v1.8', updated:'2026-06-10' },
+        { title: d.name + '术后镇痛方案', status:'已发布', version:'v1.3', updated:'2026-05-18' }
+      ],
+      blood: [
+        { title: d.name + '输血适应症', status:'已发布', version:'v2.0', updated:'2026-06-08' },
+        { title: d.name + '输血反应处理流程', status:'已发布', version:'v1.4', updated:'2026-05-15' }
+      ],
+      nursing: [
+        { title: d.name + '护理常规', status:'已发布', version:'v3.0', updated:'2026-06-17' },
+        { title: d.name + '专科护理操作规范', status:'已发布', version:'v2.1', updated:'2026-06-03' }
+      ],
+      system: [
+        { title: '首诊负责制度', status:'已发布', version:'v2.0', updated:'2026-06-01' },
+        { title: '三级查房制度', status:'已发布', version:'v2.0', updated:'2026-06-01' },
+        { title: '疑难病例讨论制度', status:'已发布', version:'v1.5', updated:'2026-05-20' }
+      ]
+    };
+    return samples[modId] || [];
+  }
+
+  function showListView() {
+    currentModule = null;
+    document.getElementById('knowledge-module-list').style.display = '';
+    document.getElementById('knowledge-detail-view').style.display = 'none';
+  }
+
+  function showDetailView(modId, d) {
+    var mod = null;
+    for (var i = 0; i < knowledgeModules.length; i++) {
+      if (knowledgeModules[i].id === modId) { mod = knowledgeModules[i]; break; }
+    }
+    if (!mod) return;
+    currentModule = modId;
+    var samples = getKnowledgeSamples(modId, d);
+
+    var html = '';
+    html += '<div style="display:flex;align-items:center;gap:12px;margin-bottom:20px">';
+    html += '<button class="btn btn-sm btn-outline" onclick="document.dispatchEvent(new CustomEvent(\'knowledge:back\'))" style="display:flex;align-items:center;gap:4px">';
+    html += '<svg viewBox="0 0 20 20" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 4l-6 6 6 6"/></svg>';
+    html += '返回</button>';
+    html += '<h3 style="font-size:16px;font-weight:600;color:var(--text-primary)">' + mod.name + '</h3>';
+    html += '<span style="font-size:12px;color:var(--text-tertiary)">共 ' + samples.length + ' 条知识</span>';
+    html += '</div>';
+    html += '<div class="card"><div class="card-header"><h3>' + d.name + ' - ' + mod.name + '</h3>';
+    html += '<div class="table-filters"><button class="btn btn-sm btn-outline">批量导出</button><button class="btn btn-sm btn-primary">新增知识</button></div></div>';
+    html += '<div class="card-body"><div class="table-wrapper"><table><thead><tr>';
+    html += '<th>知识名称</th><th>版本</th><th>状态</th><th>更新时间</th><th>操作</th>';
+    html += '</tr></thead><tbody>';
+    for (var j = 0; j < samples.length; j++) {
+      var s = samples[j];
+      var statusClass = s.status === '已发布' ? 'tag-success' : 'tag-warning';
+      html += '<tr><td><strong>' + s.title + '</strong></td><td>' + s.version + '</td>';
+      html += '<td><span class="tag ' + statusClass + '">' + s.status + '</span></td>';
+      html += '<td>' + s.updated + '</td>';
+      html += '<td><button class="btn btn-sm btn-outline">查看</button> <button class="btn btn-sm btn-outline">编辑</button></td></tr>';
+    }
+    html += '</tbody></table></div></div></div>';
+
+    var detailView = document.getElementById('knowledge-detail-view');
+    detailView.innerHTML = html;
+    document.getElementById('knowledge-module-list').style.display = 'none';
+    detailView.style.display = '';
+  }
+
+  function init() {
+    if (typeof DiseaseContext === 'undefined') return;
+    var d = DiseaseContext.get();
+    var stats = DiseaseContext.getStats();
+
+    // 更新副标题和病种标签
+    var subtitleEl = document.getElementById('knowledge-disease-subtitle');
+    if (subtitleEl) subtitleEl.textContent = d.dept + ' | 在管患者 ' + d.patientCount.toLocaleString() + ' 人';
+    var labelEl = document.getElementById('knowledge-disease-label');
+    if (labelEl) labelEl.textContent = '当前病种: ' + d.name;
+
+    // 更新统计卡片
+    var vals = document.querySelectorAll('.stat-card .value');
+    if (vals.length >= 4) {
+      vals[0].textContent = '14';
+      vals[1].textContent = Math.floor(d.patientCount * 0.8).toLocaleString();
+      vals[2].textContent = Math.floor(d.patientCount * 5.2).toLocaleString();
+      vals[3].textContent = (85 + (d.patientCount % 15)) + '%';
+    }
+
+    // 生成知识模块列表
+    var list = document.getElementById('knowledge-module-list');
+    if (!list) return;
+
+    var html = '<div style="display:grid;grid-template-columns:repeat(2,1fr);gap:12px">';
+    for (var i = 0; i < knowledgeModules.length; i++) {
+      var mod = knowledgeModules[i];
+      var count = Math.floor(50 + (d.patientCount * (0.08 + i * 0.03)));
+      var updated = Math.floor(2 + (d.patientCount + i * 7) % 28);
+
+      html += '<div class="km-card" data-mod="' + mod.id + '" style="display:flex;align-items:center;gap:16px;padding:16px 20px;background:var(--bg-primary,#fff);border:1px solid var(--gray-200,#e2e8f0);border-radius:10px;cursor:pointer;transition:all 0.15s">';
+      html += '<div style="width:40px;height:40px;border-radius:8px;background:var(--gray-50,#f8fafc);border:1px solid var(--gray-200,#e2e8f0);display:flex;align-items:center;justify-content:center;flex-shrink:0">';
+      html += '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="var(--gray-500,#64748b)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="' + mod.icon + '"/></svg>';
+      html += '</div>';
+      html += '<div style="flex:1;min-width:0">';
+      html += '<div style="font-weight:600;font-size:14px;color:var(--text-primary,#1e293b);margin-bottom:2px">' + mod.name + '</div>';
+      html += '<div style="font-size:12px;color:var(--text-tertiary,#94a3b8);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">' + mod.desc + '</div>';
+      html += '</div>';
+      html += '<div style="text-align:right;flex-shrink:0">';
+      html += '<div style="font-size:15px;font-weight:700;color:var(--text-primary,#1e293b)">' + count + '</div>';
+      html += '<div style="font-size:11px;color:var(--text-tertiary,#94a3b8)">条知识</div>';
+      html += '</div>';
+      html += '<svg viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="var(--gray-400,#94a3b8)" stroke-width="2" style="flex-shrink:0"><path d="M7 4l6 6-6 6"/></svg>';
+      html += '</div>';
+    }
+    html += '</div>';
+    list.innerHTML = html;
+
+    // 绑定卡片点击事件
+    var cards = list.querySelectorAll('.km-card');
+    for (var k = 0; k < cards.length; k++) {
+      cards[k].addEventListener('click', function() {
+        showDetailView(this.getAttribute('data-mod'), d);
+      });
+      cards[k].addEventListener('mouseenter', function() {
+        this.style.borderColor = 'var(--primary,#3b82f6)';
+        this.style.boxShadow = '0 2px 8px rgba(59,130,246,0.08)';
+      });
+      cards[k].addEventListener('mouseleave', function() {
+        this.style.borderColor = 'var(--gray-200,#e2e8f0)';
+        this.style.boxShadow = 'none';
+      });
+    }
+
+    // 如果当前正在查看详情，重新渲染
+    if (currentModule) {
+      showDetailView(currentModule, d);
+    }
+  }
+
+  document.addEventListener('knowledge:back', showListView);
+
+  init();
+  document.addEventListener('module:loaded', function(e) {
+    if (e.detail && e.detail.pageId === 'knowledge/disease') {
+      showListView();
+      init();
+    }
+  });
+  document.addEventListener('disease:changed', function() {
+    setTimeout(init, 50);
+  });
+})();
+</script>
+</div>

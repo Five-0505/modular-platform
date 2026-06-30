@@ -1,0 +1,67 @@
+<div data-module-id="page-quality-dispatch">
+
+          <div class="page-header">
+            <div class="page-header-left">
+              <h2 id="quality-dispatch-title">质控规则分发</h2>
+              <p id="quality-dispatch-subtitle">全院专病医疗质量统一监管平台，实现质控规则标准化下发与整改闭环</p>
+            </div>
+          </div>
+
+            <div class="card">
+              <div class="card-header">
+                <h3>规则分发管理</h3>
+                <div class="table-filters">
+                  <button class="btn btn-sm btn-primary">批量分发</button>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="table-wrapper">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>规则名称</th>
+                        <th>分发科室</th>
+                        <th>分发时间</th>
+                        <th>执行状态</th>
+                        <th>操作</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><strong>D-to-B 时间 ≤ 90分钟</strong></td>
+                        <td>心内科, 急诊科</td>
+                        <td>2026-06-26 09:00</td>
+                        <td><span class="tag tag-success">已同步</span></td>
+                        <td><button class="btn btn-sm btn-outline">撤回</button></td>
+                      </tr>
+                      <tr>
+                        <td><strong>NIHSS评分入院24h内完成</strong></td>
+                        <td>神经内科</td>
+                        <td>2026-06-25 14:00</td>
+                        <td><span class="tag tag-success">已同步</span></td>
+                        <td><button class="btn btn-sm btn-outline">撤回</button></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+<script>
+(function() {
+  function init() {
+    if (typeof DiseaseContext === 'undefined') return;
+    var d = DiseaseContext.get();
+    var t = document.getElementById('quality-dispatch-title');
+    var s = document.getElementById('quality-dispatch-subtitle');
+    if (t) t.textContent = '质控规则分发';
+    if (s) s.textContent = d.dept + ' | 在管患者 ' + d.patientCount.toLocaleString() + ' 人';
+  }
+  init();
+  document.addEventListener('module:loaded', function(e) {
+    if (e.detail && e.detail.pageId === 'quality/dispatch') init();
+  });
+})();
+</script>
+
+</div>

@@ -1,0 +1,272 @@
+<div data-module-id="page-records-scales">
+
+          <div class="page-header">
+            <div class="page-header-left">
+              <h2>评估量表管理</h2>
+            </div>
+          </div>
+
+            <div class="stats-row">
+              <div class="stat-card">
+                <div class="stat-icon blue"><svg viewBox="0 0 20 20" width="20" height="20"><path d="M4 14a6 6 0 0112 0" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 14l-3-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="10" cy="14" r="1" fill="currentColor"/></svg></div>
+                <div class="stat-info">
+                  <div class="value">189</div>
+                  <div class="label">量表总数</div>
+                </div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon green"><svg viewBox="0 0 20 20" width="20" height="20"><circle cx="10" cy="10" r="7" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M7 10l2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                <div class="stat-info">
+                  <div class="value">94.2%</div>
+                  <div class="label">量表评估完成率</div>
+                </div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon yellow"><svg viewBox="0 0 20 20" width="20" height="20"><circle cx="10" cy="10" r="7" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M7 10h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+                <div class="stat-info">
+                  <div class="value">3.8%</div>
+                  <div class="label">漏评率</div>
+                </div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon purple"><svg viewBox="0 0 20 20" width="20" height="20"><path d="M10 2a5 5 0 00-5 5c0 3-1.5 5-2 6h14c-.5-1-2-3-2-6a5 5 0 00-5-5z" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 16a2 2 0 004 0" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></div>
+                <div class="stat-info">
+                  <div class="value">56</div>
+                  <div class="label">预警触发次数</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="data-center-layout">
+              <!-- 左侧量表分类 -->
+              <div class="data-center-sidebar">
+                <div class="data-tree-header">
+                  <span style="font-weight:600;font-size:13px;color:var(--gray-700)">量表分类</span>
+                  <button class="btn btn-sm btn-outline" style="padding:4px 8px;font-size:11px">新增</button>
+                </div>
+                <div class="data-tree-list">
+                  <div class="data-tree-group">
+                    <div class="data-tree-group-title" onclick="this.parentElement.classList.toggle('collapsed')">
+                      <span class="tree-arrow">▸</span> 风险评估 <span class="tree-count">12</span>
+                    </div>
+                    <div class="data-tree-items">
+                      <div class="data-tree-item active">Braden 压疮风险评估</div>
+                      <div class="data-tree-item">DVT 风险评估 (Caprini)</div>
+                      <div class="data-tree-item">跌倒风险评估 (Morse)</div>
+                      <div class="data-tree-item">营养风险筛查 (NRS-2002)</div>
+                    </div>
+                  </div>
+                  <div class="data-tree-group">
+                    <div class="data-tree-group-title" onclick="this.parentElement.classList.toggle('collapsed')">
+                      <span class="tree-arrow">▸</span> 疾病评分 <span class="tree-count">8</span>
+                    </div>
+                    <div class="data-tree-items">
+                      <div class="data-tree-item">GRACE 评分 (ACS)</div>
+                      <div class="data-tree-item">NIHSS 评分 (卒中)</div>
+                      <div class="data-tree-item">GCS 评分 (意识)</div>
+                      <div class="data-tree-item">Charlson 合并症指数</div>
+                    </div>
+                  </div>
+                  <div class="data-tree-group">
+                    <div class="data-tree-group-title" onclick="this.parentElement.classList.toggle('collapsed')">
+                      <span class="tree-arrow">▸</span> 生活质量 <span class="tree-count">5</span>
+                    </div>
+                    <div class="data-tree-items">
+                      <div class="data-tree-item">SF-36 生活质量</div>
+                      <div class="data-tree-item">EQ-5D 健康效用</div>
+                    </div>
+                  </div>
+                  <div class="data-tree-group">
+                    <div class="data-tree-group-title" onclick="this.parentElement.classList.toggle('collapsed')">
+                      <span class="tree-arrow">▸</span> 护理评估 <span class="tree-count">6</span>
+                    </div>
+                    <div class="data-tree-items">
+                      <div class="data-tree-item">疼痛评估 (NRS)</div>
+                      <div class="data-tree-item">Barthel 日常生活指数</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 右侧量表详情 -->
+              <div class="data-center-content">
+                <div class="card">
+                  <div class="card-header">
+                    <div style="display:flex;align-items:center;gap:12px">
+                      <h3>Braden 压疮风险评估量表</h3>
+                      <span class="tag tag-success">已发布</span>
+                      <span style="font-size:12px;color:var(--gray-400)">v2.0 | 6个评估维度</span>
+                    </div>
+                    <div class="table-filters">
+                      <button class="btn btn-sm btn-outline">编辑</button>
+                      <button class="btn btn-sm btn-outline">版本管理</button>
+                      <button class="btn btn-sm btn-primary">导出量表</button>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <!-- 量表结构展示 -->
+                    <div class="table-wrapper">
+                      <table>
+                        <thead>
+                          <tr>
+                            <th>评估维度</th>
+                            <th>1分</th>
+                            <th>2分</th>
+                            <th>3分</th>
+                            <th>4分</th>
+                            <th>预警阈值</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td><strong>感知能力</strong></td>
+                            <td>完全受限</td>
+                            <td>严重受限</td>
+                            <td>轻度受限</td>
+                            <td>未受损</td>
+                            <td><span class="tag tag-danger">低风险</span></td>
+                          </tr>
+                          <tr>
+                            <td><strong>潮湿程度</strong></td>
+                            <td>持久潮湿</td>
+                            <td>非常潮湿</td>
+                            <td>偶尔潮湿</td>
+                            <td>很少潮湿</td>
+                            <td><span class="tag tag-danger">低风险</span></td>
+                          </tr>
+                          <tr>
+                            <td><strong>活动能力</strong></td>
+                            <td>卧床不起</td>
+                            <td>局限于轮椅</td>
+                            <td>偶尔步行</td>
+                            <td>经常步行</td>
+                            <td><span class="tag tag-danger">低风险</span></td>
+                          </tr>
+                          <tr>
+                            <td><strong>移动能力</strong></td>
+                            <td>完全不能</td>
+                            <td>严重受限</td>
+                            <td>轻度受限</td>
+                            <td>不受限</td>
+                            <td><span class="tag tag-danger">低风险</span></td>
+                          </tr>
+                          <tr>
+                            <td><strong>营养摄入</strong></td>
+                            <td>非常差</td>
+                            <td>可能不足</td>
+                            <td>充足</td>
+                            <td>丰富</td>
+                            <td><span class="tag tag-danger">低风险</span></td>
+                          </tr>
+                          <tr>
+                            <td><strong>摩擦力/剪切力</strong></td>
+                            <td>存在问题</td>
+                            <td>有潜在问题</td>
+                            <td>无明显问题</td>
+                            <td>--</td>
+                            <td><span class="tag tag-danger">低风险</span></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+
+                    <!-- 评分阈值与干预 -->
+                    <div style="margin-top:20px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px">
+                      <div style="padding:16px;border-radius:var(--radius);background:var(--success-bg);border:1px solid var(--success)">
+                        <div style="font-size:13px;font-weight:600;color:var(--success);margin-bottom:4px">低风险 (19-23分)</div>
+                        <div style="font-size:12px;color:var(--gray-600)">常规护理, 每周评估1次</div>
+                      </div>
+                      <div style="padding:16px;border-radius:var(--radius);background:var(--warning-bg);border:1px solid var(--warning)">
+                        <div style="font-size:13px;font-weight:600;color:var(--warning);margin-bottom:4px">中风险 (14-18分)</div>
+                        <div style="font-size:12px;color:var(--gray-600)">加用气垫床, 每3天评估</div>
+                      </div>
+                      <div style="padding:16px;border-radius:var(--radius);background:var(--danger-bg);border:1px solid var(--danger)">
+                        <div style="font-size:13px;font-weight:600;color:var(--danger);margin-bottom:4px">高风险 (< 14分)</div>
+                        <div style="font-size:12px;color:var(--gray-600)">专人护理, 每日评估, 触发预警</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 量表完成率趋势 -->
+                <div class="card">
+                  <div class="card-header">
+                    <h3>量表完成率趋势</h3>
+                    <div class="table-filters">
+                      <select>
+                        <option>所有量表</option>
+                        <option>Braden 压疮评估</option>
+                        <option>DVT 风险评估</option>
+                        <option>GRACE 评分</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <div class="chart-placeholder" style="height:180px">量表评分趋势折线图</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+<script>
+(function() {
+  function init() {
+    if (typeof DiseaseContext === 'undefined') return;
+    var d = DiseaseContext.get();
+    var data = DiseaseContext.getData();
+    var stats = DiseaseContext.getStats();
+    var scales = DiseaseContext.getScales();
+    // 更新页面标题
+    var titleEl = document.querySelector('.page-header-left h2');
+    if (titleEl) titleEl.textContent = '评估量表管理';
+    // 更新统计卡片
+    var statValues = document.querySelectorAll('.stats-row .stat-info .value');
+    if (statValues.length >= 1 && stats.scaleCount !== undefined) statValues[0].textContent = stats.scaleCount;
+    if (statValues.length >= 2 && stats.scaleCompletion !== undefined) statValues[1].textContent = stats.scaleCompletion + '%';
+    if (statValues.length >= 3 && stats.missRate !== undefined) statValues[2].textContent = stats.missRate + '%';
+    if (statValues.length >= 4 && stats.alertCount !== undefined) statValues[3].textContent = stats.alertCount;
+    // 动态填充左侧量表分类树
+    if (scales && scales.length > 0) {
+      var treeList = document.querySelector('.data-tree-list');
+      if (treeList) {
+        var groups = {};
+        scales.forEach(function(s) {
+          var type = s.type || '其他';
+          if (!groups[type]) groups[type] = [];
+          groups[type].push(s);
+        });
+        var html = '';
+        for (var type in groups) {
+          html += '<div class="data-tree-group">' +
+            '<div class="data-tree-group-title" onclick="this.parentElement.classList.toggle(\'collapsed\')">' +
+            '<span class="tree-arrow">&#9656;</span> ' + type + ' <span class="tree-count">' + groups[type].length + '</span>' +
+            '</div><div class="data-tree-items">';
+          groups[type].forEach(function(s, i) {
+            html += '<div class="data-tree-item' + (i === 0 ? ' active' : '') + '">' + s.name + '</div>';
+          });
+          html += '</div></div>';
+        }
+        treeList.innerHTML = html;
+      }
+      // 更新右侧量表详情卡片头部（使用第一个量表）
+      var firstScale = scales[0];
+      var detailHeader = document.querySelector('.data-center-content .card-header');
+      if (detailHeader && firstScale) {
+        var h3 = detailHeader.querySelector('h3');
+        var tag = detailHeader.querySelector('.tag');
+        var versionSpan = detailHeader.querySelector('span[style*="gray-400"]');
+        if (h3) h3.textContent = firstScale.name;
+        if (tag) {
+          tag.textContent = firstScale.status;
+          tag.className = 'tag ' + (firstScale.status === '已发布' ? 'tag-success' : 'tag-warning');
+        }
+        if (versionSpan) versionSpan.textContent = firstScale.type + ' | ' + firstScale.items + '个评估条目';
+      }
+    }
+  }
+  init();
+  document.addEventListener('module:loaded', function(e) { if (e.detail && e.detail.pageId === 'records/scales') init(); });
+})();
+</script>
+
+</div>

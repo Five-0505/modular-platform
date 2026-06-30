@@ -1,0 +1,376 @@
+<div data-module-id="page-disease-detail">
+
+          <!-- Page Header -->
+          <div class="page-header">
+            <div class="page-header-left">
+              <h2 id="diseaseDetailName">病种详情</h2>
+              <p id="diseaseDetailDept" style="font-size:13px;color:var(--gray-500)"></p>
+            </div>
+          </div>
+
+          <!-- Stats Cards Row -->
+          <div class="stats-row" style="grid-template-columns:repeat(auto-fit,minmax(180px,1fr))">
+            <div class="stat-card">
+              <div class="stat-icon blue"><svg viewBox="0 0 20 20" width="20" height="20"><circle cx="10" cy="7" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M4 17c0-3.3 2.7-6 6-6s6 2.7 6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+              <div class="stat-info"><div class="value" id="detailPatientCount">-</div><div class="label">在管患者</div></div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon green"><svg viewBox="0 0 20 20" width="20" height="20"><path d="M10 3v14M3 10h14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+              <div class="stat-info"><div class="value">12</div><div class="label">今日新增</div></div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon green"><svg viewBox="0 0 20 20" width="20" height="20"><path d="M4 16l4-4 3 3 5-6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="stat-info"><div class="value">86</div><div class="label">本周新增</div></div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon yellow"><svg viewBox="0 0 20 20" width="20" height="20"><rect x="3" y="5" width="14" height="12" rx="1" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M6 3v4M14 3v4M3 9h14" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></div>
+              <div class="stat-info"><div class="value">345</div><div class="label">本月新增</div></div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon purple"><svg viewBox="0 0 20 20" width="20" height="20"><path d="M4 16V8M8 16V5M12 16V10M16 16V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+              <div class="stat-info"><div class="value">1,023</div><div class="label">本季度新增</div></div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon blue"><svg viewBox="0 0 20 20" width="20" height="20"><rect x="4" y="3" width="12" height="14" rx="1" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M7 7h6M7 10h6M7 13h3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg></div>
+              <div class="stat-info"><div class="value">8,567</div><div class="label">累计病历使用量</div></div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon yellow"><svg viewBox="0 0 20 20" width="20" height="20"><path d="M5 4h10l2 2v10l-2 2H5l-2-2V6l2-2z" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M7 9h6M7 12h4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg></div>
+              <div class="stat-info"><div class="value">4,234</div><div class="label">累计量表使用量</div></div>
+            </div>
+          </div>
+
+          <!-- Charts Row 1: Line Chart + Pie Chart -->
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px">
+            <div class="card">
+              <div class="card-header"><h3>专病患者发展趋势</h3></div>
+              <div class="card-body">
+                <svg viewBox="0 0 500 220" width="100%" height="220" style="display:block">
+                  <!-- Grid lines -->
+                  <line x1="50" y1="20" x2="50" y2="180" stroke="#E5E7EB" stroke-width="1"/>
+                  <line x1="50" y1="180" x2="480" y2="180" stroke="#E5E7EB" stroke-width="1"/>
+                  <line x1="50" y1="140" x2="480" y2="140" stroke="#F3F4F6" stroke-width="0.5" stroke-dasharray="4"/>
+                  <line x1="50" y1="100" x2="480" y2="100" stroke="#F3F4F6" stroke-width="0.5" stroke-dasharray="4"/>
+                  <line x1="50" y1="60" x2="480" y2="60" stroke="#F3F4F6" stroke-width="0.5" stroke-dasharray="4"/>
+                  <line x1="50" y1="20" x2="480" y2="20" stroke="#F3F4F6" stroke-width="0.5" stroke-dasharray="4"/>
+                  <!-- Y-axis labels -->
+                  <text x="45" y="183" text-anchor="end" fill="#9CA3AF" font-size="10">0</text>
+                  <text x="45" y="143" text-anchor="end" fill="#9CA3AF" font-size="10">200</text>
+                  <text x="45" y="103" text-anchor="end" fill="#9CA3AF" font-size="10">400</text>
+                  <text x="45" y="63" text-anchor="end" fill="#9CA3AF" font-size="10">600</text>
+                  <text x="45" y="23" text-anchor="end" fill="#9CA3AF" font-size="10">800</text>
+                  <!-- Area fill -->
+                  <polygon points="90,148 162,136 234,120 306,108 378,88 450,64 450,180 90,180" fill="url(#lineGrad)" opacity="0.3"/>
+                  <defs><linearGradient id="lineGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#3B82F6" stop-opacity="0.4"/><stop offset="100%" stop-color="#3B82F6" stop-opacity="0.02"/></linearGradient></defs>
+                  <!-- Line -->
+                  <polyline points="90,148 162,136 234,120 306,108 378,88 450,64" fill="none" stroke="#3B82F6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <!-- Data points -->
+                  <circle cx="90" cy="148" r="4" fill="#fff" stroke="#3B82F6" stroke-width="2"/>
+                  <circle cx="162" cy="136" r="4" fill="#fff" stroke="#3B82F6" stroke-width="2"/>
+                  <circle cx="234" cy="120" r="4" fill="#fff" stroke="#3B82F6" stroke-width="2"/>
+                  <circle cx="306" cy="108" r="4" fill="#fff" stroke="#3B82F6" stroke-width="2"/>
+                  <circle cx="378" cy="88" r="4" fill="#fff" stroke="#3B82F6" stroke-width="2"/>
+                  <circle cx="450" cy="64" r="4" fill="#fff" stroke="#3B82F6" stroke-width="2"/>
+                  <!-- X-axis labels -->
+                  <text x="90" y="198" text-anchor="middle" fill="#9CA3AF" font-size="10">1月</text>
+                  <text x="162" y="198" text-anchor="middle" fill="#9CA3AF" font-size="10">2月</text>
+                  <text x="234" y="198" text-anchor="middle" fill="#9CA3AF" font-size="10">3月</text>
+                  <text x="306" y="198" text-anchor="middle" fill="#9CA3AF" font-size="10">4月</text>
+                  <text x="378" y="198" text-anchor="middle" fill="#9CA3AF" font-size="10">5月</text>
+                  <text x="450" y="198" text-anchor="middle" fill="#9CA3AF" font-size="10">6月</text>
+                </svg>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header"><h3>专病患者来源分布</h3></div>
+              <div class="card-body" style="display:flex;align-items:center;gap:24px">
+                <svg viewBox="0 0 200 200" width="180" height="180">
+                  <!-- Pie chart: 门诊 68% vs 住院 32% -->
+                  <circle cx="100" cy="100" r="80" fill="none" stroke="#3B82F6" stroke-width="40" stroke-dasharray="341.8 502.7" stroke-dashoffset="0" transform="rotate(-90 100 100)"/>
+                  <circle cx="100" cy="100" r="80" fill="none" stroke="#10B981" stroke-width="40" stroke-dasharray="160.9 502.7" stroke-dashoffset="-341.8" transform="rotate(-90 100 100)"/>
+                  <circle cx="100" cy="100" r="55" fill="white"/>
+                  <text x="100" y="95" text-anchor="middle" fill="#374151" font-size="16" font-weight="700">8,567</text>
+                  <text x="100" y="115" text-anchor="middle" fill="#9CA3AF" font-size="11">总患者数</text>
+                </svg>
+                <div style="font-size:13px">
+                  <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px">
+                    <span style="width:12px;height:12px;border-radius:3px;background:#3B82F6;display:inline-block"></span>
+                    <span>门诊患者</span>
+                    <strong style="margin-left:auto">5,825 (68%)</strong>
+                  </div>
+                  <div style="display:flex;align-items:center;gap:8px">
+                    <span style="width:12px;height:12px;border-radius:3px;background:#10B981;display:inline-block"></span>
+                    <span>住院患者</span>
+                    <strong style="margin-left:auto">2,742 (32%)</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Charts Row 2: Bar Charts -->
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px">
+            <div class="card">
+              <div class="card-header"><h3>患者年龄/性别分布</h3></div>
+              <div class="card-body">
+                <svg viewBox="0 0 500 220" width="100%" height="220" style="display:block">
+                  <!-- Grid -->
+                  <line x1="60" y1="180" x2="480" y2="180" stroke="#E5E7EB" stroke-width="1"/>
+                  <line x1="60" y1="140" x2="480" y2="140" stroke="#F3F4F6" stroke-width="0.5" stroke-dasharray="4"/>
+                  <line x1="60" y1="100" x2="480" y2="100" stroke="#F3F4F6" stroke-width="0.5" stroke-dasharray="4"/>
+                  <line x1="60" y1="60" x2="480" y2="60" stroke="#F3F4F6" stroke-width="0.5" stroke-dasharray="4"/>
+                  <text x="55" y="183" text-anchor="end" fill="#9CA3AF" font-size="10">0</text>
+                  <text x="55" y="143" text-anchor="end" fill="#9CA3AF" font-size="10">300</text>
+                  <text x="55" y="103" text-anchor="end" fill="#9CA3AF" font-size="10">600</text>
+                  <text x="55" y="63" text-anchor="end" fill="#9CA3AF" font-size="10">900</text>
+                  <!-- Male bars (blue) -->
+                  <rect x="80" y="128" width="24" height="52" rx="3" fill="#3B82F6" opacity="0.85"/>
+                  <rect x="150" y="76" width="24" height="104" rx="3" fill="#3B82F6" opacity="0.85"/>
+                  <rect x="220" y="52" width="24" height="128" rx="3" fill="#3B82F6" opacity="0.85"/>
+                  <rect x="290" y="88" width="24" height="92" rx="3" fill="#3B82F6" opacity="0.85"/>
+                  <rect x="360" y="120" width="24" height="60" rx="3" fill="#3B82F6" opacity="0.85"/>
+                  <rect x="430" y="148" width="24" height="32" rx="3" fill="#3B82F6" opacity="0.85"/>
+                  <!-- Female bars (pink) -->
+                  <rect x="106" y="140" width="24" height="40" rx="3" fill="#F472B6" opacity="0.85"/>
+                  <rect x="176" y="92" width="24" height="88" rx="3" fill="#F472B6" opacity="0.85"/>
+                  <rect x="246" y="64" width="24" height="116" rx="3" fill="#F472B6" opacity="0.85"/>
+                  <rect x="316" y="100" width="24" height="80" rx="3" fill="#F472B6" opacity="0.85"/>
+                  <rect x="386" y="132" width="24" height="48" rx="3" fill="#F472B6" opacity="0.85"/>
+                  <rect x="456" y="156" width="24" height="24" rx="3" fill="#F472B6" opacity="0.85"/>
+                  <!-- X labels -->
+                  <text x="103" y="196" text-anchor="middle" fill="#9CA3AF" font-size="10"><30</text>
+                  <text x="173" y="196" text-anchor="middle" fill="#9CA3AF" font-size="10">30-40</text>
+                  <text x="243" y="196" text-anchor="middle" fill="#9CA3AF" font-size="10">40-50</text>
+                  <text x="313" y="196" text-anchor="middle" fill="#9CA3AF" font-size="10">50-60</text>
+                  <text x="383" y="196" text-anchor="middle" fill="#9CA3AF" font-size="10">60-70</text>
+                  <text x="453" y="196" text-anchor="middle" fill="#9CA3AF" font-size="10">>70</text>
+                  <!-- Legend -->
+                  <rect x="350" y="8" width="10" height="10" rx="2" fill="#3B82F6"/>
+                  <text x="364" y="17" fill="#6B7280" font-size="10">男</text>
+                  <rect x="390" y="8" width="10" height="10" rx="2" fill="#F472B6"/>
+                  <text x="404" y="17" fill="#6B7280" font-size="10">女</text>
+                </svg>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header"><h3>患者诊断分布 TOP10</h3></div>
+              <div class="card-body">
+                <svg viewBox="0 0 500 220" width="100%" height="220" style="display:block">
+                  <!-- Horizontal bar chart -->
+                  <text x="115" y="25" text-anchor="end" fill="#6B7280" font-size="10">脑梗死</text>
+                  <rect x="120" y="14" width="340" height="16" rx="3" fill="#3B82F6" opacity="0.85"/>
+                  <text x="465" y="25" fill="#6B7280" font-size="10">987</text>
+
+                  <text x="115" y="49" text-anchor="end" fill="#6B7280" font-size="10">冠心病</text>
+                  <rect x="120" y="38" width="280" height="16" rx="3" fill="#3B82F6" opacity="0.75"/>
+                  <text x="405" y="49" fill="#6B7280" font-size="10">812</text>
+
+                  <text x="115" y="73" text-anchor="end" fill="#6B7280" font-size="10">高血压</text>
+                  <rect x="120" y="62" width="240" height="16" rx="3" fill="#3B82F6" opacity="0.70"/>
+                  <text x="365" y="73" fill="#6B7280" font-size="10">698</text>
+
+                  <text x="115" y="97" text-anchor="end" fill="#6B7280" font-size="10">心力衰竭</text>
+                  <rect x="120" y="86" width="190" height="16" rx="3" fill="#60A5FA" opacity="0.75"/>
+                  <text x="315" y="97" fill="#6B7280" font-size="10">567</text>
+
+                  <text x="115" y="121" text-anchor="end" fill="#6B7280" font-size="10">结肠癌</text>
+                  <rect x="120" y="110" width="160" height="16" rx="3" fill="#60A5FA" opacity="0.70"/>
+                  <text x="285" y="121" fill="#6B7280" font-size="10">456</text>
+
+                  <text x="115" y="145" text-anchor="end" fill="#6B7280" font-size="10">脑出血</text>
+                  <rect x="120" y="134" width="140" height="16" rx="3" fill="#93C5FD" opacity="0.75"/>
+                  <text x="265" y="145" fill="#6B7280" font-size="10">345</text>
+
+                  <text x="115" y="169" text-anchor="end" fill="#6B7280" font-size="10">膝关节</text>
+                  <rect x="120" y="158" width="130" height="16" rx="3" fill="#93C5FD" opacity="0.70"/>
+                  <text x="255" y="169" fill="#6B7280" font-size="10">312</text>
+
+                  <text x="115" y="193" text-anchor="end" fill="#6B7280" font-size="10">心肌病</text>
+                  <rect x="120" y="182" width="115" height="16" rx="3" fill="#BFDBFE" opacity="0.80"/>
+                  <text x="240" y="193" fill="#6B7280" font-size="10">278</text>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Template Table -->
+          <div class="card" style="margin-bottom:16px">
+            <div class="card-header"><h3>专科病历模板列表及使用数量统计</h3></div>
+            <div class="card-body">
+              <div class="table-wrapper">
+                <table>
+                  <thead>
+                    <tr><th>模板名称</th><th>模板类型</th><th>创建时间</th><th>本月使用次数</th><th>累计使用次数</th><th>使用率</th></tr>
+                  </thead>
+                  <tbody id="detailTemplateTableBody">
+                    <tr><td>脑梗死入院记录</td><td>入院记录</td><td>2025-03-15</td><td>156</td><td>3,456</td><td><span class="tag tag-success">92.3%</span></td></tr>
+                    <tr><td>脑梗死出院小结</td><td>出院小结</td><td>2025-03-15</td><td>142</td><td>3,102</td><td><span class="tag tag-success">88.7%</span></td></tr>
+                    <tr><td>脑梗死病程记录</td><td>病程记录</td><td>2025-04-01</td><td>289</td><td>4,567</td><td><span class="tag tag-success">95.1%</span></td></tr>
+                    <tr><td>脑梗死首次病程</td><td>首次病程</td><td>2025-04-01</td><td>134</td><td>2,890</td><td><span class="tag tag-success">86.5%</span></td></tr>
+                    <tr><td>脑梗死手术记录</td><td>手术记录</td><td>2025-05-10</td><td>67</td><td>1,234</td><td><span class="tag tag-warning">72.1%</span></td></tr>
+                    <tr><td>脑梗死护理记录</td><td>护理记录</td><td>2025-05-10</td><td>198</td><td>3,789</td><td><span class="tag tag-success">91.2%</span></td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Scale Table -->
+          <div class="card" style="margin-bottom:16px">
+            <div class="card-header"><h3>专科医学量表列表及使用数量统计</h3></div>
+            <div class="card-body">
+              <div class="table-wrapper">
+                <table>
+                  <thead>
+                    <tr><th>量表名称</th><th>量表类型</th><th>创建时间</th><th>本月使用次数</th><th>累计使用次数</th><th>使用率</th></tr>
+                  </thead>
+                  <tbody id="detailScaleTableBody">
+                    <tr><td>NIHSS卒中量表</td><td>神经功能评估</td><td>2025-03-15</td><td>234</td><td>5,678</td><td><span class="tag tag-success">94.5%</span></td></tr>
+                    <tr><td>mRS改良Rankin量表</td><td>功能预后评估</td><td>2025-03-15</td><td>198</td><td>4,321</td><td><span class="tag tag-success">91.2%</span></td></tr>
+                    <tr><td>Barthel指数评定</td><td>日常生活能力</td><td>2025-04-01</td><td>167</td><td>3,456</td><td><span class="tag tag-success">87.8%</span></td></tr>
+                    <tr><td>GCS格拉斯哥昏迷量表</td><td>意识障碍评估</td><td>2025-04-01</td><td>145</td><td>2,890</td><td><span class="tag tag-success">85.3%</span></td></tr>
+                    <tr><td>吞咽功能评估量表</td><td>吞咽功能评估</td><td>2025-05-10</td><td>112</td><td>2,345</td><td><span class="tag tag-warning">78.6%</span></td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Template Usage Comparison Chart -->
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px">
+            <div class="card">
+              <div class="card-header"><h3>专科病历模板使用量统计对比</h3></div>
+              <div class="card-body">
+                <svg viewBox="0 0 500 220" width="100%" height="220" style="display:block">
+                  <line x1="50" y1="180" x2="480" y2="180" stroke="#E5E7EB" stroke-width="1"/>
+                  <line x1="50" y1="140" x2="480" y2="140" stroke="#F3F4F6" stroke-width="0.5" stroke-dasharray="4"/>
+                  <line x1="50" y1="100" x2="480" y2="100" stroke="#F3F4F6" stroke-width="0.5" stroke-dasharray="4"/>
+                  <line x1="50" y1="60" x2="480" y2="60" stroke="#F3F4F6" stroke-width="0.5" stroke-dasharray="4"/>
+                  <text x="45" y="183" text-anchor="end" fill="#9CA3AF" font-size="10">0</text>
+                  <text x="45" y="143" text-anchor="end" fill="#9CA3AF" font-size="10">200</text>
+                  <text x="45" y="103" text-anchor="end" fill="#9CA3AF" font-size="10">400</text>
+                  <text x="45" y="63" text-anchor="end" fill="#9CA3AF" font-size="10">600</text>
+                  <!-- Grouped bars: last month (light) vs this month (dark) -->
+                  <rect x="75" y="108" width="20" height="72" rx="2" fill="#93C5FD"/>
+                  <rect x="97" y="88" width="20" height="92" rx="2" fill="#3B82F6"/>
+                  <rect x="155" y="100" width="20" height="80" rx="2" fill="#93C5FD"/>
+                  <rect x="177" y="76" width="20" height="104" rx="2" fill="#3B82F6"/>
+                  <rect x="235" y="116" width="20" height="64" rx="2" fill="#93C5FD"/>
+                  <rect x="257" y="92" width="20" height="88" rx="2" fill="#3B82F6"/>
+                  <rect x="315" y="108" width="20" height="72" rx="2" fill="#93C5FD"/>
+                  <rect x="337" y="84" width="20" height="96" rx="2" fill="#3B82F6"/>
+                  <rect x="395" y="124" width="20" height="56" rx="2" fill="#93C5FD"/>
+                  <rect x="417" y="100" width="20" height="80" rx="2" fill="#3B82F6"/>
+                  <text x="108" y="196" text-anchor="middle" fill="#9CA3AF" font-size="9">入院记录</text>
+                  <text x="188" y="196" text-anchor="middle" fill="#9CA3AF" font-size="9">出院小结</text>
+                  <text x="268" y="196" text-anchor="middle" fill="#9CA3AF" font-size="9">病程记录</text>
+                  <text x="348" y="196" text-anchor="middle" fill="#9CA3AF" font-size="9">首次病程</text>
+                  <text x="428" y="196" text-anchor="middle" fill="#9CA3AF" font-size="9">护理记录</text>
+                  <rect x="340" y="8" width="10" height="10" rx="2" fill="#93C5FD"/>
+                  <text x="354" y="17" fill="#6B7280" font-size="10">上月</text>
+                  <rect x="380" y="8" width="10" height="10" rx="2" fill="#3B82F6"/>
+                  <text x="394" y="17" fill="#6B7280" font-size="10">本月</text>
+                </svg>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header"><h3>专科医学量表使用量统计对比</h3></div>
+              <div class="card-body">
+                <svg viewBox="0 0 500 220" width="100%" height="220" style="display:block">
+                  <line x1="50" y1="180" x2="480" y2="180" stroke="#E5E7EB" stroke-width="1"/>
+                  <line x1="50" y1="140" x2="480" y2="140" stroke="#F3F4F6" stroke-width="0.5" stroke-dasharray="4"/>
+                  <line x1="50" y1="100" x2="480" y2="100" stroke="#F3F4F6" stroke-width="0.5" stroke-dasharray="4"/>
+                  <line x1="50" y1="60" x2="480" y2="60" stroke="#F3F4F6" stroke-width="0.5" stroke-dasharray="4"/>
+                  <text x="45" y="183" text-anchor="end" fill="#9CA3AF" font-size="10">0</text>
+                  <text x="45" y="143" text-anchor="end" fill="#9CA3AF" font-size="10">100</text>
+                  <text x="45" y="103" text-anchor="end" fill="#9CA3AF" font-size="10">200</text>
+                  <text x="45" y="63" text-anchor="end" fill="#9CA3AF" font-size="10">300</text>
+                  <!-- Grouped bars -->
+                  <rect x="80" y="72" width="20" height="108" rx="2" fill="#6EE7B7"/>
+                  <rect x="102" y="52" width="20" height="128" rx="2" fill="#10B981"/>
+                  <rect x="170" y="80" width="20" height="100" rx="2" fill="#6EE7B7"/>
+                  <rect x="192" y="60" width="20" height="120" rx="2" fill="#10B981"/>
+                  <rect x="260" y="92" width="20" height="88" rx="2" fill="#6EE7B7"/>
+                  <rect x="282" y="72" width="20" height="108" rx="2" fill="#10B981"/>
+                  <rect x="350" y="100" width="20" height="80" rx="2" fill="#6EE7B7"/>
+                  <rect x="372" y="80" width="20" height="100" rx="2" fill="#10B981"/>
+                  <rect x="440" y="108" width="20" height="72" rx="2" fill="#6EE7B7"/>
+                  <rect x="462" y="88" width="20" height="92" rx="2" fill="#10B981"/>
+                  <text x="112" y="196" text-anchor="middle" fill="#9CA3AF" font-size="9">NIHSS</text>
+                  <text x="202" y="196" text-anchor="middle" fill="#9CA3AF" font-size="9">mRS</text>
+                  <text x="292" y="196" text-anchor="middle" fill="#9CA3AF" font-size="9">Barthel</text>
+                  <text x="382" y="196" text-anchor="middle" fill="#9CA3AF" font-size="9">GCS</text>
+                  <text x="472" y="196" text-anchor="middle" fill="#9CA3AF" font-size="9">吞咽评估</text>
+                  <rect x="340" y="8" width="10" height="10" rx="2" fill="#6EE7B7"/>
+                  <text x="354" y="17" fill="#6B7280" font-size="10">上月</text>
+                  <rect x="380" y="8" width="10" height="10" rx="2" fill="#10B981"/>
+                  <text x="394" y="17" fill="#6B7280" font-size="10">本月</text>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+<script>
+(function() {
+  window.DiseaseDetailModule = {
+    goBack() {
+      if (typeof ModuleLoader !== 'undefined') {
+        ModuleLoader.invalidate('disease-detail');
+        ModuleLoader.load('diseases');
+      }
+    },
+
+    init() {
+      var d = window._currentDiseaseDetail;
+      if (!d) return;
+
+      var nameEl = document.getElementById('diseaseDetailName');
+      var deptEl = document.getElementById('diseaseDetailDept');
+      var patientEl = document.getElementById('detailPatientCount');
+      var bcEl = document.getElementById('breadcrumb');
+
+      if (nameEl) nameEl.textContent = d.name + ' 详情';
+      if (deptEl) deptEl.textContent = d.specialty + ' | ' + d.code;
+      if (patientEl) patientEl.textContent = d.count.toLocaleString();
+      if (bcEl) bcEl.innerHTML = '<span>专科病种管理</span> / <span>' + d.name + '</span>';
+
+      // Template table
+      var templateTbody = document.getElementById('detailTemplateTableBody');
+      if (templateTbody) {
+        var templateNames = ['入院记录', '出院小结', '病程记录', '首次病程', '手术记录', '护理记录'];
+        var templateTypes = ['入院记录', '出院小结', '病程记录', '首次病程', '手术记录', '护理记录'];
+        var templateRates = ['92.3%', '88.7%', '95.1%', '86.5%', '72.1%', '91.2%'];
+        var totalTemplates = d.templateCount * 400;
+        templateTbody.innerHTML = templateNames.map(function(t, i) {
+          var monthly = Math.floor(totalTemplates * (0.08 + Math.random() * 0.06));
+          var cumulative = Math.floor(totalTemplates * (0.3 + i * 0.12));
+          return '<tr><td>' + d.name + t + '</td><td>' + templateTypes[i] + '</td><td>2025-03-' + (15 + i) + '</td><td>' + monthly.toLocaleString() + '</td><td>' + cumulative.toLocaleString() + '</td><td><span class="tag ' + (parseFloat(templateRates[i]) >= 80 ? 'tag-success' : 'tag-warning') + '">' + templateRates[i] + '</span></td></tr>';
+        }).join('');
+      }
+
+      // Scale table
+      var scaleTbody = document.getElementById('detailScaleTableBody');
+      if (scaleTbody) {
+        var scaleNames = ['NIHSS卒中量表', 'mRS改良Rankin量表', 'Barthel指数评定', 'GCS格拉斯哥昏迷量表', '吞咽功能评估量表'];
+        var scaleTypes = ['神经功能评估', '功能预后评估', '日常生活能力', '意识障碍评估', '吞咽功能评估'];
+        var scaleRates = ['94.5%', '91.2%', '87.8%', '85.3%', '78.6%'];
+        var totalScales = d.scaleCount * 500;
+        scaleTbody.innerHTML = scaleNames.map(function(s, i) {
+          var monthly = Math.floor(totalScales * (0.06 + Math.random() * 0.05));
+          var cumulative = Math.floor(totalScales * (0.25 + i * 0.15));
+          return '<tr><td>' + s + '</td><td>' + scaleTypes[i] + '</td><td>2025-03-' + (15 + i) + '</td><td>' + monthly.toLocaleString() + '</td><td>' + cumulative.toLocaleString() + '</td><td><span class="tag ' + (parseFloat(scaleRates[i]) >= 80 ? 'tag-success' : 'tag-warning') + '">' + scaleRates[i] + '</span></td></tr>';
+        }).join('');
+      }
+    }
+  };
+
+  document.addEventListener('module:loaded', function(e) {
+    if (e.detail && e.detail.pageId === 'disease-detail') {
+      DiseaseDetailModule.init();
+    }
+  });
+
+  DiseaseDetailModule.init();
+})();
+</script>
+</div>

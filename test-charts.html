@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图表测试页面</title>
+    <link rel="stylesheet" href="core/css/main.css">
+    <style>
+        body {
+            padding: 20px;
+            background: #f5f7fa;
+        }
+        .test-section {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        .test-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-section">
+        <h2 class="test-title">✅ 图表测试页面</h2>
+        <p>如果您看到图表，说明图表库工作正常！</p>
+    </div>
+
+    <div class="two-col">
+        <div class="card">
+            <div class="card-header">
+                <h3>折线图 - 月度预警趋势</h3>
+            </div>
+            <div class="card-body">
+                <div id="test-line-chart"></div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <h3>横向柱状图 - 高频预警Top5</h3>
+            </div>
+            <div class="card-body">
+                <div id="test-hbar-chart"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="two-col" style="margin-top: 20px;">
+        <div class="card">
+            <div class="card-header">
+                <h3>柱状图 - 科室达标率排行</h3>
+            </div>
+            <div class="card-body">
+                <div id="test-bar-chart"></div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <h3>饼图 - 性别构成</h3>
+            </div>
+            <div class="card-body">
+                <div id="test-pie-chart"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card" style="margin-top: 20px;">
+        <div class="card-header">
+            <h3>年龄分布</h3>
+        </div>
+        <div class="card-body">
+            <div id="test-age-chart"></div>
+        </div>
+    </div>
+
+    <!-- 引入图表库 -->
+    <script src="core/js/charts.js"></script>
+
+    <script>
+        // 测试所有图表
+        function testCharts() {
+            console.log('开始测试图表...');
+            
+            // 折线图数据
+            const lineData = [
+                { label: '1月', value: 45 },
+                { label: '2月', value: 52 },
+                { label: '3月', value: 38 },
+                { label: '4月', value: 65 },
+                { label: '5月', value: 48 },
+                { label: '6月', value: 72 }
+            ];
+            
+            // 横向柱状图数据
+            const hbarData = [
+                { label: '用药不适宜', value: 156 },
+                { label: '医嘱超时', value: 124 },
+                { label: '检验漏项', value: 98 },
+                { label: '病历缺失', value: 76 },
+                { label: '院感风险', value: 54 }
+            ];
+            
+            // 柱状图数据
+            const barData = [
+                { label: '心内科', value: 92 },
+                { label: '神经内科', value: 88 },
+                { label: '骨科', value: 85 },
+                { label: '呼吸科', value: 82 },
+                { label: '普外科', value: 79 }
+            ];
+            
+            // 饼图数据
+            const pieData = [
+                { label: '男性', value: 658 },
+                { label: '女性', value: 597 }
+            ];
+            
+            // 年龄数据
+            const ageData = [
+                { label: '18-30', value: 120 },
+                { label: '31-45', value: 245 },
+                { label: '46-60', value: 356 },
+                { label: '61-75', value: 289 },
+                { label: '75+', value: 145 }
+            ];
+            
+            // 渲染所有图表
+            const lineEl = document.getElementById('test-line-chart');
+            const hbarEl = document.getElementById('test-hbar-chart');
+            const barEl = document.getElementById('test-bar-chart');
+            const pieEl = document.getElementById('test-pie-chart');
+            const ageEl = document.getElementById('test-age-chart');
+            
+            if (lineEl) {
+                lineEl.innerHTML = Charts.lineChart(lineData, { color: '#3B82F6' });
+                console.log('折线图已渲染');
+            }
+            
+            if (hbarEl) {
+                hbarEl.innerHTML = Charts.horizontalBarChart(hbarData);
+                console.log('横向柱状图已渲染');
+            }
+            
+            if (barEl) {
+                barEl.innerHTML = Charts.barChart(barData);
+                console.log('柱状图已渲染');
+            }
+            
+            if (pieEl) {
+                pieEl.innerHTML = Charts.donutChart(pieData, { colors: ['#3B82F6', '#EC4899'] });
+                console.log('饼图已渲染');
+            }
+            
+            if (ageEl) {
+                ageEl.innerHTML = Charts.ageDistributionChart(ageData);
+                console.log('年龄分布图已渲染');
+            }
+            
+            console.log('所有图表测试完成！');
+        }
+        
+        // 页面加载后测试
+        document.addEventListener('DOMContentLoaded', testCharts);
+    </script>
+</body>
+</html>

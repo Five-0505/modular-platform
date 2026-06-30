@@ -1,0 +1,314 @@
+<div data-module-id="page-research-cohort">
+
+  <!-- Page Header -->
+  <div class="page-header">
+    <div class="page-header-left">
+      <h2>科研队列管理</h2>
+      <p style="color:var(--text-secondary,#64748b);font-size:13px;margin-top:2px;">统一管理临床科研队列，支持队列创建、入组管理、随访跟踪</p>
+    </div>
+  </div>
+
+  <!-- Stats Row -->
+  <div class="stats-row">
+    <div class="stat-card">
+      <div class="stat-icon" style="background:#e0f2fe;">
+        <svg viewBox="0 0 20 20" stroke="currentColor" fill="none" width="22" height="22" stroke-width="1.5" style="color:#0284c7;">
+          <rect x="2" y="4" width="16" height="12" rx="2"/>
+          <path d="M6 4V3a1 1 0 011-1h6a1 1 0 011 1v1M2 8h16"/>
+        </svg>
+      </div>
+      <div class="stat-info">
+        <div class="value">48</div>
+        <div class="label">队列总数</div>
+        <div class="trend" style="color:#16a34a;">+3 本月新增</div>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon" style="background:#f0fdf4;">
+        <svg viewBox="0 0 20 20" stroke="currentColor" fill="none" width="22" height="22" stroke-width="1.5" style="color:#16a34a;">
+          <circle cx="7" cy="7" r="3"/>
+          <circle cx="14" cy="7" r="3"/>
+          <path d="M2 17c0-3 2.5-5 5-5s5 2 5 5M10 17c0-3 2-5 4.5-5 2.3 0 4.5 2 4.5 5"/>
+        </svg>
+      </div>
+      <div class="stat-info">
+        <div class="value">12,580</div>
+        <div class="label">入组患者</div>
+        <div class="trend" style="color:#16a34a;">+620 本月入组</div>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon" style="background:#fef9c3;">
+        <svg viewBox="0 0 20 20" stroke="currentColor" fill="none" width="22" height="22" stroke-width="1.5" style="color:#ca8a04;">
+          <circle cx="10" cy="10" r="7"/>
+          <path d="M10 6v4l3 2"/>
+        </svg>
+      </div>
+      <div class="stat-info">
+        <div class="value">36</div>
+        <div class="label">活跃队列</div>
+        <div class="trend" style="color:#ca8a04;">占总数 75%</div>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon" style="background:#ede9fe;">
+        <svg viewBox="0 0 20 20" stroke="currentColor" fill="none" width="22" height="22" stroke-width="1.5" style="color:#7c3aed;">
+          <path d="M3 10l5 5L17 4"/>
+        </svg>
+      </div>
+      <div class="stat-info">
+        <div class="value">91.3%</div>
+        <div class="label">平均完整率</div>
+        <div class="trend" style="color:#16a34a;">+2.1% 较上月</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tabs -->
+  <div class="tabs">
+    <div class="tab active">全部队列</div>
+    <div class="tab">进行中</div>
+    <div class="tab">已完成</div>
+    <div class="tab">已暂停</div>
+  </div>
+
+  <!-- Cohort List Card -->
+  <div class="card">
+    <div class="card-header">
+      <h3>队列列表</h3>
+      <div class="page-header-right">
+        <button class="btn btn-sm btn-outline">批量导出</button>
+        <button class="btn btn-sm btn-primary">新建队列</button>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>队列名称</th>
+              <th>关联病种</th>
+              <th>研究类型</th>
+              <th>入组患者</th>
+              <th>CRF表单</th>
+              <th>数据完整率</th>
+              <th>课题负责人</th>
+              <th>PI</th>
+              <th>创建时间</th>
+              <th>状态</th>
+              <th>操作</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>AMI临床研究队列</strong></td>
+              <td>冠心病/急性心肌梗死</td>
+              <td>前瞻性研究</td>
+              <td>3,456</td>
+              <td>8</td>
+              <td>
+                <div style="display:flex;align-items:center;gap:6px;">
+                  <div class="progress-bar" style="flex:1;height:6px;"><div class="fill" style="width:92.1%;background:#16a34a;"></div></div>
+                  <span style="font-size:12px;color:#16a34a;font-weight:600;">92.1%</span>
+                </div>
+              </td>
+              <td>张明远</td>
+              <td>张建国</td>
+              <td>2025-03-15</td>
+              <td><span class="tag tag-success">进行中</span></td>
+              <td><button class="btn btn-sm btn-outline">查看</button> <button class="btn btn-sm btn-outline">编辑</button></td>
+            </tr>
+            <tr>
+              <td><strong>脑梗死预后研究队列</strong></td>
+              <td>脑梗死</td>
+              <td>回顾性分析</td>
+              <td>2,178</td>
+              <td>6</td>
+              <td>
+                <div style="display:flex;align-items:center;gap:6px;">
+                  <div class="progress-bar" style="flex:1;height:6px;"><div class="fill" style="width:88.5%;background:#16a34a;"></div></div>
+                  <span style="font-size:12px;color:#16a34a;font-weight:600;">88.5%</span>
+                </div>
+              </td>
+              <td>李文博</td>
+              <td>陈志强</td>
+              <td>2025-06-20</td>
+              <td><span class="tag tag-success">进行中</span></td>
+              <td><button class="btn btn-sm btn-outline">查看</button> <button class="btn btn-sm btn-outline">编辑</button></td>
+            </tr>
+            <tr>
+              <td><strong>结肠癌术后随访队列</strong></td>
+              <td>结肠癌</td>
+              <td>队列研究</td>
+              <td>1,567</td>
+              <td>5</td>
+              <td>
+                <div style="display:flex;align-items:center;gap:6px;">
+                  <div class="progress-bar" style="flex:1;height:6px;"><div class="fill" style="width:85.3%;background:#eab308;"></div></div>
+                  <span style="font-size:12px;color:#eab308;font-weight:600;">85.3%</span>
+                </div>
+              </td>
+              <td>王海燕</td>
+              <td>刘伟东</td>
+              <td>2025-09-01</td>
+              <td><span class="tag tag-success">进行中</span></td>
+              <td><button class="btn btn-sm btn-outline">查看</button> <button class="btn btn-sm btn-outline">编辑</button></td>
+            </tr>
+            <tr>
+              <td><strong>髋关节置换疗效研究</strong></td>
+              <td>髋关节骨关节炎</td>
+              <td>随机对照试验</td>
+              <td>890</td>
+              <td>4</td>
+              <td>
+                <div style="display:flex;align-items:center;gap:6px;">
+                  <div class="progress-bar" style="flex:1;height:6px;"><div class="fill" style="width:93.8%;background:#16a34a;"></div></div>
+                  <span style="font-size:12px;color:#16a34a;font-weight:600;">93.8%</span>
+                </div>
+              </td>
+              <td>赵德明</td>
+              <td>周晓峰</td>
+              <td>2025-11-10</td>
+              <td><span class="tag tag-success">进行中</span></td>
+              <td><button class="btn btn-sm btn-outline">查看</button> <button class="btn btn-sm btn-outline">编辑</button></td>
+            </tr>
+            <tr>
+              <td><strong>2型糖尿病降糖方案对比</strong></td>
+              <td>2型糖尿病</td>
+              <td>随机对照试验</td>
+              <td>2,045</td>
+              <td>10</td>
+              <td>
+                <div style="display:flex;align-items:center;gap:6px;">
+                  <div class="progress-bar" style="flex:1;height:6px;"><div class="fill" style="width:96.2%;background:#16a34a;"></div></div>
+                  <span style="font-size:12px;color:#16a34a;font-weight:600;">96.2%</span>
+                </div>
+              </td>
+              <td>孙丽华</td>
+              <td>黄志远</td>
+              <td>2024-12-05</td>
+              <td><span class="tag tag-success">进行中</span></td>
+              <td><button class="btn btn-sm btn-outline">查看</button> <button class="btn btn-sm btn-outline">编辑</button></td>
+            </tr>
+            <tr>
+              <td><strong>乳腺癌新辅助化疗队列</strong></td>
+              <td>乳腺癌</td>
+              <td>前瞻性研究</td>
+              <td>1,230</td>
+              <td>7</td>
+              <td>
+                <div style="display:flex;align-items:center;gap:6px;">
+                  <div class="progress-bar" style="flex:1;height:6px;"><div class="fill" style="width:100%;background:#16a34a;"></div></div>
+                  <span style="font-size:12px;color:#16a34a;font-weight:600;">100%</span>
+                </div>
+              </td>
+              <td>陈雪梅</td>
+              <td>吴建国</td>
+              <td>2024-04-18</td>
+              <td><span class="tag" style="background:#dbeafe;color:#1d4ed8;">已完成</span></td>
+              <td><button class="btn btn-sm btn-outline">查看</button> <button class="btn btn-sm btn-outline">编辑</button></td>
+            </tr>
+            <tr>
+              <td><strong>COPD肺康复干预队列</strong></td>
+              <td>慢性阻塞性肺疾病</td>
+              <td>队列研究</td>
+              <td>678</td>
+              <td>5</td>
+              <td>
+                <div style="display:flex;align-items:center;gap:6px;">
+                  <div class="progress-bar" style="flex:1;height:6px;"><div class="fill" style="width:79.4%;background:#eab308;"></div></div>
+                  <span style="font-size:12px;color:#eab308;font-weight:600;">79.4%</span>
+                </div>
+              </td>
+              <td>刘振华</td>
+              <td>马文斌</td>
+              <td>2025-08-22</td>
+              <td><span class="tag" style="background:#f1f5f9;color:#64748b;">已暂停</span></td>
+              <td><button class="btn btn-sm btn-outline">查看</button> <button class="btn btn-sm btn-outline">编辑</button></td>
+            </tr>
+            <tr>
+              <td><strong>甲状腺癌碘131治疗随访</strong></td>
+              <td>甲状腺癌</td>
+              <td>回顾性分析</td>
+              <td>536</td>
+              <td>3</td>
+              <td>
+                <div style="display:flex;align-items:center;gap:6px;">
+                  <div class="progress-bar" style="flex:1;height:6px;"><div class="fill" style="width:87.6%;background:#16a34a;"></div></div>
+                  <span style="font-size:12px;color:#16a34a;font-weight:600;">87.6%</span>
+                </div>
+              </td>
+              <td>郑芳</td>
+              <td>林国栋</td>
+              <td>2026-01-10</td>
+              <td><span class="tag tag-success">进行中</span></td>
+              <td><button class="btn btn-sm btn-outline">查看</button> <button class="btn btn-sm btn-outline">编辑</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Two Column Charts -->
+  <div class="two-col">
+    <div class="card">
+      <div class="card-header">
+        <h3>入组趋势</h3>
+        <div class="tabs" style="margin-bottom:0;border-bottom:none;">
+          <div class="tab active">近6个月</div>
+          <div class="tab">近12个月</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="enrollment-trend-chart"></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <h3>队列状态分布</h3>
+        <div class="tabs" style="margin-bottom:0;border-bottom:none;">
+          <div class="tab active">按状态</div>
+          <div class="tab">按病种</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="cohort-status-chart"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div class="card">
+      <div class="card-header">
+        <h3>年龄分布</h3>
+      </div>
+      <div class="card-body">
+        <div class="age-distribution-chart"></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <h3>性别构成</h3>
+      </div>
+      <div class="card-body">
+        <div class="gender-distribution-chart"></div>
+      </div>
+    </div>
+  </div>
+
+<script>
+(function() {
+  function init() {
+    if (typeof ChartRenderer !== 'undefined') {
+      ChartRenderer.renderResearchCohort();
+    }
+  }
+  init();
+  document.addEventListener('module:loaded', function(e) {
+    if (e.detail && e.detail.pageId === 'research/cohort') init();
+  });
+})();
+</script>
+
+</div>

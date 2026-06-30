@@ -1,0 +1,178 @@
+<div data-module-id="page-data-center-standards">
+
+          <div class="page-header">
+            <div class="page-header-left">
+              <h2>医疗标准字典</h2>
+            </div>
+          </div>
+
+            <div class="stats-row">
+              <div class="stat-card">
+                <div class="stat-icon blue"><svg viewBox="0 0 20 20" width="20" height="20"><path d="M13.5 3.5l3 3L7 16H4v-3L13.5 3.5z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M11 6l3 3" stroke="currentColor" stroke-width="1.3"/></svg></div>
+                <div class="stat-info">
+                  <div class="value">12,345</div>
+                  <div class="label">标准编码总量</div>
+                </div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon green"><svg viewBox="0 0 20 20" width="20" height="20"><path d="M7 10a3 3 0 013-3h3a3 3 0 010 6h-3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M13 10a3 3 0 01-3 3H7a3 3 0 010-6h3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+                <div class="stat-info">
+                  <div class="value">92.1%</div>
+                  <div class="label">映射覆盖率</div>
+                </div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon yellow"><svg viewBox="0 0 20 20" width="20" height="20"><path d="M4 4h12M10 4v12M7 16h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+                <div class="stat-info">
+                  <div class="value">8</div>
+                  <div class="label">字典类型</div>
+                </div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon purple"><svg viewBox="0 0 20 20" width="20" height="20"><path d="M3 4a1 1 0 011-1h6l8 8-6 6-8-8V4z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><circle cx="7" cy="7" r="1" fill="currentColor"/></svg></div>
+                <div class="stat-info">
+                  <div class="value">v3.2</div>
+                  <div class="label">当前版本</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="data-center-layout">
+              <div class="data-center-sidebar">
+                <div class="data-tree-header">
+                  <span style="font-weight:600;font-size:13px;color:var(--gray-700)">标准字典分类</span>
+                </div>
+                <div class="data-tree-list">
+                  <div class="data-tree-group">
+                    <div class="data-tree-group-title" onclick="this.parentElement.classList.toggle('collapsed')">
+                      <span class="tree-arrow">▸</span> 疾病编码
+                    </div>
+                    <div class="data-tree-items">
+                      <div class="data-tree-item active">ICD-10 疾病分类</div>
+                      <div class="data-tree-item">ICD-9-CM-3 手术编码</div>
+                    </div>
+                  </div>
+                  <div class="data-tree-group">
+                    <div class="data-tree-group-title" onclick="this.parentElement.classList.toggle('collapsed')">
+                      <span class="tree-arrow">▸</span> 药品编码
+                    </div>
+                    <div class="data-tree-items">
+                      <div class="data-tree-item">国家基本药物编码</div>
+                      <div class="data-tree-item">医保药品目录编码</div>
+                    </div>
+                  </div>
+                  <div class="data-tree-group">
+                    <div class="data-tree-group-title" onclick="this.parentElement.classList.toggle('collapsed')">
+                      <span class="tree-arrow">▸</span> 检验编码
+                    </div>
+                    <div class="data-tree-items">
+                      <div class="data-tree-item">LOINC 检验编码</div>
+                      <div class="data-tree-item">检验项目字典</div>
+                    </div>
+                  </div>
+                  <div class="data-tree-group">
+                    <div class="data-tree-group-title" onclick="this.parentElement.classList.toggle('collapsed')">
+                      <span class="tree-arrow">▸</span> 通用术语
+                    </div>
+                    <div class="data-tree-items">
+                      <div class="data-tree-item">科室字典</div>
+                      <div class="data-tree-item">诊断字典</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="data-center-content">
+                <div class="card">
+                  <div class="card-header">
+                    <h3>ICD-10 疾病编码 - 映射配置</h3>
+                    <div class="table-filters">
+                      <input type="text" placeholder="搜索编码或名称..." style="width:200px">
+                      <button class="btn btn-sm btn-outline">版本比对</button>
+                      <button class="btn btn-sm btn-outline">批量导入</button>
+                      <button class="btn btn-sm btn-primary">新增映射</button>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <div class="table-wrapper">
+                      <table>
+                        <thead>
+                          <tr>
+                            <th>标准编码</th>
+                            <th>标准名称</th>
+                            <th>本地编码</th>
+                            <th>本地名称</th>
+                            <th>映射状态</th>
+                            <th>版本</th>
+                            <th>操作</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td style="font-family:monospace">I21.9</td>
+                            <td><strong>急性心肌梗死</strong></td>
+                            <td style="font-family:monospace">AMI001</td>
+                            <td>急性心肌梗死</td>
+                            <td><span class="tag tag-success">已映射</span></td>
+                            <td>v3.2</td>
+                            <td><button class="btn btn-sm btn-outline">查看</button></td>
+                          </tr>
+                          <tr>
+                            <td style="font-family:monospace">I63</td>
+                            <td><strong>脑梗死</strong></td>
+                            <td style="font-family:monospace">CBI001</td>
+                            <td>脑梗死</td>
+                            <td><span class="tag tag-success">已映射</span></td>
+                            <td>v3.2</td>
+                            <td><button class="btn btn-sm btn-outline">查看</button></td>
+                          </tr>
+                          <tr>
+                            <td style="font-family:monospace">I61</td>
+                            <td><strong>脑出血</strong></td>
+                            <td style="font-family:monospace">CBH001</td>
+                            <td>脑出血</td>
+                            <td><span class="tag tag-success">已映射</span></td>
+                            <td>v3.2</td>
+                            <td><button class="btn btn-sm btn-outline">查看</button></td>
+                          </tr>
+                          <tr>
+                            <td style="font-family:monospace">I72</td>
+                            <td><strong>动脉瘤</strong></td>
+                            <td style="font-family:monospace;color:var(--danger)">--</td>
+                            <td style="color:var(--danger)">未匹配</td>
+                            <td><span class="tag tag-danger">未映射</span></td>
+                            <td>v3.2</td>
+                            <td><button class="btn btn-sm btn-primary">配置映射</button></td>
+                          </tr>
+                          <tr>
+                            <td style="font-family:monospace">C18</td>
+                            <td><strong>结肠癌</strong></td>
+                            <td style="font-family:monospace">CCA001</td>
+                            <td>结肠癌</td>
+                            <td><span class="tag tag-success">已映射</span></td>
+                            <td>v3.2</td>
+                            <td><button class="btn btn-sm btn-outline">查看</button></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+<script>
+(function() {
+  function init() {
+    if (typeof DiseaseContext === 'undefined') return;
+    var d = DiseaseContext.get();
+    var h2 = document.querySelector('h2');
+    if (h2) h2.textContent = '医疗标准字典';
+  }
+  init();
+  document.addEventListener('module:loaded', function(e) {
+    if (e.detail && e.detail.pageId === 'data-center/standards') init();
+  });
+})();
+</script>
+
+</div>

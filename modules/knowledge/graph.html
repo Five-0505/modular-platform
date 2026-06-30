@@ -1,0 +1,206 @@
+<div data-module-id="page-knowledge-graph">
+
+            <div class="page-header">
+              <div class="page-header-left">
+                <h2>AI知识图谱</h2>
+              </div>
+            </div>
+
+            <div class="stats-row">
+              <div class="stat-card">
+                <div class="stat-icon blue"><svg viewBox="0 0 20 20" width="20" height="20"><circle cx="10" cy="10" r="7" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M7 10l2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                <div class="stat-info">
+                  <div class="value">3,456</div>
+                  <div class="label">实体总数</div>
+                </div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon green"><svg viewBox="0 0 20 20" width="20" height="20"><circle cx="7" cy="8" r="3.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 10.5l5-5M13 7.5l2 2M16 7v3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                <div class="stat-info">
+                  <div class="value">8,912</div>
+                  <div class="label">关系总数</div>
+                </div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon yellow"><svg viewBox="0 0 20 20" width="20" height="20"><path d="M3 4a1 1 0 011-1h6l8 8-6 6-8-8V4z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><circle cx="7" cy="7" r="1" fill="currentColor"/></svg></div>
+                <div class="stat-info">
+                  <div class="value">56</div>
+                  <div class="label">标签类型</div>
+                </div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon purple"><svg viewBox="0 0 20 20" width="20" height="20"><circle cx="6" cy="7" r="2" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="14" cy="13" r="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M3 7h6M11 13h6M10 3v14" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></div>
+                <div class="stat-info">
+                  <div class="value">12,567</div>
+                  <div class="label">本月图谱调用</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="two-col">
+              <!-- 图谱可视化画布 -->
+              <div class="card">
+                <div class="card-header">
+                  <h3>知识图谱可视化</h3>
+                  <div class="table-filters">
+                    <select>
+                      <option>所有实体类型</option>
+                      <option>疾病</option>
+                      <option>症状</option>
+                      <option>药品</option>
+                      <option>检查</option>
+                      <option>治疗</option>
+                    </select>
+                    <button class="btn btn-sm btn-outline">全屏</button>
+                    <button class="btn btn-sm btn-primary">新增实体</button>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="graph-canvas">
+                    <!-- 中心节点 -->
+                    <div class="graph-center-node">急性心肌梗死</div>
+                    <!-- 关联实体 -->
+                    <div class="graph-node graph-disease" style="top:15%;left:15%">胸痛</div>
+                    <div class="graph-node graph-disease" style="top:10%;left:55%">ST段抬高</div>
+                    <div class="graph-node graph-disease" style="top:30%;left:80%">cTnI升高</div>
+                    <div class="graph-node graph-drug" style="top:65%;left:12%">阿司匹林</div>
+                    <div class="graph-node graph-drug" style="top:80%;left:40%">氯吡格雷</div>
+                    <div class="graph-node graph-drug" style="top:75%;left:75%">肝素</div>
+                    <div class="graph-node graph-treat" style="top:15%;left:80%">直接PCI</div>
+                    <div class="graph-node graph-treat" style="top:55%;left:90%">溶栓治疗</div>
+                    <div class="graph-node graph-check" style="top:85%;left:15%">心电图</div>
+                    <div class="graph-node graph-check" style="top:40%;left:5%">冠脉造影</div>
+                    <!-- 连线用 SVG -->
+                    <svg class="graph-lines" viewBox="0 0 100 100" preserveAspectRatio="none">
+                      <line x1="50" y1="50" x2="20" y2="20" stroke="var(--gray-300)" stroke-width="0.3" stroke-dasharray="1,1"/>
+                      <line x1="50" y1="50" x2="60" y2="15" stroke="var(--gray-300)" stroke-width="0.3" stroke-dasharray="1,1"/>
+                      <line x1="50" y1="50" x2="85" y2="35" stroke="var(--gray-300)" stroke-width="0.3" stroke-dasharray="1,1"/>
+                      <line x1="50" y1="50" x2="17" y2="70" stroke="var(--gray-300)" stroke-width="0.3" stroke-dasharray="1,1"/>
+                      <line x1="50" y1="50" x2="45" y2="85" stroke="var(--gray-300)" stroke-width="0.3" stroke-dasharray="1,1"/>
+                      <line x1="50" y1="50" x2="80" y2="80" stroke="var(--gray-300)" stroke-width="0.3" stroke-dasharray="1,1"/>
+                      <line x1="50" y1="50" x2="85" y2="20" stroke="var(--gray-300)" stroke-width="0.3" stroke-dasharray="1,1"/>
+                      <line x1="50" y1="50" x2="60" y2="60" stroke="var(--gray-300)" stroke-width="0.3" stroke-dasharray="1,1"/>
+                      <line x1="50" y1="50" x2="20" y2="90" stroke="var(--gray-300)" stroke-width="0.3" stroke-dasharray="1,1"/>
+                      <line x1="50" y1="50" x2="8" y2="45" stroke="var(--gray-300)" stroke-width="0.3" stroke-dasharray="1,1"/>
+                    </svg>
+                  </div>
+                  <div style="display:flex;gap:16px;margin-top:12px;flex-wrap:wrap">
+                    <div style="display:flex;align-items:center;gap:6px;font-size:12px;color:var(--gray-600)">
+                      <span style="width:12px;height:12px;border-radius:50%;background:var(--primary);display:inline-block"></span> 疾病/症状
+                    </div>
+                    <div style="display:flex;align-items:center;gap:6px;font-size:12px;color:var(--gray-600)">
+                      <span style="width:12px;height:12px;border-radius:50%;background:var(--success);display:inline-block"></span> 药品
+                    </div>
+                    <div style="display:flex;align-items:center;gap:6px;font-size:12px;color:var(--gray-600)">
+                      <span style="width:12px;height:12px;border-radius:50%;background:var(--warning);display:inline-block"></span> 检查
+                    </div>
+                    <div style="display:flex;align-items:center;gap:6px;font-size:12px;color:var(--gray-600)">
+                      <span style="width:12px;height:12px;border-radius:50%;background:var(--info);display:inline-block"></span> 治疗
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 右侧实体管理 -->
+              <div>
+                <div class="card">
+                  <div class="card-header">
+                    <h3>实体管理</h3>
+                  </div>
+                  <div class="card-body">
+                    <div class="table-wrapper">
+                      <table>
+                        <thead>
+                          <tr>
+                            <th>实体名称</th>
+                            <th>类型</th>
+                            <th>关系数</th>
+                            <th>操作</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td><strong>急性心肌梗死</strong></td>
+                            <td><span class="tag tag-primary">疾病</span></td>
+                            <td>24</td>
+                            <td><button class="btn btn-sm btn-outline">编辑</button></td>
+                          </tr>
+                          <tr>
+                            <td><strong>阿司匹林</strong></td>
+                            <td><span class="tag tag-success">药品</span></td>
+                            <td>18</td>
+                            <td><button class="btn btn-sm btn-outline">编辑</button></td>
+                          </tr>
+                          <tr>
+                            <td><strong>直接PCI</strong></td>
+                            <td><span class="tag tag-info">治疗</span></td>
+                            <td>12</td>
+                            <td><button class="btn btn-sm btn-outline">编辑</button></td>
+                          </tr>
+                          <tr>
+                            <td><strong>胸痛</strong></td>
+                            <td><span class="tag tag-warning">症状</span></td>
+                            <td>32</td>
+                            <td><button class="btn btn-sm btn-outline">编辑</button></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <div class="card-header">
+                    <h3>图谱标签管理</h3>
+                  </div>
+                  <div class="card-body">
+                    <div style="display:flex;gap:8px;flex-wrap:wrap">
+                      <span class="tag tag-primary" style="padding:6px 12px">疾病</span>
+                      <span class="tag tag-success" style="padding:6px 12px">药品</span>
+                      <span class="tag tag-warning" style="padding:6px 12px">症状</span>
+                      <span class="tag tag-info" style="padding:6px 12px">检查</span>
+                      <span class="tag tag-danger" style="padding:6px 12px">手术</span>
+                      <span class="tag tag-gray" style="padding:6px 12px">护理</span>
+                      <span class="tag" style="padding:6px 12px;border:1px dashed var(--gray-300);color:var(--gray-500)">+ 新增标签</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <div class="card-header">
+                    <h3>重复实体检测</h3>
+                  </div>
+                  <div class="card-body">
+                    <div class="todo-item">
+                      <div class="todo-priority medium"></div>
+                      <div class="todo-content">
+                        <div class="todo-title">发现疑似重复实体</div>
+                        <div class="todo-desc">「高血压」与「高血压病」为同一实体, 建议合并去重</div>
+                        <div class="todo-meta"><span class="tag tag-warning">待处理</span></div>
+                      </div>
+                      <div class="todo-actions">
+                        <button class="btn btn-sm btn-primary">合并</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+
+<script>
+(function() {
+  function init() {
+    if (typeof DiseaseContext === 'undefined') return;
+    var d = DiseaseContext.get();
+    var titleEl = document.querySelector('.page-header-left h2');
+    if (titleEl) titleEl.textContent = 'AI知识图谱';
+    var subtitleEl = document.querySelector('.page-header-left p');
+    if (subtitleEl) subtitleEl.textContent = d.dept + ' | 在管患者 ' + d.patientCount.toLocaleString() + ' 人';
+  }
+  init();
+  document.addEventListener('module:loaded', function(e) {
+    if (e.detail && e.detail.pageId === 'knowledge/graph') init();
+  });
+})();
+</script>
+</div>

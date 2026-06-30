@@ -1,0 +1,117 @@
+<div data-module-id="page-ai-config">
+
+          <div class="page-header">
+            <div class="page-header-left">
+              <h2>Dify智能体配置</h2>
+            </div>
+          </div>
+
+            <div class="card">
+              <div class="card-header">
+                <h3>Dify 接入参数配置</h3>
+              </div>
+              <div class="card-body">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label>Dify 服务地址</label>
+                    <input type="text" value="https://dify-hospital.internal/api/v1" placeholder="Dify API地址">
+                  </div>
+                  <div class="form-group">
+                    <label>API Key</label>
+                    <input type="password" value="app-xxxxxxxxxxxxxxxx" placeholder="Dify App API Key">
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label>超时时间 (秒)</label>
+                    <input type="number" value="30" placeholder="请求超时时间">
+                  </div>
+                  <div class="form-group">
+                    <label>最大并发数</label>
+                    <input type="number" value="10" placeholder="最大并发处理数">
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label>重试次数</label>
+                    <input type="number" value="3" placeholder="失败重试次数">
+                  </div>
+                  <div class="form-group">
+                    <label>日志保留天数</label>
+                    <input type="number" value="90" placeholder="日志保留天数">
+                  </div>
+                </div>
+                <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:16px;padding-top:16px;border-top:1px solid var(--gray-100)">
+                  <button class="btn btn-outline">测试连接</button>
+                  <button class="btn btn-primary">保存配置</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header">
+                <h3>智能体实例配置</h3>
+                <button class="btn btn-sm btn-primary" onclick="showModal('ai-agent-modal')">新增实例</button>
+              </div>
+              <div class="card-body">
+                <div class="table-wrapper">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>实例名称</th>
+                        <th>Dify App ID</th>
+                        <th>接入方式</th>
+                        <th>绑定病种</th>
+                        <th>输入类型</th>
+                        <th>自动启动</th>
+                        <th>状态</th>
+                        <th>操作</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><strong>病历后结构化</strong></td>
+                        <td style="font-family:monospace;font-size:12px;color:var(--gray-500)">app-emr-struct-v2</td>
+                        <td><span class="tag tag-info">Dify</span></td>
+                        <td>全部病种</td>
+                        <td>病历文书</td>
+                        <td><span class="tag tag-success">是</span></td>
+                        <td><span class="tag tag-success">运行中</span></td>
+                        <td>
+                          <button class="btn btn-sm btn-outline">编辑</button>
+                          <button class="btn btn-sm btn-outline">停止</button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><strong>检查报告结构化</strong></td>
+                        <td style="font-family:monospace;font-size:12px;color:var(--gray-500)">app-report-struct-v1</td>
+                        <td><span class="tag tag-info">Dify</span></td>
+                        <td>全部病种</td>
+                        <td>检查报告</td>
+                        <td><span class="tag tag-success">是</span></td>
+                        <td><span class="tag tag-success">运行中</span></td>
+                        <td>
+                          <button class="btn btn-sm btn-outline">编辑</button>
+                          <button class="btn btn-sm btn-outline">停止</button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><strong>智能诊断辅助</strong></td>
+                        <td style="font-family:monospace;font-size:12px;color:var(--gray-500)">app-diagnosis-v1</td>
+                        <td><span class="tag tag-info">Dify</span></td>
+                        <td>心血管内科</td>
+                        <td>病历+检查</td>
+                        <td><span class="tag tag-success">是</span></td>
+                        <td><span class="tag tag-success">运行中</span></td>
+                        <td>
+                          <button class="btn btn-sm btn-outline">编辑</button>
+                          <button class="btn btn-sm btn-outline">停止</button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+</div>

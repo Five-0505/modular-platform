@@ -1,0 +1,293 @@
+<div data-module-id="page-records-elements">
+
+          <div class="page-header">
+            <div class="page-header-left">
+              <h2>专科数据元管理</h2>
+            </div>
+          </div>
+
+            <div class="stats-row">
+              <div class="stat-card">
+                <div class="stat-icon blue"><svg viewBox="0 0 20 20" width="20" height="20"><rect x="3" y="3" width="6" height="6" rx="1" fill="none" stroke="currentColor" stroke-width="1.3"/><rect x="11" y="3" width="6" height="6" rx="1" fill="none" stroke="currentColor" stroke-width="1.3"/><rect x="3" y="11" width="6" height="6" rx="1" fill="none" stroke="currentColor" stroke-width="1.3"/><rect x="11" y="11" width="6" height="6" rx="1" fill="none" stroke="currentColor" stroke-width="1.3"/></svg></div>
+                <div class="stat-info">
+                  <div class="value">5,678</div>
+                  <div class="label">数据元总数</div>
+                </div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon green"><svg viewBox="0 0 20 20" width="20" height="20"><circle cx="10" cy="10" r="7" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="10" cy="10" r="4" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="10" cy="10" r="1" fill="currentColor"/></svg></div>
+                <div class="stat-info">
+                  <div class="value">89.7%</div>
+                  <div class="label">标准匹配率</div>
+                </div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon yellow"><svg viewBox="0 0 20 20" width="20" height="20"><path d="M3 15l4-4 3 2 4-5 3-1" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="17" cy="7" r="1.5" fill="none" stroke="currentColor" stroke-width="1.3"/></svg></div>
+                <div class="stat-info">
+                  <div class="value">342</div>
+                  <div class="label">值域定义数</div>
+                </div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon purple"><svg viewBox="0 0 20 20" width="20" height="20"><path d="M7 10a3 3 0 013-3h3a3 3 0 010 6h-3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M13 10a3 3 0 01-3 3H7a3 3 0 010-6h3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+                <div class="stat-info">
+                  <div class="value">92.1%</div>
+                  <div class="label">编码映射覆盖率</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header">
+                <h3>数据元列表</h3>
+                <div class="table-filters">
+                  <input type="text" placeholder="搜索编码或名称..." style="width:200px">
+                  <select>
+                    <option>所有类型</option>
+                    <option>文本</option>
+                    <option>数值</option>
+                    <option>枚举</option>
+                    <option>日期</option>
+                    <option>日期时间</option>
+                  </select>
+                  <select>
+                    <option>所有标准来源</option>
+                    <option>国家单病种</option>
+                    <option>互联互通</option>
+                    <option>临床研究</option>
+                    <option>院内自定义</option>
+                  </select>
+                  <button class="btn btn-sm btn-outline">批量导入</button>
+                  <button class="btn btn-sm btn-outline">批量导出</button>
+                  <button class="btn btn-sm btn-primary">新增数据元</button>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="table-wrapper">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>编码</th>
+                        <th>名称</th>
+                        <th>类型</th>
+                        <th>值域</th>
+                        <th>标准来源</th>
+                        <th>引用模板</th>
+                        <th>映射状态</th>
+                        <th>操作</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td style="font-family:monospace;color:var(--gray-600)">DE_AMI_001</td>
+                        <td><strong>入院日期</strong></td>
+                        <td><span class="tag tag-info">日期</span></td>
+                        <td>YYYY-MM-DD</td>
+                        <td>国家单病种</td>
+                        <td>12</td>
+                        <td><span class="tag tag-success">已映射</span></td>
+                        <td><button class="btn btn-sm btn-outline">查看</button></td>
+                      </tr>
+                      <tr>
+                        <td style="font-family:monospace;color:var(--gray-600)">DE_AMI_002</td>
+                        <td><strong>发病时间</strong></td>
+                        <td><span class="tag tag-info">日期时间</span></td>
+                        <td>YYYY-MM-DD HH:mm</td>
+                        <td>国家单病种</td>
+                        <td>8</td>
+                        <td><span class="tag tag-success">已映射</span></td>
+                        <td><button class="btn btn-sm btn-outline">查看</button></td>
+                      </tr>
+                      <tr>
+                        <td style="font-family:monospace;color:var(--gray-600)">DE_AMI_003</td>
+                        <td><strong>心电图类型</strong></td>
+                        <td><span class="tag tag-warning">枚举</span></td>
+                        <td>STEMI/NSTEMI/UAP</td>
+                        <td>国家单病种</td>
+                        <td>15</td>
+                        <td><span class="tag tag-success">已映射</span></td>
+                        <td><button class="btn btn-sm btn-outline">查看</button></td>
+                      </tr>
+                      <tr>
+                        <td style="font-family:monospace;color:var(--gray-600)">DE_AMI_004</td>
+                        <td><strong>肌钙蛋白值</strong></td>
+                        <td><span class="tag tag-primary">数值</span></td>
+                        <td>ng/mL, >=0.04</td>
+                        <td>互联互通</td>
+                        <td>6</td>
+                        <td><span class="tag tag-warning">待确认</span></td>
+                        <td><button class="btn btn-sm btn-outline">查看</button></td>
+                      </tr>
+                      <tr>
+                        <td style="font-family:monospace;color:var(--gray-600)">DE_AMI_005</td>
+                        <td><strong>D-to-B时间</strong></td>
+                        <td><span class="tag tag-primary">数值</span></td>
+                        <td>分钟, 0-999</td>
+                        <td>国家单病种</td>
+                        <td>10</td>
+                        <td><span class="tag tag-success">已映射</span></td>
+                        <td><button class="btn btn-sm btn-outline">查看</button></td>
+                      </tr>
+                      <tr>
+                        <td style="font-family:monospace;color:var(--gray-600)">DE_AMI_006</td>
+                        <td><strong>冠脉造影结果</strong></td>
+                        <td><span class="tag tag-gray">文本</span></td>
+                        <td>自由文本</td>
+                        <td>临床研究</td>
+                        <td>3</td>
+                        <td><span class="tag tag-danger">未映射</span></td>
+                        <td><button class="btn btn-sm btn-outline">查看</button></td>
+                      </tr>
+                      <tr>
+                        <td style="font-family:monospace;color:var(--gray-600)">DE_CBI_001</td>
+                        <td><strong>NIHSS入院评分</strong></td>
+                        <td><span class="tag tag-primary">数值</span></td>
+                        <td>0-42分</td>
+                        <td>国家单病种</td>
+                        <td>8</td>
+                        <td><span class="tag tag-success">已映射</span></td>
+                        <td><button class="btn btn-sm btn-outline">查看</button></td>
+                      </tr>
+                      <tr>
+                        <td style="font-family:monospace;color:var(--gray-600)">DE_HIP_001</td>
+                        <td><strong>Harris髋关节评分</strong></td>
+                        <td><span class="tag tag-primary">数值</span></td>
+                        <td>0-100分</td>
+                        <td>院内自定义</td>
+                        <td>5</td>
+                        <td><span class="tag tag-warning">待确认</span></td>
+                        <td><button class="btn btn-sm btn-outline">查看</button></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-top:12px;padding-top:12px;border-top:1px solid var(--gray-100)">
+                  <span style="font-size:12px;color:var(--gray-500)">共 5,678 个数据元 | 已映射 5,112 | 待确认 345 | 未映射 221</span>
+                  <div style="display:flex;gap:4px">
+                    <button class="btn btn-sm btn-outline" disabled>上一页</button>
+                    <button class="btn btn-sm btn-primary">1</button>
+                    <button class="btn btn-sm btn-outline">2</button>
+                    <button class="btn btn-sm btn-outline">3</button>
+                    <button class="btn btn-sm btn-outline">...</button>
+                    <button class="btn btn-sm btn-outline">71</button>
+                    <button class="btn btn-sm btn-outline">下一页</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 数据元类型分布 & 标准来源 -->
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+              <div class="card">
+                <div class="card-header">
+                  <h3>数据元类型分布</h3>
+                </div>
+                <div class="card-body">
+                  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+                    <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:var(--gray-50);border-radius:var(--radius-sm)">
+                      <span style="font-size:13px">枚举型</span>
+                      <span style="font-size:15px;font-weight:700;color:var(--primary)">2,345</span>
+                    </div>
+                    <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:var(--gray-50);border-radius:var(--radius-sm)">
+                      <span style="font-size:13px">文本型</span>
+                      <span style="font-size:15px;font-weight:700;color:var(--success)">1,234</span>
+                    </div>
+                    <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:var(--gray-50);border-radius:var(--radius-sm)">
+                      <span style="font-size:13px">数值型</span>
+                      <span style="font-size:15px;font-weight:700;color:var(--warning)">1,089</span>
+                    </div>
+                    <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:var(--gray-50);border-radius:var(--radius-sm)">
+                      <span style="font-size:13px">日期型</span>
+                      <span style="font-size:15px;font-weight:700;color:var(--info)">567</span>
+                    </div>
+                    <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:var(--gray-50);border-radius:var(--radius-sm)">
+                      <span style="font-size:13px">日期时间型</span>
+                      <span style="font-size:15px;font-weight:700;color:var(--purple)">345</span>
+                    </div>
+                    <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:var(--gray-50);border-radius:var(--radius-sm)">
+                      <span style="font-size:13px">布尔型</span>
+                      <span style="font-size:15px;font-weight:700;color:var(--gray-600)">98</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header">
+                  <h3>标准来源分布</h3>
+                </div>
+                <div class="card-body">
+                  <div style="font-size:13px">
+                    <div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--gray-100)">
+                      <span>国家单病种标准</span>
+                      <span style="font-weight:600">2,890 (50.9%)</span>
+                    </div>
+                    <div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--gray-100)">
+                      <span>互联互通标准</span>
+                      <span style="font-weight:600">1,567 (27.6%)</span>
+                    </div>
+                    <div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--gray-100)">
+                      <span>临床研究专病</span>
+                      <span style="font-weight:600">678 (11.9%)</span>
+                    </div>
+                    <div style="display:flex;justify-content:space-between;padding:10px 0">
+                      <span>院内自定义</span>
+                      <span style="font-weight:600">543 (9.6%)</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+<script>
+(function() {
+  function init() {
+    if (typeof DiseaseContext === 'undefined') return;
+    var d = DiseaseContext.get();
+    var data = DiseaseContext.getData();
+    var stats = DiseaseContext.getStats();
+    // 更新页面标题
+    var titleEl = document.querySelector('.page-header-left h2');
+    if (titleEl) titleEl.textContent = '专科数据元管理';
+    // 更新统计卡片
+    var statValues = document.querySelectorAll('.stats-row .stat-info .value');
+    if (statValues.length >= 1 && stats.elementCount !== undefined) statValues[0].textContent = stats.elementCount.toLocaleString();
+    if (statValues.length >= 2 && stats.standardMatchRate !== undefined) statValues[1].textContent = stats.standardMatchRate + '%';
+    if (statValues.length >= 3 && stats.valueDomainCount !== undefined) statValues[2].textContent = stats.valueDomainCount;
+    if (statValues.length >= 4 && stats.codeCoverage !== undefined) statValues[3].textContent = stats.codeCoverage + '%';
+    // 更新数据元表格
+    var tbody = document.querySelector('.card table tbody');
+    if (tbody && data.elements && data.elements.length > 0) {
+      tbody.innerHTML = data.elements.map(function(el) {
+        var typeTag = 'tag-gray';
+        if (el.type === '数值') typeTag = 'tag-primary';
+        else if (el.type === '枚举') typeTag = 'tag-warning';
+        else if (el.type === '日期' || el.type === '日期时间') typeTag = 'tag-info';
+        var statusTag = 'tag-success';
+        var statusText = '已映射';
+        if (el.status === '待确认') { statusTag = 'tag-warning'; statusText = '待确认'; }
+        else if (el.status === '未映射') { statusTag = 'tag-danger'; statusText = '未映射'; }
+        return '<tr>' +
+          '<td style="font-family:monospace;color:var(--gray-600)">' + el.code + '</td>' +
+          '<td><strong>' + el.name + '</strong></td>' +
+          '<td><span class="tag ' + typeTag + '">' + el.type + '</span></td>' +
+          '<td>' + (el.valueRange || '--') + '</td>' +
+          '<td>' + (el.source || '--') + '</td>' +
+          '<td>' + (el.templateCount || '--') + '</td>' +
+          '<td><span class="tag ' + statusTag + '">' + statusText + '</span></td>' +
+          '<td><button class="btn btn-sm btn-outline">查看</button></td>' +
+        '</tr>';
+      }).join('');
+      // 更新分页摘要
+      var mapped = data.elements.filter(function(e) { return e.status === '已映射'; }).length;
+      var pending = data.elements.filter(function(e) { return e.status === '待确认'; }).length;
+      var unmapped = data.elements.filter(function(e) { return e.status === '未映射'; }).length;
+      var summaryEl = document.querySelector('.card-body div[style*="border-top"] span');
+      if (summaryEl) summaryEl.textContent = '共 ' + data.elements.length + ' 个数据元 | 已映射 ' + mapped + ' | 待确认 ' + pending + ' | 未映射 ' + unmapped;
+    }
+  }
+  init();
+  document.addEventListener('module:loaded', function(e) { if (e.detail && e.detail.pageId === 'records/elements') init(); });
+})();
+</script>
+
+</div>

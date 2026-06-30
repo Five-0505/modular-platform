@@ -1,0 +1,161 @@
+<div data-module-id="page-data-center-ai">
+
+          <div class="page-header">
+            <div class="page-header-left">
+              <h2>AI数据治理</h2>
+            </div>
+          </div>
+
+            <div class="stats-row">
+              <div class="stat-card">
+                <div class="stat-icon blue"><svg viewBox="0 0 20 20" width="20" height="20"><circle cx="10" cy="10" r="7" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="10" cy="10" r="4" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="10" cy="10" r="1" fill="currentColor"/></svg></div>
+                <div class="stat-info">
+                  <div class="value">97.8%</div>
+                  <div class="label">AI 结构化识别准确率</div>
+                </div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon green"><svg viewBox="0 0 20 20" width="20" height="20"><circle cx="10" cy="10" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 2v2M10 16v2M2 10h2M16 10h2M4.2 4.2l1.4 1.4M14.4 14.4l1.4 1.4M15.8 4.2l-1.4 1.4M5.6 14.4l-1.4 1.4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+                <div class="stat-info">
+                  <div class="value">23,456</div>
+                  <div class="label">今日处理量</div>
+                </div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon yellow"><svg viewBox="0 0 20 20" width="20" height="20"><path d="M10 3L2 17h16L10 3z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M10 8v4M10 14v1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+                <div class="stat-info">
+                  <div class="value">0.3%</div>
+                  <div class="label">异常数据占比</div>
+                </div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon purple"><svg viewBox="0 0 20 20" width="20" height="20"><path d="M10 2l7 3v5c0 4.4-3 7.5-7 9-4-1.5-7-4.6-7-9V5l7-3z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></div>
+                <div class="stat-info">
+                  <div class="value">92.1%</div>
+                  <div class="label">标准编码映射覆盖率</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header">
+                <h3>AI 后结构化处理监控</h3>
+                <div class="table-filters">
+                  <select>
+                    <option>所有病种</option>
+                    <option>冠心病/急性心肌梗死</option>
+                    <option>脑梗死</option>
+                    <option>结肠癌</option>
+                  </select>
+                  <select>
+                    <option>所有状态</option>
+                    <option>处理中</option>
+                    <option>已完成</option>
+                    <option>异常</option>
+                  </select>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="table-wrapper">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>批处理任务</th>
+                        <th>来源</th>
+                        <th>病种</th>
+                        <th>文档数</th>
+                        <th>识别准确率</th>
+                        <th>耗时</th>
+                        <th>状态</th>
+                        <th>操作</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><strong>AMI病历结构化-0626</strong></td>
+                        <td>EMR</td>
+                        <td>冠心病/急性心肌梗死</td>
+                        <td>128</td>
+                        <td>98.2%</td>
+                        <td>6m 12s</td>
+                        <td><span class="tag tag-success">已完成</span></td>
+                        <td><button class="btn btn-sm btn-outline">查看</button></td>
+                      </tr>
+                      <tr>
+                        <td><strong>脑梗死病历结构化-0626</strong></td>
+                        <td>EMR</td>
+                        <td>脑梗死</td>
+                        <td>89</td>
+                        <td>97.5%</td>
+                        <td>--</td>
+                        <td><span class="tag tag-primary">处理中</span></td>
+                        <td><button class="btn btn-sm btn-outline">监控</button></td>
+                      </tr>
+                      <tr>
+                        <td><strong>结肠癌病历结构化-0625</strong></td>
+                        <td>EMR</td>
+                        <td>结肠癌</td>
+                        <td>45</td>
+                        <td>96.8%</td>
+                        <td>3m 45s</td>
+                        <td><span class="tag tag-danger">异常</span></td>
+                        <td><button class="btn btn-sm btn-danger">重试</button></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header">
+                <h3>AI 治理质量预警</h3>
+              </div>
+              <div class="card-body">
+                <div class="todo-item">
+                  <div class="todo-priority high"></div>
+                  <div class="todo-content">
+                    <div class="todo-title">结肠癌结构化准确率低于阈值</div>
+                    <div class="todo-desc">当前准确率 96.8%，低于 97% 阈值，建议优化病种提示词</div>
+                    <div class="todo-meta">
+                      <span>2026-06-26 09:15</span>
+                      <span class="tag tag-danger">紧急</span>
+                    </div>
+                  </div>
+                  <div class="todo-actions">
+                    <button class="btn btn-sm btn-primary">优化提示词</button>
+                  </div>
+                </div>
+                <div class="todo-item">
+                  <div class="todo-priority medium"></div>
+                  <div class="todo-content">
+                    <div class="todo-title">标准编码缺失映射拦截</div>
+                    <div class="todo-desc">采集环节发现 12 个编码未找到映射关系，需维护字典</div>
+                    <div class="todo-meta">
+                      <span>2026-06-26 08:30</span>
+                      <span class="tag tag-warning">中等</span>
+                    </div>
+                  </div>
+                  <div class="todo-actions">
+                    <button class="btn btn-sm btn-primary">跳转字典</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+</div>
+
+<script>
+(function() {
+  function init() {
+    if (typeof DiseaseContext === 'undefined') return;
+    var d = DiseaseContext.get();
+    var h2 = document.querySelector('h2');
+    if (h2) h2.textContent = 'AI数据治理';
+  }
+  init();
+  document.addEventListener('module:loaded', function(e) {
+    if (e.detail && e.detail.pageId === 'data-center/ai-governance') init();
+  });
+})();
+</script>

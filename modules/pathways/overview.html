@@ -1,0 +1,396 @@
+<div data-module-id="pathways/overview">
+  <div class="page-header">
+    <div class="page-header-left">
+      <h2 id="pathway-overview-title">诊疗路径总览</h2>
+      <p id="pathway-overview-subtitle">入径统计看板与入径患者实时追踪</p>
+    </div>
+  </div>
+
+          <!-- === 三层联动: 顶部统计看板 === -->
+          <div class="pathway-kpi-section">
+            <!-- 核心运营指标 -->
+            <div class="stats-row">
+              <div class="stat-card">
+                <div class="stat-icon blue"><svg viewBox="0 0 20 20" width="20" height="20"><path d="M4 10h12M12 6l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                <div class="stat-info">
+                  <div class="value">1,258</div>
+                  <div class="label">入径总人数</div>
+                  <div class="trend up"><span class="arrow">↑</span> 8.3% 较上月</div>
+                </div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon green"><svg viewBox="0 0 20 20" width="20" height="20"><path d="M3 15l4-4 3 2 4-5 3-1" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="17" cy="7" r="1.5" fill="none" stroke="currentColor" stroke-width="1.3"/></svg></div>
+                <div class="stat-info">
+                  <div class="value">92.7%</div>
+                  <div class="label">入径率</div>
+                  <div class="trend up"><span class="arrow">↑</span> 2.1%</div>
+                </div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon yellow"><svg viewBox="0 0 20 20" width="20" height="20"><path d="M4 6h12M4 10h12M4 14h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+                <div class="stat-info">
+                  <div class="value">4.2%</div>
+                  <div class="label">整体变异率</div>
+                  <div class="trend down"><span class="arrow">↓</span> 1.3%</div>
+                </div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon purple"><svg viewBox="0 0 20 20" width="20" height="20"><circle cx="10" cy="10" r="7" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M7 10l2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                <div class="stat-info">
+                  <div class="value">86.3%</div>
+                  <div class="label">路径完成率</div>
+                </div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon red"><svg viewBox="0 0 20 20" width="20" height="20"><rect x="3" y="4" width="14" height="13" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M3 8h14M7 2v4M13 2v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+                <div class="stat-info">
+                  <div class="value">8.5天</div>
+                  <div class="label">平均住院日</div>
+                  <div class="trend down"><span class="arrow">↓</span> 0.8天</div>
+                </div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon blue"><svg viewBox="0 0 20 20" width="20" height="20"><text x="10" y="14" text-anchor="middle" font-size="14" font-weight="600" fill="currentColor" font-family="sans-serif">¥</text></svg></div>
+                <div class="stat-info">
+                  <div class="value">3.2万</div>
+                  <div class="label">次均住院费用</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 病种横向对比排行 -->
+            <div class="pathway-kpi-charts">
+              <div class="card" style="margin-bottom:0">
+                <div class="card-header">
+                  <h3>各病种入径率排行</h3>
+                </div>
+                <div class="card-body">
+                  <div class="pathway-ranking-list">
+                    <div class="pathway-ranking-item">
+                      <span class="rank rank-1">1</span>
+                      <span class="rank-name">冠心病/急性心肌梗死</span>
+                      <div class="rank-bar"><div class="fill" style="width:96.2%"></div></div>
+                      <span class="rank-value">96.2%</span>
+                    </div>
+                    <div class="pathway-ranking-item">
+                      <span class="rank rank-2">2</span>
+                      <span class="rank-name">脑梗死</span>
+                      <div class="rank-bar"><div class="fill" style="width:94.8%"></div></div>
+                      <span class="rank-value">94.8%</span>
+                    </div>
+                    <div class="pathway-ranking-item">
+                      <span class="rank rank-3">3</span>
+                      <span class="rank-name">髋关节</span>
+                      <div class="rank-bar"><div class="fill" style="width:93.1%"></div></div>
+                      <span class="rank-value">93.1%</span>
+                    </div>
+                    <div class="pathway-ranking-item">
+                      <span class="rank">4</span>
+                      <span class="rank-name">膝关节</span>
+                      <div class="rank-bar"><div class="fill" style="width:91.5%"></div></div>
+                      <span class="rank-value">91.5%</span>
+                    </div>
+                    <div class="pathway-ranking-item">
+                      <span class="rank">5</span>
+                      <span class="rank-name">结肠癌</span>
+                      <div class="rank-bar"><div class="fill" style="width:88.7%"></div></div>
+                      <span class="rank-value">88.7%</span>
+                    </div>
+                    <div class="pathway-ranking-item">
+                      <span class="rank">6</span>
+                      <span class="rank-name">脑出血</span>
+                      <div class="rank-bar"><div class="fill" style="width:85.3%"></div></div>
+                      <span class="rank-value">85.3%</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card" style="margin-bottom:0">
+                <div class="card-header">
+                  <h3>月度趋势</h3>
+                </div>
+                <div class="card-body">
+                  <div class="chart-placeholder" style="height:220px">入径率/变异率/完成率 月度趋势折线图</div>
+                </div>
+              </div>
+
+              <div class="card" style="margin-bottom:0">
+                <div class="card-header">
+                  <h3>变异原因分布</h3>
+                </div>
+                <div class="card-body">
+                  <div style="font-size:13px">
+                    <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--gray-100)">
+                      <span style="display:flex;align-items:center;gap:6px"><span style="width:10px;height:10px;border-radius:50%;background:var(--primary);display:inline-block"></span> 并发症</span>
+                      <span style="font-weight:600">35%</span>
+                    </div>
+                    <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--gray-100)">
+                      <span style="display:flex;align-items:center;gap:6px"><span style="width:10px;height:10px;border-radius:50%;background:var(--warning);display:inline-block"></span> 患者拒绝</span>
+                      <span style="font-weight:600">25%</span>
+                    </div>
+                    <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--gray-100)">
+                      <span style="display:flex;align-items:center;gap:6px"><span style="width:10px;height:10px;border-radius:50%;background:var(--success);display:inline-block"></span> 病情变化</span>
+                      <span style="font-weight:600">22%</span>
+                    </div>
+                    <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--gray-100)">
+                      <span style="display:flex;align-items:center;gap:6px"><span style="width:10px;height:10px;border-radius:50%;background:var(--danger);display:inline-block"></span> 费用超限</span>
+                      <span style="font-weight:600">10%</span>
+                    </div>
+                    <div style="display:flex;justify-content:space-between;padding:8px 0">
+                      <span style="display:flex;align-items:center;gap:6px"><span style="width:10px;height:10px;border-radius:50%;background:var(--gray-400);display:inline-block"></span> 其他</span>
+                      <span style="font-weight:600">8%</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- === 中部: 入径患者列表 === -->
+          <div class="card">
+            <div class="card-header">
+              <h3>入径患者列表</h3>
+              <div class="table-filters">
+                <input type="text" placeholder="住院号/患者姓名..." style="width:160px">
+                <select>
+                  <option>所有专科</option>
+                  <option>心血管内科</option>
+                  <option>神经内科</option>
+                  <option>神经外科</option>
+                  <option>结直肠外科</option>
+                  <option>骨科</option>
+                  <option>核医学科</option>
+                  <option>泌尿外科</option>
+                </select>
+                <select>
+                  <option>所有病种</option>
+                  <option>冠心病/急性心肌梗死</option>
+                  <option>脑梗死</option>
+                  <option>脑出血</option>
+                  <option>结肠癌</option>
+                </select>
+                <select>
+                  <option>所有状态</option>
+                  <option>路径进行中</option>
+                  <option>已完成</option>
+                  <option>已退出</option>
+                  <option>有变异</option>
+                </select>
+                <button class="btn btn-sm btn-outline">批量督办</button>
+                <button class="btn btn-sm btn-outline">导出台账</button>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="table-wrapper">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>患者信息</th>
+                      <th>诊断/病种</th>
+                      <th>入径时间</th>
+                      <th>当前节点</th>
+                      <th>节点进度</th>
+                      <th>住院天数</th>
+                      <th>变异</th>
+                      <th>状态</th>
+                      <th>操作</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr onclick="showDrawer('patient-drawer')" style="cursor:pointer">
+                      <td>
+                        <div style="display:flex;align-items:center;gap:8px">
+                          <div class="patient-avatar" style="width:36px;height:36px;font-size:13px;flex-shrink:0;background:var(--primary)">王</div>
+                          <div>
+                            <div style="font-weight:600;font-size:13px">王建国</div>
+                            <div style="font-size:11px;color:var(--gray-500)">男 65岁 | 202606001</div>
+                          </div>
+                        </div>
+                      </td>
+                      <td>冠心病/急性心肌梗死</td>
+                      <td>2026-06-24</td>
+                      <td><span class="tag tag-primary">节点4 辅助检查</span></td>
+                      <td>
+                        <div class="path-progress" style="width:160px">
+                          <div class="path-node done"></div><div class="path-node done"></div>
+                          <div class="path-node done"></div><div class="path-node current"></div>
+                          <div class="path-node"></div><div class="path-node"></div>
+                          <div class="path-node"></div><div class="path-node"></div>
+                          <div class="path-node"></div><div class="path-node"></div>
+                          <div class="path-node"></div><div class="path-node"></div>
+                        </div>
+                        <span style="font-size:11px;color:var(--gray-500)">4/12</span>
+                      </td>
+                      <td>2天</td>
+                      <td><span class="tag tag-gray">无</span></td>
+                      <td><span class="tag tag-primary">路径进行中</span></td>
+                      <td><button class="btn btn-sm btn-outline" onclick="showDrawer('pathway-drawer')">详情</button></td>
+                    </tr>
+                    <tr onclick="showDrawer('patient-drawer')" style="cursor:pointer">
+                      <td>
+                        <div style="display:flex;align-items:center;gap:8px">
+                          <div class="patient-avatar" style="width:36px;height:36px;font-size:13px;flex-shrink:0;background:var(--success)">李</div>
+                          <div>
+                            <div style="font-weight:600;font-size:13px">李雪梅</div>
+                            <div style="font-size:11px;color:var(--gray-500)">女 58岁 | 202606002</div>
+                          </div>
+                        </div>
+                      </td>
+                      <td>脑梗死</td>
+                      <td>2026-06-23</td>
+                      <td><span class="tag tag-primary">节点6 药物治疗</span></td>
+                      <td>
+                        <div class="path-progress" style="width:160px">
+                          <div class="path-node done"></div><div class="path-node done"></div>
+                          <div class="path-node done"></div><div class="path-node done"></div>
+                          <div class="path-node done"></div><div class="path-node current"></div>
+                          <div class="path-node"></div><div class="path-node"></div>
+                          <div class="path-node"></div><div class="path-node"></div>
+                          <div class="path-node"></div><div class="path-node"></div>
+                        </div>
+                        <span style="font-size:11px;color:var(--gray-500)">6/12</span>
+                      </td>
+                      <td>3天</td>
+                      <td><span class="tag tag-gray">无</span></td>
+                      <td><span class="tag tag-primary">路径进行中</span></td>
+                      <td><button class="btn btn-sm btn-outline" onclick="showDrawer('pathway-drawer')">详情</button></td>
+                    </tr>
+                    <tr onclick="showDrawer('patient-drawer')" style="cursor:pointer">
+                      <td>
+                        <div style="display:flex;align-items:center;gap:8px">
+                          <div class="patient-avatar" style="width:36px;height:36px;font-size:13px;flex-shrink:0;background:var(--warning)">张</div>
+                          <div>
+                            <div style="font-weight:600;font-size:13px">张伟</div>
+                            <div style="font-size:11px;color:var(--gray-500)">男 72岁 | 202606003</div>
+                          </div>
+                        </div>
+                      </td>
+                      <td>冠心病/急性心肌梗死</td>
+                      <td>2026-06-20</td>
+                      <td><span class="tag tag-danger">节点9 出院评估</span></td>
+                      <td>
+                        <div class="path-progress" style="width:160px">
+                          <div class="path-node done"></div><div class="path-node done"></div>
+                          <div class="path-node done"></div><div class="path-node done"></div>
+                          <div class="path-node done"></div><div class="path-node done"></div>
+                          <div class="path-node done"></div><div class="path-node done"></div>
+                          <div class="path-node current"></div><div class="path-node"></div>
+                          <div class="path-node"></div><div class="path-node"></div>
+                        </div>
+                        <span style="font-size:11px;color:var(--gray-500)">9/12</span>
+                      </td>
+                      <td>6天</td>
+                      <td><span class="tag tag-warning">并发症</span></td>
+                      <td><span class="tag tag-danger">节点超时</span></td>
+                      <td><button class="btn btn-sm btn-outline" onclick="showDrawer('pathway-drawer')">详情</button></td>
+                    </tr>
+                    <tr onclick="showDrawer('patient-drawer')" style="cursor:pointer">
+                      <td>
+                        <div style="display:flex;align-items:center;gap:8px">
+                          <div class="patient-avatar" style="width:36px;height:36px;font-size:13px;flex-shrink:0;background:var(--info)">赵</div>
+                          <div>
+                            <div style="font-weight:600;font-size:13px">赵丽华</div>
+                            <div style="font-size:11px;color:var(--gray-500)">女 68岁 | 202606004</div>
+                          </div>
+                        </div>
+                      </td>
+                      <td>髋关节</td>
+                      <td>2026-06-25</td>
+                      <td><span class="tag tag-primary">节点3 术前准备</span></td>
+                      <td>
+                        <div class="path-progress" style="width:160px">
+                          <div class="path-node done"></div><div class="path-node done"></div>
+                          <div class="path-node current"></div><div class="path-node"></div>
+                          <div class="path-node"></div><div class="path-node"></div>
+                          <div class="path-node"></div><div class="path-node"></div>
+                          <div class="path-node"></div><div class="path-node"></div>
+                          <div class="path-node"></div><div class="path-node"></div>
+                        </div>
+                        <span style="font-size:11px;color:var(--gray-500)">3/12</span>
+                      </td>
+                      <td>1天</td>
+                      <td><span class="tag tag-gray">无</span></td>
+                      <td><span class="tag tag-primary">路径进行中</span></td>
+                      <td><button class="btn btn-sm btn-outline" onclick="showDrawer('pathway-drawer')">详情</button></td>
+                    </tr>
+                    <tr style="cursor:pointer">
+                      <td>
+                        <div style="display:flex;align-items:center;gap:8px">
+                          <div class="patient-avatar" style="width:36px;height:36px;font-size:13px;flex-shrink:0;background:var(--gray-400)">陈</div>
+                          <div>
+                            <div style="font-weight:600;font-size:13px">陈志强</div>
+                            <div style="font-size:11px;color:var(--gray-500)">男 55岁 | 202606005</div>
+                          </div>
+                        </div>
+                      </td>
+                      <td>结肠癌</td>
+                      <td>2026-06-21</td>
+                      <td><span class="tag tag-success">路径完成</span></td>
+                      <td>
+                        <div class="path-progress" style="width:160px">
+                          <div class="path-node done"></div><div class="path-node done"></div>
+                          <div class="path-node done"></div><div class="path-node done"></div>
+                          <div class="path-node done"></div><div class="path-node done"></div>
+                          <div class="path-node done"></div><div class="path-node done"></div>
+                          <div class="path-node done"></div><div class="path-node done"></div>
+                          <div class="path-node done"></div><div class="path-node done"></div>
+                        </div>
+                        <span style="font-size:11px;color:var(--gray-500)">12/12</span>
+                      </td>
+                      <td>5天</td>
+                      <td><span class="tag tag-warning">费用</span></td>
+                      <td><span class="tag tag-success">已完成</span></td>
+                      <td><button class="btn btn-sm btn-outline" onclick="showDrawer('pathway-drawer')">详情</button></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-top:12px;padding-top:12px;border-top:1px solid var(--gray-100)">
+                <span style="font-size:12px;color:var(--gray-500)">共 1,258 名在径患者 | 进行中 1,102 | 已完成 132 | 已退出 24</span>
+                <div style="display:flex;gap:4px">
+                  <button class="btn btn-sm btn-outline" disabled>上一页</button>
+                  <button class="btn btn-sm btn-primary">1</button>
+                  <button class="btn btn-sm btn-outline">2</button>
+                  <button class="btn btn-sm btn-outline">3</button>
+                  <button class="btn btn-sm btn-outline">下一页</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+<script>
+(function() {
+  function initPathwayOverview() {
+    if (typeof DiseaseContext === 'undefined') return;
+    var d = DiseaseContext.get();
+    var stats = DiseaseContext.getStats();
+
+    var titleEl = document.getElementById('pathway-overview-title');
+    if (titleEl) titleEl.textContent = '诊疗路径总览';
+    var subEl = document.getElementById('pathway-overview-subtitle');
+    if (subEl) subEl.textContent = d.dept + ' | 入径统计看板与入径患者实时追踪';
+
+    var values = document.querySelectorAll('.stat-info .value');
+    if (values.length >= 6) {
+      values[0].textContent = Math.floor(stats.patientCount * 0.85).toLocaleString();
+      values[1].textContent = stats.completionRate;
+      values[2].textContent = (2 + (stats.patientCount % 5) * 0.5).toFixed(1) + '%';
+      values[3].textContent = (75 + (stats.patientCount % 20)).toFixed(1) + '%';
+      values[4].textContent = stats.avgStayDays + '天';
+      values[5].textContent = (2 + (stats.patientCount % 4)).toFixed(1) + '万';
+    }
+
+    var bc = document.getElementById('breadcrumb');
+    if (bc) {
+      bc.innerHTML = '<span>诊疗路径总览</span>';
+    }
+  }
+
+  initPathwayOverview();
+  document.addEventListener('module:loaded', function(e) {
+    if (e.detail && e.detail.pageId === 'pathways/overview') initPathwayOverview();
+  });
+})();
+</script>
+</div>

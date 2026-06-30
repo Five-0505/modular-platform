@@ -1,0 +1,200 @@
+<div data-module-id="page-pathways-nodes">
+
+  <div class="page-header">
+    <div class="page-header-left">
+      <h2>节点规则配置</h2>
+      <p id="pathway-nodes-subtitle">12节点标准化配置，覆盖诊前筛查至效果评价全闭环</p>
+    </div>
+  </div>
+
+  <!-- 节点列表视图 -->
+  <div id="pathway-nodes-list">
+    <div class="card">
+      <div class="card-header">
+        <div style="display:flex;align-items:center;gap:12px">
+          <h3>12 节点标准化配置</h3>
+          <span id="pathway-disease-label" style="font-size:12px;color:var(--text-tertiary)">当前病种路径</span>
+        </div>
+      </div>
+      <div class="card-body" style="padding:0">
+        <div id="pathway-nodes-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--gray-200,#e2e8f0)">
+          <!-- 由JS动态生成 -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 节点详情配置视图 -->
+  <div id="pathway-node-detail" style="display:none"></div>
+
+<script>
+(function() {
+  var currentNodeIdx = null;
+
+  var nodeDefaults = [
+    { title:'诊前筛查', desc:'ICD编码匹配, 入径资格校验', trigger:'入院登记', template:'入院记录', limit:'即时', knowledge:'单病种入径标准' },
+    { title:'入院评估', desc:'GRACE评分, 风险分层, 生命体征采集', trigger:'入院后2h内', template:'入院评估单', limit:'2小时', knowledge:'风险评估量表' },
+    { title:'急救处置', desc:'D-to-B时间监控, 再灌注治疗启动', trigger:'确诊STEMI', template:'急救记录', limit:'90分钟', knowledge:'急救流程规范' },
+    { title:'辅助检查', desc:'心电图, 心肌标志物, 影像学检查', trigger:'入院后', template:'检查申请单', limit:'6小时', knowledge:'检查项目清单' },
+    { title:'诊断确认', desc:'主诊断+合并症编码确认', trigger:'检查结果回报', template:'诊断证明', limit:'24小时', knowledge:'ICD编码规则' },
+    { title:'手术/介入', desc:'PCI术前评估, 手术记录, 知情同意', trigger:'治疗决策', template:'手术记录', limit:'术前', knowledge:'手术适应症' },
+    { title:'术后监护', desc:'ICU监护, 并发症筛查, 生命体征监测', trigger:'术后', template:'监护记录', limit:'术后24h', knowledge:'并发症预警' },
+    { title:'药物治疗', desc:'抗血小板, 调脂, 心衰管理方案', trigger:'术后/入院后', template:'医嘱单', limit:'持续', knowledge:'用药指南' },
+    { title:'康复评估', desc:'心脏康复, 运动耐量评估', trigger:'病情稳定后', template:'康复评估单', limit:'出院前', knowledge:'康复方案' },
+    { title:'出院评估', desc:'出院标准校验, 费用核算, 病历质控', trigger:'达到出院标准', template:'出院小结', limit:'出院前1天', knowledge:'出院标准' },
+    { title:'出院宣教', desc:'用药指导, 随访计划, 生活方式建议', trigger:'出院当日', template:'宣教记录', limit:'出院前', knowledge:'健康教育' },
+    { title:'效果评价', desc:'30天再入院率, 并发症统计, 费用分析', trigger:'出院后30天', template:'随访记录', limit:'30天', knowledge:'质控指标' }
+  ];
+
+  function getStatusForNode(idx, total) {
+    if (idx < total * 0.3) return 'completed';
+    if (idx === Math.floor(total * 0.3)) return 'current';
+    return '';
+  }
+
+  function showNodeList() {
+    currentNodeIdx = null;
+    document.getElementById('pathway-nodes-list').style.display = '';
+    document.getElementById('pathway-node-detail').style.display = 'none';
+  }
+
+  function showNodeDetail(idx, d) {
+    currentNodeIdx = idx;
+    var node = nodeDefaults[idx];
+    var pathways = DiseaseContext.getPathways();
+    var pathwayName = pathways.length ? pathways[0].name : d.name + '诊疗路径';
+
+    var html = '';
+
+    // 节点头部信息
+    html += '<div class="card" style="margin-bottom:16px"><div class="card-body" style="padding:20px">';
+    html += '<div style="display:flex;align-items:center;gap:20px">';
+    html += '<button class="btn btn-outline" onclick="document.dispatchEvent(new CustomEvent(\'pathway:nodes-back\'))" style="flex-shrink:0">';
+    html += '<svg viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:6px;vertical-align:-3px"><path d="M12 4l-6 6 6 6"/></svg>';
+    html += '返回</button>';
+    html += '<div style="width:56px;height:56px;border-radius:50%;background:var(--primary,#3b82f6);color:#fff;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:700;flex-shrink:0">' + (idx+1) + '</div>';
+    html += '<div style="flex:1">';
+    html += '<div style="font-size:18px;font-weight:700;color:var(--text-primary)">' + node.title + '</div>';
+    html += '<div style="font-size:13px;color:var(--text-secondary);margin-top:4px">' + node.desc + '</div>';
+    html += '</div>';
+    html += '<span class="tag tag-success">已配置</span>';
+    html += '</div>';
+    html += '</div></div>';
+
+    // 配置表单
+    html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">';
+
+    // 基本配置
+    html += '<div class="card"><div class="card-header"><h3>基本配置</h3></div><div class="card-body">';
+    html += '<div class="form-group"><label>节点名称</label><input type="text" value="' + node.title + '" style="width:100%"></div>';
+    html += '<div class="form-group"><label>节点描述</label><textarea style="width:100%;min-height:60px">' + node.desc + '</textarea></div>';
+    html += '<div class="form-group"><label>触发条件</label><input type="text" value="' + node.trigger + '" style="width:100%"></div>';
+    html += '<div class="form-group"><label>时限要求</label><input type="text" value="' + node.limit + '" style="width:100%"></div>';
+    html += '</div></div>';
+
+    // 关联配置
+    html += '<div class="card"><div class="card-header"><h3>关联配置</h3></div><div class="card-body">';
+    html += '<div class="form-group"><label>关联模板</label><select style="width:100%"><option selected>' + node.template + '</option><option>自定义模板A</option><option>自定义模板B</option></select></div>';
+    html += '<div class="form-group"><label>关联知识库</label><select style="width:100%"><option selected>' + node.knowledge + '</option><option>临床指南</option><option>专家共识</option></select></div>';
+    html += '<div class="form-group"><label>关联量表</label><select style="width:100%"><option>GRACE评分</option><option>NIHSS评分</option><option>Braden评分</option></select></div>';
+    html += '<div class="form-group"><label>数据回写</label><select style="width:100%"><option>自动回写RDR</option><option>手动确认后回写</option><option>不回写</option></select></div>';
+    html += '</div></div>';
+
+    html += '</div>';
+
+    // 质控规则
+    html += '<div class="card" style="margin-top:16px"><div class="card-header"><h3>质控规则</h3><button class="btn btn-sm btn-primary">新增规则</button></div><div class="card-body">';
+    html += '<div class="table-wrapper"><table><thead><tr><th>规则名称</th><th>规则类型</th><th>阈值</th><th>预警级别</th><th>状态</th><th>操作</th></tr></thead><tbody>';
+    html += '<tr><td><strong>' + node.title + '时限监控</strong></td><td><span class="tag tag-info">时效</span></td><td>' + node.limit + '</td><td><span class="tag tag-danger">严重</span></td><td><span class="tag tag-success">启用</span></td><td><button class="btn btn-sm btn-outline">编辑</button></td></tr>';
+    html += '<tr><td><strong>' + node.title + '必填字段检查</strong></td><td><span class="tag tag-warning">完整性</span></td><td>必填</td><td><span class="tag tag-warning">警告</span></td><td><span class="tag tag-success">启用</span></td><td><button class="btn btn-sm btn-outline">编辑</button></td></tr>';
+    html += '</tbody></table></div>';
+    html += '</div></div>';
+
+    // 保存按钮
+    html += '<div style="display:flex;justify-content:flex-end;gap:12px;margin-top:20px">';
+    html += '<button class="btn btn-outline">重置</button>';
+    html += '<button class="btn btn-primary">保存配置</button>';
+    html += '</div>';
+
+    var detailView = document.getElementById('pathway-node-detail');
+    detailView.innerHTML = html;
+    document.getElementById('pathway-nodes-list').style.display = 'none';
+    detailView.style.display = '';
+  }
+
+  function init() {
+    if (typeof DiseaseContext === 'undefined') return;
+    var d = DiseaseContext.get();
+    var pathways = DiseaseContext.getPathways();
+    var pathwayName = pathways.length ? pathways[0].name : d.name + '诊疗路径';
+
+    // 更新标题
+    var subEl = document.getElementById('pathway-nodes-subtitle');
+    if (subEl) subEl.textContent = d.dept + ' | ' + pathwayName + ' | 12节点标准化配置';
+    var labelEl = document.getElementById('pathway-disease-label');
+    if (labelEl) labelEl.textContent = pathwayName;
+
+    // 生成节点网格
+    var grid = document.getElementById('pathway-nodes-grid');
+    if (!grid) return;
+
+    var html = '';
+    for (var i = 0; i < 12; i++) {
+      var node = nodeDefaults[i];
+      var status = getStatusForNode(i, 12);
+      var statusText = status === 'completed' ? '已完成' : status === 'current' ? '进行中' : '待执行';
+      var statusClass = status === 'completed' ? 'tag-success' : status === 'current' ? 'tag-primary' : 'tag-gray';
+      var borderColor = status === 'completed' ? 'var(--success,#16a34a)' : status === 'current' ? 'var(--primary,#3b82f6)' : 'transparent';
+
+      html += '<div class="pathway-node-card" data-idx="' + i + '" style="background:var(--bg-primary,#fff);padding:20px;cursor:pointer;transition:all 0.15s;border-left:3px solid ' + borderColor + '">';
+      html += '<div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">';
+      html += '<div style="width:36px;height:36px;border-radius:50%;background:' + (status === 'completed' ? 'var(--success,#16a34a)' : status === 'current' ? 'var(--primary,#3b82f6)' : 'var(--gray-200,#e2e8f0)') + ';color:' + (status ? '#fff' : 'var(--gray-500,#64748b)') + ';display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700">' + (i+1) + '</div>';
+      html += '<div style="flex:1">';
+      html += '<div style="font-weight:600;font-size:14px;color:var(--text-primary)">' + node.title + '</div>';
+      html += '</div>';
+      html += '<span class="tag ' + statusClass + '" style="font-size:11px">' + statusText + '</span>';
+      html += '</div>';
+      html += '<div style="font-size:12px;color:var(--text-secondary);margin-bottom:8px;line-height:1.5">' + node.desc + '</div>';
+      html += '<div style="display:flex;align-items:center;justify-content:space-between">';
+      html += '<span style="font-size:11px;color:var(--text-tertiary)">时限: ' + node.limit + '</span>';
+      html += '<svg viewBox="0 0 20 20" width="14" height="14" fill="none" stroke="var(--gray-400,#94a3b8)" stroke-width="2"><path d="M7 4l6 6-6 6"/></svg>';
+      html += '</div>';
+      html += '</div>';
+    }
+    grid.innerHTML = html;
+
+    // 绑定点击事件
+    var cards = grid.querySelectorAll('.pathway-node-card');
+    for (var k = 0; k < cards.length; k++) {
+      cards[k].addEventListener('click', function() {
+        showNodeDetail(parseInt(this.getAttribute('data-idx')), d);
+      });
+      cards[k].addEventListener('mouseenter', function() {
+        this.style.background = 'var(--gray-50,#f8fafc)';
+      });
+      cards[k].addEventListener('mouseleave', function() {
+        this.style.background = 'var(--bg-primary,#fff)';
+      });
+    }
+
+    // 如果正在查看详情则重新渲染
+    if (currentNodeIdx !== null) {
+      showNodeDetail(currentNodeIdx, d);
+    }
+  }
+
+  document.addEventListener('pathway:nodes-back', showNodeList);
+
+  init();
+  document.addEventListener('module:loaded', function(e) {
+    if (e.detail && e.detail.pageId === 'pathways/nodes') {
+      showNodeList();
+      init();
+    }
+  });
+  document.addEventListener('disease:changed', function() {
+    setTimeout(init, 50);
+  });
+})();
+</script>
+</div>

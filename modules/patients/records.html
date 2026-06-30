@@ -1,0 +1,848 @@
+<div data-module-id="page-patients-records">
+
+            <div class="page-header">
+              <div class="page-header-left">
+                <h2>专科病历夹</h2>
+              </div>
+            </div>
+
+            <div class="stats-row">
+              <div class="stat-card">
+                <div class="stat-icon blue"><svg viewBox="0 0 20 20" width="20" height="20"><circle cx="10" cy="7" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M4 17c0-3.3 2.7-6 6-6s6 2.7 6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+                <div class="stat-info">
+                  <div class="value">12,580</div>
+                  <div class="label">全院在管专病患者</div>
+                </div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon green"><svg viewBox="0 0 20 20" width="20" height="20"><rect x="3" y="4" width="14" height="13" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 8v4M8 10h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M7 17v1M13 17v1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+                <div class="stat-info">
+                  <div class="value">1,256</div>
+                  <div class="label">当前在院患者</div>
+                </div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon yellow"><svg viewBox="0 0 20 20" width="20" height="20"><circle cx="10" cy="10" r="7" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M7 10h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+                <div class="stat-info">
+                  <div class="value">3.2%</div>
+                  <div class="label">病历资料缺失率</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="data-center-layout">
+              <!-- 左侧患者列表 -->
+              <div class="data-center-sidebar" style="max-height:600px">
+                <div class="data-tree-header">
+                  <span style="font-weight:600;font-size:13px;color:var(--gray-700)">患者列表</span>
+                  <button class="btn btn-sm btn-outline" style="padding:4px 8px;font-size:11px">打标签</button>
+                </div>
+                <div class="data-tree-search">
+                  <input type="text" placeholder="姓名/住院号搜索..." style="width:100%;padding:6px 10px;font-size:12px;border-radius:6px">
+                </div>
+                <div class="data-tree-list">
+                  <div class="data-tree-group">
+                    <div class="data-tree-group-title" onclick="this.parentElement.classList.toggle('collapsed')">
+                      <span class="tree-arrow">▸</span> 心血管内科 <span class="tree-count">在院 32</span>
+                    </div>
+                    <div class="data-tree-items">
+                      <div class="data-tree-item active" data-patient="wang">
+                        <div style="display:flex;justify-content:space-between;align-items:center;width:100%">
+                          <span>王建国 男65 AMI</span>
+                          <div style="display:flex;gap:4px">
+                            <span class="tag tag-primary" style="font-size:10px;padding:1px 6px">高危</span>
+                            <span class="tag tag-danger" style="font-size:10px;padding:1px 6px">急</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="data-tree-item" data-patient="zhang">
+                        <div style="display:flex;justify-content:space-between;align-items:center;width:100%">
+                          <span>张伟 男72 AMI</span>
+                          <div style="display:flex;gap:4px">
+                            <span class="tag tag-success" style="font-size:10px;padding:1px 6px">术后</span>
+                            <span class="tag tag-info" style="font-size:10px;padding:1px 6px">在径</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="data-tree-item" data-patient="liu">
+                        <div style="display:flex;justify-content:space-between;align-items:center;width:100%">
+                          <span>刘秀英 女58 高血压</span>
+                          <div style="display:flex;gap:4px">
+                            <span class="tag tag-warning" style="font-size:10px;padding:1px 6px">慢病</span>
+                            <span class="tag tag-warning" style="font-size:10px;padding:1px 6px">待查</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="data-tree-item" data-patient="chen">
+                        <div style="display:flex;justify-content:space-between;align-items:center;width:100%">
+                          <span>陈志明 男48 心力衰竭</span>
+                          <div style="display:flex;gap:4px">
+                            <span class="tag tag-danger" style="font-size:10px;padding:1px 6px">心衰</span>
+                            <span class="tag tag-primary" style="font-size:10px;padding:1px 6px">在院</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="data-tree-item" data-patient="li">
+                        <div style="display:flex;justify-content:space-between;align-items:center;width:100%">
+                          <span>李晓燕 女52 心律失常</span>
+                          <div style="display:flex;gap:4px">
+                            <span class="tag tag-info" style="font-size:10px;padding:1px 6px">房颤</span>
+                            <span class="tag tag-primary" style="font-size:10px;padding:1px 6px">在径</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="data-tree-item" data-patient="wang2">
+                        <div style="display:flex;justify-content:space-between;align-items:center;width:100%">
+                          <span>王光明 男68 心肌梗死</span>
+                          <div style="display:flex;gap:4px">
+                            <span class="tag tag-success" style="font-size:10px;padding:1px 6px">康复</span>
+                            <span class="tag tag-info" style="font-size:10px;padding:1px 6px">随访</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="data-tree-item" data-patient="zhao">
+                        <div style="display:flex;justify-content:space-between;align-items:center;width:100%">
+                          <span>赵秀兰 女75 高血压</span>
+                          <div style="display:flex;gap:4px">
+                            <span class="tag tag-warning" style="font-size:10px;padding:1px 6px">高龄</span>
+                            <span class="tag tag-danger" style="font-size:10px;padding:1px 6px">待查</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="data-tree-item" data-patient="sun">
+                        <div style="display:flex;justify-content:space-between;align-items:center;width:100%">
+                          <span>孙建国 男62 冠心病</span>
+                          <div style="display:flex;gap:4px">
+                            <span class="tag tag-info" style="font-size:10px;padding:1px 6px">在径</span>
+                            <span class="tag tag-success" style="font-size:10px;padding:1px 6px">稳定</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="data-tree-item">... 更多 24 人</div>
+                    </div>
+                  </div>
+                  <div class="data-tree-group">
+                    <div class="data-tree-group-title" onclick="this.parentElement.classList.toggle('collapsed')">
+                      <span class="tree-arrow">▸</span> 神经内科 <span class="tree-count">在院 18</span>
+                    </div>
+                    <div class="data-tree-items">
+                      <div class="data-tree-item" data-patient="lixue">
+                        <div style="display:flex;justify-content:space-between;align-items:center;width:100%">
+                          <span>李雪梅 女58 脑梗死</span>
+                          <div style="display:flex;gap:4px">
+                            <span class="tag tag-warning" style="font-size:10px;padding:1px 6px">卒中</span>
+                            <span class="tag tag-primary" style="font-size:10px;padding:1px 6px">在院</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="data-tree-item" data-patient="zhou">
+                        <div style="display:flex;justify-content:space-between;align-items:center;width:100%">
+                          <span>周强 男62 脑梗死</span>
+                          <div style="display:flex;gap:4px">
+                            <span class="tag tag-success" style="font-size:10px;padding:1px 6px">康复</span>
+                            <span class="tag tag-info" style="font-size:10px;padding:1px 6px">在径</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="data-tree-item" data-patient="wu">
+                        <div style="display:flex;justify-content:space-between;align-items:center;width:100%">
+                          <span>吴晓燕 女46 帕金森</span>
+                          <div style="display:flex;gap:4px">
+                            <span class="tag tag-warning" style="font-size:10px;padding:1px 6px">慢病</span>
+                            <span class="tag tag-primary" style="font-size:10px;padding:1px 6px">在院</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="data-tree-item" data-patient="zheng">
+                        <div style="display:flex;justify-content:space-between;align-items:center;width:100%">
+                          <span>郑建国 男58 脑出血</span>
+                          <div style="display:flex;gap:4px">
+                            <span class="tag tag-danger" style="font-size:10px;padding:1px 6px">重症</span>
+                            <span class="tag tag-danger" style="font-size:10px;padding:1px 6px">监护</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="data-tree-item">... 更多 14 人</div>
+                    </div>
+                  </div>
+                  <div class="data-tree-group">
+                    <div class="data-tree-group-title" onclick="this.parentElement.classList.toggle('collapsed')">
+                      <span class="tree-arrow">▸</span> 骨科 <span class="tree-count">在院 8</span>
+                    </div>
+                    <div class="data-tree-items">
+                      <div class="data-tree-item" data-patient="zhaolihua">
+                        <div style="display:flex;justify-content:space-between;align-items:center;width:100%">
+                          <span>赵丽华 女68 髋关节</span>
+                          <div style="display:flex;gap:4px">
+                            <span class="tag tag-success" style="font-size:10px;padding:1px 6px">术后</span>
+                            <span class="tag tag-info" style="font-size:10px;padding:1px 6px">在径</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="data-tree-item" data-patient="qian">
+                        <div style="display:flex;justify-content:space-between;align-items:center;width:100%">
+                          <span>钱卫国 男52 膝关节</span>
+                          <div style="display:flex;gap:4px">
+                            <span class="tag tag-warning" style="font-size:10px;padding:1px 6px">术前</span>
+                            <span class="tag tag-primary" style="font-size:10px;padding:1px 6px">在院</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="data-tree-item" data-patient="feng">
+                        <div style="display:flex;justify-content:space-between;align-items:center;width:100%">
+                          <span>冯雪英 女48 骨折</span>
+                          <div style="display:flex;gap:4px">
+                            <span class="tag tag-success" style="font-size:10px;padding:1px 6px">稳定</span>
+                            <span class="tag tag-info" style="font-size:10px;padding:1px 6px">在径</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="data-tree-item">... 更多 5 人</div>
+                    </div>
+                  </div>
+                  <div class="data-tree-group">
+                    <div class="data-tree-group-title" onclick="this.parentElement.classList.toggle('collapsed')">
+                      <span class="tree-arrow">▸</span> 结直肠外科 <span class="tree-count">在院 6</span>
+                    </div>
+                    <div class="data-tree-items">
+                      <div class="data-tree-item" data-patient="chenzhiqiang">
+                        <div style="display:flex;justify-content:space-between;align-items:center;width:100%">
+                          <span>陈志强 男55 结肠癌</span>
+                          <div style="display:flex;gap:4px">
+                            <span class="tag tag-success" style="font-size:10px;padding:1px 6px">术后</span>
+                            <span class="tag tag-info" style="font-size:10px;padding:1px 6px">在径</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="data-tree-item" data-patient="he">
+                        <div style="display:flex;justify-content:space-between;align-items:center;width:100%">
+                          <span>何秀兰 女58 直肠癌</span>
+                          <div style="display:flex;gap:4px">
+                            <span class="tag tag-danger" style="font-size:10px;padding:1px 6px">化疗</span>
+                            <span class="tag tag-warning" style="font-size:10px;padding:1px 6px">待查</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="data-tree-item" data-patient="gao">
+                        <div style="display:flex;justify-content:space-between;align-items:center;width:100%">
+                          <span>高建国 男62 肠息肉</span>
+                          <div style="display:flex;gap:4px">
+                            <span class="tag tag-warning" style="font-size:10px;padding:1px 6px">待查</span>
+                            <span class="tag tag-primary" style="font-size:10px;padding:1px 6px">在院</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="data-tree-item">... 更多 3 人</div>
+                    </div>
+                  </div>
+                  <div class="data-tree-group">
+                    <div class="data-tree-group-title" onclick="this.parentElement.classList.toggle('collapsed')">
+                      <span class="tree-arrow">▸</span> 泌尿外科 <span class="tree-count">在院 5</span>
+                    </div>
+                    <div class="data-tree-items">
+                      <div class="data-tree-item" data-patient="sunmingyuan">
+                        <div style="display:flex;justify-content:space-between;align-items:center;width:100%">
+                          <span>孙明远 男61 肾癌</span>
+                          <div style="display:flex;gap:4px">
+                            <span class="tag tag-danger" style="font-size:10px;padding:1px 6px">肿瘤</span>
+                            <span class="tag tag-success" style="font-size:10px;padding:1px 6px">术后</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="data-tree-item" data-patient="xu">
+                        <div style="display:flex;justify-content:space-between;align-items:center;width:100%">
+                          <span>徐丽娟 女56 前列腺癌</span>
+                          <div style="display:flex;gap:4px">
+                            <span class="tag tag-danger" style="font-size:10px;padding:1px 6px">肿瘤</span>
+                            <span class="tag tag-warning" style="font-size:10px;padding:1px 6px">待查</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="data-tree-item">... 更多 3 人</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 右侧病历聚合详情 -->
+              <div class="data-center-content">
+                <!-- 患者信息卡片 -->
+                <div class="card" style="height: 100px;">
+                  <div class="card-header">
+                    <div style="display:flex;align-items:center;gap:16px">
+                      <div class="patient-avatar" style="width:48px;height:48px;font-size:18px;background:var(--primary)">王</div>
+                      <div>
+                        <h3>王建国</h3>
+                        <div style="font-size:12px;color:var(--gray-500);display:flex;gap:12px;margin-top:4px">
+                          <span>男 · 65岁</span>
+                          <span>住院号: 202606001</span>
+                          <span>心血管内科</span>
+                          <span>入院: 2026-06-24</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div style="display:flex;gap:6px">
+                      <span class="tag tag-primary">在院</span>
+                      <span class="tag tag-primary">在径</span>
+                      <span class="tag tag-danger">高危</span>
+                      <span class="tag tag-warning">慢病管理</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 诊疗时间轴 -->
+                <div class="card">
+                  <div class="card-header">
+                    <h3>诊疗时间轴</h3>
+                    <div style="display:flex;gap:8px">
+                      <button class="btn btn-sm btn-primary">今日</button>
+                      <button class="btn btn-sm btn-outline">全部</button>
+                    </div>
+                  </div>
+                  <div class="card-body" style="max-height:280px;overflow-y:auto">
+                    <div class="timeline">
+                      <div class="timeline-item">
+                        <div class="timeline-dot" style="background:var(--success)"></div>
+                        <div class="timeline-content">
+                          <div class="timeline-time">2026-06-26 14:20</div>
+                          <div class="timeline-title"><span class="tag tag-success" style="margin-right:8px">术后</span>术后康复评估完成</div>
+                          <div class="timeline-desc">主治医师：李医生 · 患者生命体征平稳，伤口愈合良好</div>
+                        </div>
+                      </div>
+                      <div class="timeline-item">
+                        <div class="timeline-dot" style="background:var(--info)"></div>
+                        <div class="timeline-content">
+                          <div class="timeline-time">2026-06-26 10:30</div>
+                          <div class="timeline-title"><span class="tag tag-info" style="margin-right:8px">护理</span>术后护理记录更新</div>
+                          <div class="timeline-desc">护理师：王护士 · 血压130/82mmHg，心率78次/分，体温36.8°C</div>
+                        </div>
+                      </div>
+                      <div class="timeline-item">
+                        <div class="timeline-dot" style="background:var(--primary)"></div>
+                        <div class="timeline-content">
+                          <div class="timeline-time">2026-06-25 16:00</div>
+                          <div class="timeline-title"><span class="tag tag-gray" style="margin-right:8px">手术</span>PCI手术完成</div>
+                          <div class="timeline-desc">主刀医师：张主任 · 手术顺利，植入支架1枚，患者安返病房</div>
+                        </div>
+                      </div>
+                      <div class="timeline-item">
+                        <div class="timeline-dot" style="background:var(--warning)"></div>
+                        <div class="timeline-content">
+                          <div class="timeline-time">2026-06-25 12:00</div>
+                          <div class="timeline-title"><span class="tag tag-warning" style="margin-right:8px">检查</span>冠脉造影完成</div>
+                          <div class="timeline-desc">影像科：王技师 · 发现前降支狭窄85%，建议立即PCI</div>
+                        </div>
+                      </div>
+                      <div class="timeline-item">
+                        <div class="timeline-dot" style="background:var(--danger)"></div>
+                        <div class="timeline-content">
+                          <div class="timeline-time">2026-06-24 15:30</div>
+                          <div class="timeline-title"><span class="tag tag-danger" style="margin-right:8px">紧急</span>急诊PCI准备</div>
+                          <div class="timeline-desc">急诊科：刘医生 · 患者突发胸痛加重，心电图ST段抬高</div>
+                        </div>
+                      </div>
+                      <div class="timeline-item">
+                        <div class="timeline-dot" style="background:var(--success)"></div>
+                        <div class="timeline-content">
+                          <div class="timeline-time">2026-06-24 11:30</div>
+                          <div class="timeline-title"><span class="tag tag-success" style="margin-right:8px">检验</span>心肌标志物检测完成</div>
+                          <div class="timeline-desc">检验科：李技师 · cTnI升高至1.2ng/ml，确认为急性心肌梗死</div>
+                        </div>
+                      </div>
+                      <div class="timeline-item">
+                        <div class="timeline-dot" style="background:var(--primary)"></div>
+                        <div class="timeline-content">
+                          <div class="timeline-time">2026-06-24 10:00</div>
+                          <div class="timeline-title"><span class="tag tag-info" style="margin-right:8px">入院</span>办理入院手续</div>
+                          <div class="timeline-desc">责任护士：陈护士 · 床位：心内科12床，初步诊断：急性心肌梗死</div>
+                        </div>
+                      </div>
+                      <div class="timeline-item">
+                        <div class="timeline-dot" style="background:var(--info)"></div>
+                        <div class="timeline-content">
+                          <div class="timeline-time">2026-06-24 09:30</div>
+                          <div class="timeline-title"><span class="tag tag-warning" style="margin-right:8px">急诊</span>急诊就诊</div>
+                          <div class="timeline-desc">急诊科：赵医生 · 主诉：胸痛3小时，伴出汗、恶心</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 诊疗视图 -->
+                <div class="card">
+                  <div class="card-header">
+                    <h3>诊疗视图</h3>
+                    <div style="display:flex;gap:8px">
+                      <button class="btn btn-sm btn-primary" data-view="summary">总览</button>
+                      <button class="btn btn-sm btn-outline" data-view="vitals">生命体征</button>
+                      <button class="btn btn-sm btn-outline" data-view="medications">用药</button>
+                      <button class="btn btn-sm btn-outline" data-view="orders">医嘱</button>
+                    </div>
+                  </div>
+                  <div class="card-body" id="clinical-view">
+                    <!-- 总览视图 -->
+                    <div id="view-summary" class="clinical-view">
+                      <div class="two-col">
+                        <div class="card" style="margin-bottom:0">
+                          <div class="card-header" style="padding:8px 12px"><h4 style="font-size:14px;margin:0">主要诊断</h4></div>
+                          <div class="card-body" style="padding:12px">
+                            <p style="margin:0;font-weight:600;color:var(--primary)">急性ST段抬高型心肌梗死</p>
+                            <p style="margin:4px 0 0 0;font-size:12px;color:var(--gray-500)">前降支病变，Killip I级</p>
+                          </div>
+                        </div>
+                        <div class="card" style="margin-bottom:0">
+                          <div class="card-header" style="padding:8px 12px"><h4 style="font-size:14px;margin:0">合并症</h4></div>
+                          <div class="card-body" style="padding:12px">
+                            <p style="margin:0"><span class="tag tag-warning" style="margin-right:6px">高血压</span><span class="tag tag-warning" style="margin-right:6px">糖尿病</span></p>
+                            <p style="margin:4px 0 0 0;font-size:12px;color:var(--gray-500)">高血压3级，2型糖尿病</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div style="margin-top:12px">
+                        <h4 style="font-size:14px;margin:0 0 12px 0">关键指标</h4>
+                        <div class="stat-cards" style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px">
+                          <div class="stat-card" style="margin:0">
+                            <div class="stat-info">
+                              <div class="value">138/82</div>
+                              <div class="label">血压(mmHg)</div>
+                            </div>
+                          </div>
+                          <div class="stat-card" style="margin:0">
+                            <div class="stat-info">
+                              <div class="value">78</div>
+                              <div class="label">心率(次/分)</div>
+                            </div>
+                          </div>
+                          <div class="stat-card" style="margin:0">
+                            <div class="stat-info">
+                              <div class="value">36.8</div>
+                              <div class="label">体温(°C)</div>
+                            </div>
+                          </div>
+                          <div class="stat-card" style="margin:0">
+                            <div class="stat-info">
+                              <div class="value">98</div>
+                              <div class="label">血氧饱和度(%)</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- 生命体征视图 -->
+                    <div id="view-vitals" class="clinical-view" style="display:none">
+                      <h4 style="font-size:14px;margin:0 0 12px 0">近7天生命体征趋势</h4>
+                      <div class="chart-placeholder" style="height:200px">血压、心率趋势图</div>
+                    </div>
+
+                    <!-- 用药视图 -->
+                    <div id="view-medications" class="clinical-view" style="display:none">
+                      <h4 style="font-size:14px;margin:0 0 12px 0">当前用药</h4>
+                      <div class="table-wrapper">
+                        <table style="font-size:12px">
+                          <thead>
+                            <tr>
+                              <th>药物名称</th>
+                              <th>剂量</th>
+                              <th>用法</th>
+                              <th>频率</th>
+                              <th>开始时间</th>
+                              <th>状态</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>阿司匹林肠溶片</td>
+                              <td>100mg</td>
+                              <td>口服</td>
+                              <td>每日1次</td>
+                              <td>2026-06-24</td>
+                              <td><span class="tag tag-success">使用中</span></td>
+                            </tr>
+                            <tr>
+                              <td>氯吡格雷片</td>
+                              <td>75mg</td>
+                              <td>口服</td>
+                              <td>每日1次</td>
+                              <td>2026-06-24</td>
+                              <td><span class="tag tag-success">使用中</span></td>
+                            </tr>
+                            <tr>
+                              <td>阿托伐他汀钙片</td>
+                              <td>20mg</td>
+                              <td>口服</td>
+                              <td>每晚1次</td>
+                              <td>2026-06-24</td>
+                              <td><span class="tag tag-success">使用中</span></td>
+                            </tr>
+                            <tr>
+                              <td>美托洛尔缓释片</td>
+                              <td>47.5mg</td>
+                              <td>口服</td>
+                              <td>每日1次</td>
+                              <td>2026-06-24</td>
+                              <td><span class="tag tag-success">使用中</span></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+
+                    <!-- 医嘱视图 -->
+                    <div id="view-orders" class="clinical-view" style="display:none">
+                      <h4 style="font-size:14px;margin:0 0 12px 0">今日医嘱</h4>
+                      <div class="table-wrapper">
+                        <table style="font-size:12px">
+                          <thead>
+                            <tr>
+                              <th>医嘱时间</th>
+                              <th>医嘱内容</th>
+                              <th>医嘱类型</th>
+                              <th>开嘱医生</th>
+                              <th>执行状态</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>2026-06-26 09:00</td>
+                              <td>术后第2天护理常规</td>
+                              <td><span class="tag tag-info">护理</span></td>
+                              <td>李医生</td>
+                              <td><span class="tag tag-success">已执行</span></td>
+                            </tr>
+                            <tr>
+                              <td>2026-06-26 08:30</td>
+                              <td>血常规、生化复查</td>
+                              <td><span class="tag tag-success">检验</span></td>
+                              <td>张主任</td>
+                              <td><span class="tag tag-success">已执行</span></td>
+                            </tr>
+                            <tr>
+                              <td>2026-06-26 08:00</td>
+                              <td>心电监护持续</td>
+                              <td><span class="tag tag-info">检查</span></td>
+                              <td>李医生</td>
+                              <td><span class="tag tag-success">执行中</span></td>
+                            </tr>
+                            <tr>
+                              <td>2026-06-26 14:00</td>
+                              <td>康复科会诊</td>
+                              <td><span class="tag tag-warning">会诊</span></td>
+                              <td>张主任</td>
+                              <td><span class="tag tag-primary">待执行</span></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 病历聚合视图 -->
+                <div class="card">
+                  <div class="card-header">
+                    <h3>病历资料聚合</h3>
+                    <button class="btn btn-sm btn-outline">导出病历</button>
+                  </div>
+                  <div class="card-body">
+                    <div class="table-wrapper">
+                      <table>
+                        <thead>
+                          <tr>
+                            <th>资料类型</th>
+                            <th>文档名称</th>
+                            <th>数据来源</th>
+                            <th>时间</th>
+                            <th>状态</th>
+                            <th>操作</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td><span class="tag tag-info">入院记录</span></td>
+                            <td><strong>急性心肌梗死入院记录</strong></td>
+                            <td>EMR</td>
+                            <td>2026-06-24 09:30</td>
+                            <td><span class="tag tag-success">已完成</span></td>
+                            <td><button class="btn btn-sm btn-outline">查看</button></td>
+                          </tr>
+                          <tr>
+                            <td><span class="tag tag-info">病程记录</span></td>
+                            <td><strong>首次病程记录</strong></td>
+                            <td>EMR</td>
+                            <td>2026-06-24 10:15</td>
+                            <td><span class="tag tag-success">已完成</span></td>
+                            <td><button class="btn btn-sm btn-outline">查看</button></td>
+                          </tr>
+                          <tr>
+                            <td><span class="tag tag-info">病程记录</span></td>
+                            <td><strong>上级医师查房记录</strong></td>
+                            <td>EMR</td>
+                            <td>2026-06-24 14:00</td>
+                            <td><span class="tag tag-success">已完成</span></td>
+                            <td><button class="btn btn-sm btn-outline">查看</button></td>
+                          </tr>
+                          <tr>
+                            <td><span class="tag tag-warning">量表</span></td>
+                            <td><strong>GRACE评分</strong></td>
+                            <td>专科病历管理</td>
+                            <td>2026-06-24 10:30</td>
+                            <td><span class="tag tag-success">已完成</span></td>
+                            <td><button class="btn btn-sm btn-outline">查看</button></td>
+                          </tr>
+                          <tr>
+                            <td><span class="tag tag-warning">量表</span></td>
+                            <td><strong>Braden压疮评估</strong></td>
+                            <td>专科病历管理</td>
+                            <td>2026-06-24 11:00</td>
+                            <td><span class="tag tag-success">已完成</span></td>
+                            <td><button class="btn btn-sm btn-outline">查看</button></td>
+                          </tr>
+                          <tr>
+                            <td><span class="tag tag-warning">量表</span></td>
+                            <td><strong>疼痛数字评分(NRS)</strong></td>
+                            <td>专科病历管理</td>
+                            <td>2026-06-24 12:00</td>
+                            <td><span class="tag tag-success">已完成</span></td>
+                            <td><button class="btn btn-sm btn-outline">查看</button></td>
+                          </tr>
+                          <tr>
+                            <td><span class="tag tag-success">检查</span></td>
+                            <td><strong>心电图报告</strong></td>
+                            <td>PACS</td>
+                            <td>2026-06-24 10:45</td>
+                            <td><span class="tag tag-success">已完成</span></td>
+                            <td><button class="btn btn-sm btn-outline">查看</button></td>
+                          </tr>
+                          <tr>
+                            <td><span class="tag tag-success">检查</span></td>
+                            <td><strong>超声心动图</strong></td>
+                            <td>PACS</td>
+                            <td>2026-06-24 11:30</td>
+                            <td><span class="tag tag-success">已完成</span></td>
+                            <td><button class="btn btn-sm btn-outline">查看</button></td>
+                          </tr>
+                          <tr>
+                            <td><span class="tag tag-success">检查</span></td>
+                            <td><strong>胸部X光片</strong></td>
+                            <td>PACS</td>
+                            <td>2026-06-24 11:45</td>
+                            <td><span class="tag tag-success">已完成</span></td>
+                            <td><button class="btn btn-sm btn-outline">查看</button></td>
+                          </tr>
+                          <tr>
+                            <td><span class="tag tag-success">检验</span></td>
+                            <td><strong>心肌标志物 (cTnI)</strong></td>
+                            <td>LIS</td>
+                            <td>2026-06-24 11:30</td>
+                            <td><span class="tag tag-success">已完成</span></td>
+                            <td><button class="btn btn-sm btn-outline">查看</button></td>
+                          </tr>
+                          <tr>
+                            <td><span class="tag tag-success">检验</span></td>
+                            <td><strong>血常规</strong></td>
+                            <td>LIS</td>
+                            <td>2026-06-24 10:00</td>
+                            <td><span class="tag tag-success">已完成</span></td>
+                            <td><button class="btn btn-sm btn-outline">查看</button></td>
+                          </tr>
+                          <tr>
+                            <td><span class="tag tag-success">检验</span></td>
+                            <td><strong>生化全套</strong></td>
+                            <td>LIS</td>
+                            <td>2026-06-24 10:00</td>
+                            <td><span class="tag tag-success">已完成</span></td>
+                            <td><button class="btn btn-sm btn-outline">查看</button></td>
+                          </tr>
+                          <tr>
+                            <td><span class="tag tag-success">检验</span></td>
+                            <td><strong>凝血功能</strong></td>
+                            <td>LIS</td>
+                            <td>2026-06-24 10:30</td>
+                            <td><span class="tag tag-success">已完成</span></td>
+                            <td><button class="btn btn-sm btn-outline">查看</button></td>
+                          </tr>
+                          <tr>
+                            <td><span class="tag tag-success">检验</span></td>
+                            <td><strong>血气分析</strong></td>
+                            <td>LIS</td>
+                            <td>2026-06-24 11:00</td>
+                            <td><span class="tag tag-success">已完成</span></td>
+                            <td><button class="btn btn-sm btn-outline">查看</button></td>
+                          </tr>
+                          <tr>
+                            <td><span class="tag tag-success">影像</span></td>
+                            <td><strong>冠脉造影报告</strong></td>
+                            <td>PACS</td>
+                            <td>2026-06-24 14:20</td>
+                            <td><span class="tag tag-success">已完成</span></td>
+                            <td><button class="btn btn-sm btn-outline">查看</button></td>
+                          </tr>
+                          <tr>
+                            <td><span class="tag tag-gray">手术</span></td>
+                            <td><strong>PCI手术记录</strong></td>
+                            <td>EMR</td>
+                            <td>2026-06-24 15:30</td>
+                            <td><span class="tag tag-primary">填写中</span></td>
+                            <td><button class="btn btn-sm btn-outline">查看</button></td>
+                          </tr>
+                          <tr>
+                            <td><span class="tag tag-info">病程</span></td>
+                            <td><strong>术后病程记录</strong></td>
+                            <td>EMR</td>
+                            <td>--</td>
+                            <td><span class="tag tag-danger">缺失</span></td>
+                            <td><button class="btn btn-sm btn-outline">补录</button></td>
+                          </tr>
+                          <tr>
+                            <td><span class="tag tag-info">护理记录</span></td>
+                            <td><strong>术后护理记录</strong></td>
+                            <td>EMR</td>
+                            <td>--</td>
+                            <td><span class="tag tag-danger">缺失</span></td>
+                            <td><button class="btn btn-sm btn-outline">补录</button></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <div style="margin-top:12px;padding:12px;background:var(--danger-bg);border-radius:var(--radius);border:1px solid var(--danger);display:flex;align-items:center;gap:8px">
+                      <span style="font-size:14px">!</span>
+                      <span style="font-size:12px;color:var(--danger)">病历资料缺失 1 项: 术后病程记录，请及时补录</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+
+<script>
+(function() {
+  function init() {
+    // 初始化诊疗视图切换
+    initClinicalViews();
+
+    if (typeof DiseaseContext === 'undefined') return;
+    var d = DiseaseContext.get();
+    var data = DiseaseContext.getData();
+    var samples = DiseaseContext.getPatientSamples();
+
+    // 更新 h2 标题
+    var title = document.querySelector('.page-header-left h2');
+    if (title) title.textContent = '专科病历夹';
+
+    // 更新统计卡片
+    var statVals = document.querySelectorAll('.stat-card .stat-info .value');
+    if (statVals.length >= 3) {
+      statVals[0].textContent = d.patientCount.toLocaleString();
+      statVals[1].textContent = Math.floor(d.patientCount * 0.1);
+      statVals[2].textContent = (1 + Math.random() * 5).toFixed(1) + '%';
+    }
+
+    // 更新左侧患者列表：只显示当前病种科室和患者样本
+    var sidebar = document.querySelector('.data-center-sidebar');
+    if (sidebar && samples.length > 0) {
+      var treeList = sidebar.querySelector('.data-tree-list');
+      if (treeList) {
+        var countInDept = Math.floor(d.patientCount * 0.03);
+        var html = '<div class="data-tree-group">';
+        html += '<div class="data-tree-group-title" onclick="this.parentElement.classList.toggle(\'collapsed\')">';
+        html += '<span class="tree-arrow">&#9656;</span> ' + d.dept + ' <span class="tree-count">在院 ' + countInDept + '</span>';
+        html += '</div>';
+        html += '<div class="data-tree-items">';
+        for (var i = 0; i < samples.length; i++) {
+          var p = samples[i];
+          var activeClass = i === 0 ? ' active' : '';
+          html += '<div class="data-tree-item' + activeClass + '" data-patient-idx="' + i + '">' + p.name + ' ' + p.gender + p.age + ' ' + d.name + '</div>';
+        }
+        html += '<div class="data-tree-item">... 更多 ' + (countInDept - samples.length) + ' 人</div>';
+        html += '</div></div>';
+        treeList.innerHTML = html;
+
+        // 点击患者列表项更新右侧详情
+        var items = treeList.querySelectorAll('.data-tree-item[data-patient-idx]');
+        items.forEach(function(item) {
+          item.addEventListener('click', function() {
+            treeList.querySelectorAll('.data-tree-item').forEach(function(el) { el.classList.remove('active'); });
+            item.classList.add('active');
+            var idx = parseInt(item.getAttribute('data-patient-idx'));
+            updatePatientCard(samples[idx], d);
+          });
+        });
+      }
+    }
+
+    // 更新右侧患者信息卡片（默认显示第一个患者样本）
+    if (samples.length > 0) {
+      updatePatientCard(samples[0], d);
+    }
+  }
+
+  // 初始化诊疗视图切换
+  function initClinicalViews() {
+    var viewButtons = document.querySelectorAll('[data-view]');
+    viewButtons.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var view = btn.getAttribute('data-view');
+        
+        // 切换按钮样式
+        viewButtons.forEach(function(b) {
+          b.classList.remove('btn-primary');
+          b.classList.add('btn-outline');
+        });
+        btn.classList.remove('btn-outline');
+        btn.classList.add('btn-primary');
+        
+        // 切换视图内容
+        var views = document.querySelectorAll('.clinical-view');
+        views.forEach(function(v) {
+          v.style.display = 'none';
+        });
+        
+        var targetView = document.getElementById('view-' + view);
+        if (targetView) {
+          targetView.style.display = 'block';
+        }
+      });
+    });
+  }
+
+  function updatePatientCard(p, d) {
+    if (!p) return;
+    // 患者信息卡片
+    var avatar = document.querySelector('.patient-avatar');
+    if (avatar) avatar.textContent = p.name.charAt(0);
+
+    var cardHeader = document.querySelector('.data-center-content .card:first-child .card-header');
+    if (cardHeader) {
+      var nameH3 = cardHeader.querySelector('h3');
+      if (nameH3) nameH3.textContent = p.name;
+
+      var infoDiv = cardHeader.querySelector('div[style*="font-size:12px"]');
+      if (infoDiv) {
+        infoDiv.innerHTML = '<span>' + p.gender + ' · ' + p.age + '岁</span>' +
+          '<span>住院号: ' + p.id + '</span>' +
+          '<span>' + d.dept + '</span>' +
+          '<span>入院: ' + p.admit + '</span>';
+      }
+    }
+
+    // 更新病历资料表格第一行的诊断信息
+    var recordTable = document.querySelector('.data-center-content .card:nth-child(2) table tbody');
+    if (recordTable) {
+      var firstRow = recordTable.querySelector('tr:first-child');
+      if (firstRow) {
+        var cells = firstRow.querySelectorAll('td');
+        if (cells.length >= 6) {
+          cells[1].innerHTML = '<strong>' + p.diagnosis + '入院记录</strong>';
+          cells[3].textContent = p.admit + ' 09:30';
+        }
+      }
+    }
+  }
+
+  init();
+  document.addEventListener('module:loaded', function(e) { if (e.detail && e.detail.pageId === 'patients/records') init(); });
+})();
+</script>
+
+</div>

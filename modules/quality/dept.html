@@ -1,0 +1,103 @@
+<div data-module-id="page-quality-dept">
+
+          <div class="page-header">
+            <div class="page-header-left">
+              <h2>质控科室分发</h2>
+            </div>
+          </div>
+
+            <div class="data-center-layout">
+              <div class="data-center-sidebar">
+                <div class="data-tree-header"><span>科室列表</span></div>
+                <div class="data-tree-list">
+                  <div class="data-tree-item active">心血管内科</div>
+                  <div class="data-tree-item">神经内科</div>
+                  <div class="data-tree-item">结直肠外科</div>
+                  <div class="data-tree-item">骨科</div>
+                </div>
+              </div>
+              <div class="data-center-content">
+                <div class="card">
+                  <div class="card-header"><h3>心血管内科 - 差异化配置</h3></div>
+                  <div class="card-body">
+                    <div class="table-wrapper">
+                      <table>
+                        <thead><tr><th>规则名称</th><th>基础阈值</th><th>科室阈值</th><th>状态</th></tr></thead>
+                        <tbody>
+                          <tr>
+                            <td><strong>D-to-B 时间</strong></td>
+                            <td>90分钟</td>
+                            <td>90分钟</td>
+                            <td><span class="tag tag-success">已同步</span></td>
+                          </tr>
+                          <tr>
+                            <td><strong>首份心电图完成时间</strong></td>
+                            <td>10分钟</td>
+                            <td>8分钟</td>
+                            <td><span class="tag tag-info">已覆盖</span></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+<script>
+(function() {
+  function init() {
+    if (typeof DiseaseContext === 'undefined') return;
+    var d = DiseaseContext.get();
+    var h2 = document.querySelector('h2');
+    if (h2) h2.textContent = '质控科室分发';
+    var sidebarItems = document.querySelectorAll('.data-tree-item');
+    if (sidebarItems.length) {
+      sidebarItems[0].textContent = d.dept;
+    }
+    var cardHeader = document.querySelector('.card-header h3');
+    if (cardHeader) cardHeader.textContent = d.dept + ' - 差异化配置';
+
+    // 根据 DiseaseContext 动态更新质控规则表格
+    var rules = DiseaseContext.getQualityRules();
+    var tbody = document.querySelector('.table-wrapper table tbody');
+    if (tbody) {
+      if (rules && rules.length > 0) {
+        var html = '';
+        for (var i = 0; i < rules.length; i++) {
+          var rule = rules[i];
+          var baseTarget = rule.target || '—';
+          var deptTarget = rule.target || '—';
+          var statusClass = 'tag-info';
+          var statusText = '已覆盖';
+          if (rule.status === 'active' || rule.status === 'compliant') {
+            statusClass = 'tag-success';
+            statusText = '已同步';
+          } else if (rule.status === 'warning' || rule.status === 'partial') {
+            statusClass = 'tag-warning';
+            statusText = '待审核';
+          } else if (rule.status === 'inactive' || rule.status === 'non-compliant') {
+            statusClass = 'tag-danger';
+            statusText = '已停用';
+          }
+          html += '<tr>';
+          html += '<td><strong>' + rule.name + '</strong></td>';
+          html += '<td>' + baseTarget + '</td>';
+          html += '<td>' + deptTarget + '</td>';
+          html += '<td><span class="tag ' + statusClass + '">' + statusText + '</span></td>';
+          html += '</tr>';
+        }
+        tbody.innerHTML = html;
+      } else {
+        tbody.innerHTML = '<tr><td colspan="4" style="text-align:center;color:var(--gray-400);padding:20px">暂无质控规则数据</td></tr>';
+      }
+    }
+  }
+  init();
+  document.addEventListener('module:loaded', function(e) {
+    if (e.detail && e.detail.pageId === 'quality/dept') init();
+  });
+})();
+</script>
+
+</div>

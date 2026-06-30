@@ -1,0 +1,300 @@
+<div data-module-id="page-records-templates">
+
+          <div class="page-header">
+            <div class="page-header-left">
+              <h2 id="records-templates-title">专科病历管理</h2>
+              <p id="records-templates-subtitle">统一维护专病病历模板、风险评估量表、标准化采集数据元</p>
+            </div>
+          </div>
+
+            <div class="stats-row">
+              <div class="stat-card">
+                <div class="stat-icon blue"><svg viewBox="0 0 20 20" width="20" height="20"><rect x="6" y="6" width="10" height="11" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M4 14V4a1.5 1.5 0 011.5-1.5H12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+                <div class="stat-info">
+                  <div class="value">256</div>
+                  <div class="label">病历模板总数</div>
+                </div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon green"><svg viewBox="0 0 20 20" width="20" height="20"><path d="M10 2l7 3v5c0 4.4-3 7.5-7 9-4-1.5-7-4.6-7-9V5l7-3z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></div>
+                <div class="stat-info">
+                  <div class="value">92.3%</div>
+                  <div class="label">病种模板覆盖率</div>
+                </div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon yellow"><svg viewBox="0 0 20 20" width="20" height="20"><rect x="3" y="11" width="3" height="6" rx="0.5" fill="none" stroke="currentColor" stroke-width="1.3"/><rect x="8.5" y="6" width="3" height="11" rx="0.5" fill="none" stroke="currentColor" stroke-width="1.3"/><rect x="14" y="3" width="3" height="14" rx="0.5" fill="none" stroke="currentColor" stroke-width="1.3"/></svg></div>
+                <div class="stat-info">
+                  <div class="value">87.6%</div>
+                  <div class="label">模板月度使用率</div>
+                </div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon purple"><svg viewBox="0 0 20 20" width="20" height="20"><path d="M5 10l3 3 7-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                <div class="stat-info">
+                  <div class="value">78.4%</div>
+                  <div class="label">文书结构化字段占比</div>
+              </div>
+            </div>
+</div>
+
+            <div class="card">
+              <div class="card-header">
+                <h3>模板列表</h3>
+                <div class="table-filters">
+                  <input type="text" placeholder="搜索模板..." style="width:180px">
+                  <select>
+                    <option>所有专科</option>
+                    <option>心血管内科</option>
+                    <option>神经内科</option>
+                    <option>神经外科</option>
+                    <option>结直肠外科</option>
+                    <option>骨科</option>
+                    <option>核医学科</option>
+                    <option>泌尿外科</option>
+                  </select>
+                  <select>
+                    <option>所有状态</option>
+                    <option>已发布</option>
+                    <option>草稿</option>
+                    <option>已停用</option>
+                  </select>
+                  <button class="btn btn-sm btn-outline">批量导入</button>
+                  <button class="btn btn-sm btn-outline">批量导出</button>
+                  <button class="btn btn-sm btn-primary" onclick="showModal('template-modal')">新增模板</button>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="table-wrapper">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>模板名称</th>
+                        <th>所属专科</th>
+                        <th>关联病种</th>
+                        <th>绑定数据元</th>
+                        <th>版本</th>
+                        <th>使用次数</th>
+                        <th>使用率</th>
+                        <th>状态</th>
+                        <th>操作</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><strong>急性心肌梗死首次病程记录</strong></td>
+                        <td>心血管内科</td>
+                        <td>冠心病/急性心肌梗死</td>
+                        <td>156</td>
+                        <td>v2.1</td>
+                        <td>1,256</td>
+                        <td><span class="tag tag-success">92%</span></td>
+                        <td><span class="tag tag-success">已发布</span></td>
+                        <td>
+                          <button class="btn btn-sm btn-outline" onclick="showDrawer('template-drawer')">预览</button>
+                          <button class="btn btn-sm btn-outline">编辑</button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><strong>急性心肌梗死入院记录</strong></td>
+                        <td>心血管内科</td>
+                        <td>冠心病/急性心肌梗死</td>
+                        <td>142</td>
+                        <td>v1.8</td>
+                        <td>986</td>
+                        <td><span class="tag tag-success">88%</span></td>
+                        <td><span class="tag tag-success">已发布</span></td>
+                        <td>
+                          <button class="btn btn-sm btn-outline" onclick="showDrawer('template-drawer')">预览</button>
+                          <button class="btn btn-sm btn-outline">编辑</button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><strong>脑梗死入院记录</strong></td>
+                        <td>神经内科</td>
+                        <td>脑梗死</td>
+                        <td>138</td>
+                        <td>v1.5</td>
+                        <td>892</td>
+                        <td><span class="tag tag-success">85%</span></td>
+                        <td><span class="tag tag-success">已发布</span></td>
+                        <td>
+                          <button class="btn btn-sm btn-outline" onclick="showDrawer('template-drawer')">预览</button>
+                          <button class="btn btn-sm btn-outline">编辑</button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><strong>结肠癌手术记录</strong></td>
+                        <td>结直肠外科</td>
+                        <td>结肠癌</td>
+                        <td>98</td>
+                        <td>v2.0</td>
+                        <td>456</td>
+                        <td><span class="tag tag-warning">72%</span></td>
+                        <td><span class="tag tag-success">已发布</span></td>
+                        <td>
+                          <button class="btn btn-sm btn-outline" onclick="showDrawer('template-drawer')">预览</button>
+                          <button class="btn btn-sm btn-outline">编辑</button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><strong>髋关节置换术前评估</strong></td>
+                        <td>骨科</td>
+                        <td>髋关节</td>
+                        <td>86</td>
+                        <td>v1.2</td>
+                        <td>345</td>
+                        <td><span class="tag tag-success">90%</span></td>
+                        <td><span class="tag tag-success">已发布</span></td>
+                        <td>
+                          <button class="btn btn-sm btn-outline" onclick="showDrawer('template-drawer')">预览</button>
+                          <button class="btn btn-sm btn-outline">编辑</button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><strong>肾癌术后随访记录</strong></td>
+                        <td>泌尿外科</td>
+                        <td>肾癌</td>
+                        <td>72</td>
+                        <td>v1.0</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td><span class="tag tag-warning">草稿</span></td>
+                        <td>
+                          <button class="btn btn-sm btn-outline" onclick="showDrawer('template-drawer')">预览</button>
+                          <button class="btn btn-sm btn-outline">编辑</button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><strong>脑出血手术记录</strong></td>
+                        <td>神经外科</td>
+                        <td>脑出血</td>
+                        <td>115</td>
+                        <td>v1.3</td>
+                        <td>234</td>
+                        <td><span class="tag tag-success">81%</span></td>
+                        <td><span class="tag tag-success">已发布</span></td>
+                        <td>
+                          <button class="btn btn-sm btn-outline" onclick="showDrawer('template-drawer')">预览</button>
+                          <button class="btn btn-sm btn-outline">编辑</button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-top:12px;padding-top:12px;border-top:1px solid var(--gray-100)">
+                  <span style="font-size:12px;color:var(--gray-500)">共 256 个模板 | 已发布 218 | 草稿 31 | 已停用 7</span>
+                  <div style="display:flex;gap:4px">
+                    <button class="btn btn-sm btn-outline" disabled>上一页</button>
+                    <button class="btn btn-sm btn-primary">1</button>
+                    <button class="btn btn-sm btn-outline">2</button>
+                    <button class="btn btn-sm btn-outline">3</button>
+                    <button class="btn btn-sm btn-outline">下一页</button>
+                  </div>
+              </div>
+            </div>
+
+            <!-- 模板使用率排行 -->
+            <div class="card">
+              <div class="card-header">
+                <h3>模板使用率排行（按专科）</h3>
+              </div>
+              <div class="card-body">
+                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px">
+                  <div class="template-usage-item">
+                    <div style="display:flex;justify-content:space-between;margin-bottom:6px">
+                      <span style="font-size:13px;font-weight:500">心血管内科</span>
+                      <span style="font-size:13px;color:var(--primary);font-weight:600">91.2%</span>
+                    </div>
+                    <div class="progress-bar"><div class="fill" style="width:91.2%"></div></div>
+                  </div>
+                  <div class="template-usage-item">
+                    <div style="display:flex;justify-content:space-between;margin-bottom:6px">
+                      <span style="font-size:13px;font-weight:500">骨科</span>
+                      <span style="font-size:13px;color:var(--primary);font-weight:600">89.7%</span>
+                    </div>
+                    <div class="progress-bar"><div class="fill" style="width:89.7%"></div></div>
+                  </div>
+                  <div class="template-usage-item">
+                    <div style="display:flex;justify-content:space-between;margin-bottom:6px">
+                      <span style="font-size:13px;font-weight:500">神经内科</span>
+                      <span style="font-size:13px;color:var(--primary);font-weight:600">85.3%</span>
+                    </div>
+                    <div class="progress-bar"><div class="fill" style="width:85.3%"></div></div>
+                  </div>
+                  <div class="template-usage-item">
+                    <div style="display:flex;justify-content:space-between;margin-bottom:6px">
+                      <span style="font-size:13px;font-weight:500">神经外科</span>
+                      <span style="font-size:13px;color:var(--warning);font-weight:600">81.0%</span>
+                    </div>
+                    <div class="progress-bar"><div class="fill" style="width:81%;background:linear-gradient(90deg,var(--warning),#fbbf24)"></div></div>
+                  </div>
+                  <div class="template-usage-item">
+                    <div style="display:flex;justify-content:space-between;margin-bottom:6px">
+                      <span style="font-size:13px;font-weight:500">结直肠外科</span>
+                      <span style="font-size:13px;color:var(--warning);font-weight:600">72.0%</span>
+                    </div>
+                    <div class="progress-bar"><div class="fill" style="width:72%;background:linear-gradient(90deg,var(--warning),#fbbf24)"></div></div>
+                  </div>
+                  <div class="template-usage-item">
+                    <div style="display:flex;justify-content:space-between;margin-bottom:6px">
+                      <span style="font-size:13px;font-weight:500">泌尿外科</span>
+                      <span style="font-size:13px;color:var(--danger);font-weight:600">65.8%</span>
+                    </div>
+                    <div class="progress-bar"><div class="fill" style="width:65.8%;background:linear-gradient(90deg,var(--danger),#f87171)"></div></div>
+                  </div>
+              </div>
+            </div>
+
+<script>
+(function() {
+  function init() {
+    if (typeof DiseaseContext === 'undefined') return;
+    var d = DiseaseContext.get();
+    var data = DiseaseContext.getData();
+    var stats = DiseaseContext.getStats();
+    // 更新页面标题
+    var titleEl = document.getElementById('records-templates-title');
+    if (titleEl) titleEl.textContent = '病历模板管理';
+    // 更新副标题
+    var subtitleEl = document.getElementById('records-templates-subtitle');
+    if (subtitleEl) subtitleEl.textContent = d.dept + ' | 模板 ' + (data.templates ? data.templates.length : 0) + ' 个';
+    // 更新面包屑
+    var bc = document.getElementById('breadcrumb');
+    if (bc) bc.innerHTML = '<span>病历模板管理</span>';
+    // 更新统计卡片
+    var statValues = document.querySelectorAll('.stats-row .stat-info .value');
+    if (statValues.length >= 1 && stats.templateCount !== undefined) statValues[0].textContent = stats.templateCount;
+    if (statValues.length >= 2 && stats.templateCoverage !== undefined) statValues[1].textContent = stats.templateCoverage + '%';
+    if (statValues.length >= 3 && stats.templateUsage !== undefined) statValues[2].textContent = stats.templateUsage + '%';
+    if (statValues.length >= 4 && stats.structuredRate !== undefined) statValues[3].textContent = stats.structuredRate + '%';
+    // 动态填充模板表格
+    var tbody = document.querySelector('.card table tbody');
+    if (tbody && data.templates && data.templates.length > 0) {
+      tbody.innerHTML = data.templates.map(function(t) {
+        return '<tr>' +
+          '<td><strong>' + t.name + '</strong></td>' +
+          '<td>' + d.dept + '</td>' +
+          '<td>' + d.name + '</td>' +
+          '<td>' + t.fields + '</td>' +
+          '<td>' + t.version + '</td>' +
+          '<td>--</td>' +
+          '<td>--</td>' +
+          '<td><span class="tag ' + (t.status === '已发布' ? 'tag-success' : 'tag-warning') + '">' + t.status + '</span></td>' +
+          '<td><button class="btn btn-sm btn-outline" onclick="showDrawer(\'template-drawer\')">预览</button> <button class="btn btn-sm btn-outline">编辑</button></td>' +
+        '</tr>';
+      }).join('');
+      // 更新分页摘要
+      var published = data.templates.filter(function(t) { return t.status === '已发布'; }).length;
+      var draft = data.templates.filter(function(t) { return t.status === '草稿'; }).length;
+      var summaryEl = document.querySelector('.card-body div[style*="border-top"] span');
+      if (summaryEl) summaryEl.textContent = '共 ' + data.templates.length + ' 个模板 | 已发布 ' + published + ' | 草稿 ' + draft;
+    }
+  }
+  init();
+  document.addEventListener('module:loaded', function(e) { if (e.detail && e.detail.pageId === 'records/templates') init(); });
+})();
+</script>
+</div>
+
+</div>
