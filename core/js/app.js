@@ -137,9 +137,7 @@ const App = {
         { id: 'pathway-overview', name: '诊疗路径总览', pageId: 'pathways/overview' },
         { id: 'pathway-manage', name: '诊疗路径管理', pageId: 'pathways/manage' }
       ]},
-      { id: 'ai', name: '专科智能体管理', icon: 'cpu', pageId: 'ai/monitor', children: [
-        { id: 'ai-monitor', name: '智能体运行监控', pageId: 'ai/monitor' }
-      ]},
+      { id: 'ai', name: '专科智能体管理', icon: 'cpu', pageId: 'ai/monitor', children: [] },
       { id: 'patients', name: '患者管理中心', icon: 'users', pageId: 'patients/records', children: [
         { id: 'records-folder', name: '专科病历夹', pageId: 'patients/records' },
         { id: 'followup', name: '患者随访管理', pageId: 'patients/followup' }
