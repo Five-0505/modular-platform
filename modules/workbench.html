@@ -3,17 +3,15 @@
           <div class="page-header">
             <div class="page-header-left">
               <h2>工作台</h2>
-              <p>欢迎回来！今天是 2026年06月26日</p>
+              <p>欢迎回来！今天是 2026年06月30日</p>
             </div>
           </div>
 
-          <!-- 第一部分：全局统计区 -->
           <div class="card">
             <div class="card-header">
               <h3>全局统计区</h3>
             </div>
             <div class="card-body">
-              <!-- 数据卡片行1 -->
               <div class="stats-row">
                 <div class="stat-card">
                   <div class="stat-icon blue"><svg viewBox="0 0 20 20" width="20" height="20"><circle cx="10" cy="7" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M4 17c0-3.3 2.7-6 6-6s6 2.7 6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
@@ -46,7 +44,6 @@
                 </div>
               </div>
 
-              <!-- 数据卡片行2 -->
               <div class="stats-row">
                 <div class="stat-card">
                   <div class="stat-icon blue"><svg viewBox="0 0 20 20" width="20" height="20"><path d="M5 3h7l4 4v10a1 1 0 01-1 1H5a1 1 0 01-1-1V4a1 1 0 011-1z" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M12 3v4h4" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M7 10h6M7 13h4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg></div>
@@ -78,7 +75,6 @@
                 </div>
               </div>
 
-              <!-- 图表区域 -->
               <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-top:20px">
                 <div class="card" style="margin-bottom:0">
                   <div class="card-header" style="padding:12px 16px">
@@ -104,25 +100,21 @@
                   </div>
                   <div class="card-body" style="padding:12px">
                     <svg viewBox="0 0 320 160" width="100%" style="overflow:visible">
-                      <!-- Grid lines -->
                       <line x1="40" y1="10" x2="40" y2="130" stroke="var(--gray-200)" stroke-width="0.5"/>
                       <line x1="40" y1="130" x2="310" y2="130" stroke="var(--gray-200)" stroke-width="0.5"/>
                       <line x1="40" y1="90" x2="310" y2="90" stroke="var(--gray-100)" stroke-width="0.5" stroke-dasharray="4,4"/>
                       <line x1="40" y1="50" x2="310" y2="50" stroke="var(--gray-100)" stroke-width="0.5" stroke-dasharray="4,4"/>
                       <line x1="40" y1="10" x2="310" y2="10" stroke="var(--gray-100)" stroke-width="0.5" stroke-dasharray="4,4"/>
-                      <!-- Y labels -->
                       <text x="36" y="133" text-anchor="end" font-size="8" fill="var(--gray-400)">0</text>
                       <text x="36" y="93" text-anchor="end" font-size="8" fill="var(--gray-400)">500</text>
                       <text x="36" y="53" text-anchor="end" font-size="8" fill="var(--gray-400)">1000</text>
                       <text x="36" y="13" text-anchor="end" font-size="8" fill="var(--gray-400)">1500</text>
-                      <!-- X labels -->
                       <text x="63" y="145" text-anchor="middle" font-size="8" fill="var(--gray-400)">1月</text>
                       <text x="108" y="145" text-anchor="middle" font-size="8" fill="var(--gray-400)">2月</text>
                       <text x="153" y="145" text-anchor="middle" font-size="8" fill="var(--gray-400)">3月</text>
                       <text x="198" y="145" text-anchor="middle" font-size="8" fill="var(--gray-400)">4月</text>
                       <text x="243" y="145" text-anchor="middle" font-size="8" fill="var(--gray-400)">5月</text>
                       <text x="288" y="145" text-anchor="middle" font-size="8" fill="var(--gray-400)">6月</text>
-                      <!-- 心内科 line (blue) -->
                       <polyline points="63,55 108,62 153,48 198,50 243,42 288,38" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                       <circle cx="63" cy="55" r="3" fill="var(--primary)"/>
                       <circle cx="108" cy="62" r="3" fill="var(--primary)"/>
@@ -130,7 +122,6 @@
                       <circle cx="198" cy="50" r="3" fill="var(--primary)"/>
                       <circle cx="243" cy="42" r="3" fill="var(--primary)"/>
                       <circle cx="288" cy="38" r="3" fill="var(--primary)"/>
-                      <!-- 神经内科 line (green) -->
                       <polyline points="63,95 108,90 153,85 198,82 243,78 288,75" fill="none" stroke="var(--success)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                       <circle cx="63" cy="95" r="3" fill="var(--success)"/>
                       <circle cx="108" cy="90" r="3" fill="var(--success)"/>
@@ -138,7 +129,6 @@
                       <circle cx="198" cy="82" r="3" fill="var(--success)"/>
                       <circle cx="243" cy="78" r="3" fill="var(--success)"/>
                       <circle cx="288" cy="75" r="3" fill="var(--success)"/>
-                      <!-- 骨科 line (yellow) -->
                       <polyline points="63,110 108,108 153,105 198,100 243,95 288,92" fill="none" stroke="var(--warning)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                       <circle cx="63" cy="110" r="3" fill="var(--warning)"/>
                       <circle cx="108" cy="108" r="3" fill="var(--warning)"/>
@@ -208,13 +198,353 @@
             </div>
           </div>
 
-          <!-- 第二部分：待办中心 -->
+          <div class="card" style="margin-top:14px">
+            <div class="card-header">
+              <h3>学科运营指标</h3>
+            </div>
+            <div class="card-body">
+              <div class="stats-row">
+                <div class="stat-card">
+                  <div class="stat-icon blue"><svg viewBox="0 0 20 20" width="20" height="20"><path d="M10 2L2 7l8 5 8-5-8-5z" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M2 17l8-5 8 5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+                  <div class="stat-info">
+                    <div class="value">98.6%</div>
+                    <div class="label">平均住院日达标率</div>
+                    <div class="trend up"><span class="arrow">↑</span> 1.2% 较上月</div>
+                  </div>
+                </div>
+                <div class="stat-card">
+                  <div class="stat-icon green"><svg viewBox="0 0 20 20" width="20" height="20"><path d="M3 3h14v14H3z" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M3 9h14" stroke="currentColor" stroke-width="1.2"/><path d="M9 3v14" stroke="currentColor" stroke-width="1.2"/></svg></div>
+                  <div class="stat-info">
+                    <div class="value">95.2%</div>
+                    <div class="label">临床路径入径率</div>
+                    <div class="trend up"><span class="arrow">↑</span> 2.1% 较上月</div>
+                  </div>
+                </div>
+                <div class="stat-card">
+                  <div class="stat-icon yellow"><svg viewBox="0 0 20 20" width="20" height="20"><path d="M10 2v16M2 10h16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+                  <div class="stat-info">
+                    <div class="value">89.3%</div>
+                    <div class="label">治疗方案依从率</div>
+                  </div>
+                </div>
+                <div class="stat-card">
+                  <div class="stat-icon purple"><svg viewBox="0 0 20 20" width="20" height="20"><path d="M2 6h16M2 10h16M2 14h16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+                  <div class="stat-info">
+                    <div class="value">96.8%</div>
+                    <div class="label">患者满意度</div>
+                  </div>
+                </div>
+              </div>
+
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px">
+                <div class="card" style="margin-bottom:0">
+                  <div class="card-header" style="padding:12px 16px">
+                    <h4 style="font-size:14px">各学科运营评分</h4>
+                  </div>
+                  <div class="card-body" style="padding:16px">
+                    <div style="display:flex;flex-direction:column;gap:12px">
+                      <div style="display:flex;align-items:center;gap:12px">
+                        <span style="font-size:12px;color:var(--gray-600);min-width:80px">心血管内科</span>
+                        <div style="flex:1;height:24px;background:var(--gray-100);border-radius:6px;overflow:hidden">
+                          <div style="width:95%;height:100%;background:linear-gradient(90deg,var(--primary),var(--info));border-radius:6px;display:flex;align-items:center;justify-content:flex-end;padding-right:10px">
+                            <span style="font-size:12px;color:#fff;font-weight:600">95</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div style="display:flex;align-items:center;gap:12px">
+                        <span style="font-size:12px;color:var(--gray-600);min-width:80px">神经内科</span>
+                        <div style="flex:1;height:24px;background:var(--gray-100);border-radius:6px;overflow:hidden">
+                          <div style="width:88%;height:100%;background:linear-gradient(90deg,var(--success),var(--primary));border-radius:6px;display:flex;align-items:center;justify-content:flex-end;padding-right:10px">
+                            <span style="font-size:12px;color:#fff;font-weight:600">88</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div style="display:flex;align-items:center;gap:12px">
+                        <span style="font-size:12px;color:var(--gray-600);min-width:80px">骨科</span>
+                        <div style="flex:1;height:24px;background:var(--gray-100);border-radius:6px;overflow:hidden">
+                          <div style="width:82%;height:100%;background:linear-gradient(90deg,var(--warning),var(--success));border-radius:6px;display:flex;align-items:center;justify-content:flex-end;padding-right:10px">
+                            <span style="font-size:12px;color:#fff;font-weight:600">82</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div style="display:flex;align-items:center;gap:12px">
+                        <span style="font-size:12px;color:var(--gray-600);min-width:80px">肿瘤科</span>
+                        <div style="flex:1;height:24px;background:var(--gray-100);border-radius:6px;overflow:hidden">
+                          <div style="width:78%;height:100%;background:linear-gradient(90deg,var(--danger),var(--warning));border-radius:6px;display:flex;align-items:center;justify-content:flex-end;padding-right:10px">
+                            <span style="font-size:12px;color:#fff;font-weight:600">78</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="card" style="margin-bottom:0">
+                  <div class="card-header" style="padding:12px 16px">
+                    <h4 style="font-size:14px">关键绩效指标(KPI)</h4>
+                  </div>
+                  <div class="card-body" style="padding:16px">
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+                      <div style="background:var(--gray-50);padding:12px;border-radius:8px;text-align:center">
+                        <div style="font-size:20px;font-weight:700;color:var(--primary)">3.2天</div>
+                        <div style="font-size:11px;color:var(--gray-500);margin-top:4px">平均住院日</div>
+                      </div>
+                      <div style="background:var(--gray-50);padding:12px;border-radius:8px;text-align:center">
+                        <div style="font-size:20px;font-weight:700;color:var(--success)">15%</div>
+                        <div style="font-size:11px;color:var(--gray-500);margin-top:4px">再入院率</div>
+                      </div>
+                      <div style="background:var(--gray-50);padding:12px;border-radius:8px;text-align:center">
+                        <div style="font-size:20px;font-weight:700;color:var(--warning)">92%</div>
+                        <div style="font-size:11px;color:var(--gray-500);margin-top:4px">手术准时率</div>
+                      </div>
+                      <div style="background:var(--gray-50);padding:12px;border-radius:8px;text-align:center">
+                        <div style="font-size:20px;font-weight:700;color:var(--info)">1.8次</div>
+                        <div style="font-size:11px;color:var(--gray-500);margin-top:4px">平均会诊次数</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" style="margin-top:14px">
+            <div class="card-header">
+              <h3>科研产出指标</h3>
+            </div>
+            <div class="card-body">
+              <div class="stats-row">
+                <div class="stat-card">
+                  <div class="stat-icon blue"><svg viewBox="0 0 20 20" width="20" height="20"><path d="M2 4h16v12H2z" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M6 8h8M6 12h8" stroke="currentColor" stroke-width="1.2"/></svg></div>
+                  <div class="stat-info">
+                    <div class="value">234</div>
+                    <div class="label">核心期刊论文</div>
+                    <div class="trend up"><span class="arrow">↑</span> 18篇 较去年</div>
+                  </div>
+                </div>
+                <div class="stat-card">
+                  <div class="stat-icon green"><svg viewBox="0 0 20 20" width="20" height="20"><path d="M10 2L2 7l8 5 8-5-8-5z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="10" cy="10" r="2" fill="currentColor"/></svg></div>
+                  <div class="stat-info">
+                    <div class="value">45</div>
+                    <div class="label">SCI收录论文</div>
+                  </div>
+                </div>
+                <div class="stat-card">
+                  <div class="stat-icon yellow"><svg viewBox="0 0 20 20" width="20" height="20"><path d="M10 2a8 8 0 018 8H2a8 8 0 018-8z" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M6 10h8M10 6v8" stroke="currentColor" stroke-width="1.2"/></svg></div>
+                  <div class="stat-info">
+                    <div class="value">12</div>
+                    <div class="label">专利申请数量</div>
+                  </div>
+                </div>
+                <div class="stat-card">
+                  <div class="stat-icon purple"><svg viewBox="0 0 20 20" width="20" height="20"><path d="M3 17h14M6 3v14M10 3v14M14 3v14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+                  <div class="stat-info">
+                    <div class="value">8</div>
+                    <div class="label">科研项目立项</div>
+                  </div>
+                </div>
+              </div>
+
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px">
+                <div class="card" style="margin-bottom:0">
+                  <div class="card-header" style="padding:12px 16px">
+                    <h4 style="font-size:14px">论文发表趋势</h4>
+                  </div>
+                  <div class="card-body" style="padding:12px">
+                    <svg viewBox="0 0 280 140" width="100%" style="overflow:visible">
+                      <line x1="30" y1="10" x2="30" y2="110" stroke="var(--gray-200)" stroke-width="0.5"/>
+                      <line x1="30" y1="110" x2="270" y2="110" stroke="var(--gray-200)" stroke-width="0.5"/>
+                      <line x1="30" y1="80" x2="270" y2="80" stroke="var(--gray-100)" stroke-width="0.5" stroke-dasharray="4,4"/>
+                      <line x1="30" y1="50" x2="270" y2="50" stroke="var(--gray-100)" stroke-width="0.5" stroke-dasharray="4,4"/>
+                      <line x1="30" y1="20" x2="270" y2="20" stroke="var(--gray-100)" stroke-width="0.5" stroke-dasharray="4,4"/>
+                      <text x="26" y="113" text-anchor="end" font-size="8" fill="var(--gray-400)">0</text>
+                      <text x="26" y="83" text-anchor="end" font-size="8" fill="var(--gray-400)">30</text>
+                      <text x="26" y="53" text-anchor="end" font-size="8" fill="var(--gray-400)">60</text>
+                      <text x="26" y="23" text-anchor="end" font-size="8" fill="var(--gray-400)">90</text>
+                      <text x="60" y="125" text-anchor="middle" font-size="8" fill="var(--gray-400)">2022</text>
+                      <text x="115" y="125" text-anchor="middle" font-size="8" fill="var(--gray-400)">2023</text>
+                      <text x="170" y="125" text-anchor="middle" font-size="8" fill="var(--gray-400)">2024</text>
+                      <text x="225" y="125" text-anchor="middle" font-size="8" fill="var(--gray-400)">2025</text>
+                      <text x="265" y="125" text-anchor="middle" font-size="8" fill="var(--gray-400)">2026</text>
+                      <rect x="45" y="70" width="40" height="40" fill="var(--primary)" opacity="0.8"/>
+                      <rect x="100" y="55" width="40" height="55" fill="var(--primary)" opacity="0.8"/>
+                      <rect x="155" y="40" width="40" height="70" fill="var(--primary)" opacity="0.8"/>
+                      <rect x="210" y="25" width="40" height="85" fill="var(--primary)" opacity="0.8"/>
+                    </svg>
+                  </div>
+                </div>
+                
+                <div class="card" style="margin-bottom:0">
+                  <div class="card-header" style="padding:12px 16px">
+                    <h4 style="font-size:14px">学科科研排名</h4>
+                  </div>
+                  <div class="card-body" style="padding:16px">
+                    <div style="display:flex;flex-direction:column;gap:10px">
+                      <div style="display:flex;align-items:center;gap:10px">
+                        <span style="width:20px;height:20px;background:var(--primary);color:#fff;font-size:11px;border-radius:50%;display:flex;align-items:center;justify-content:center">1</span>
+                        <span style="font-size:12px;color:var(--gray-700);flex:1">心血管内科</span>
+                        <span style="font-size:12px;font-weight:600;color:var(--primary)">56篇</span>
+                      </div>
+                      <div style="display:flex;align-items:center;gap:10px">
+                        <span style="width:20px;height:20px;background:var(--gray-400);color:#fff;font-size:11px;border-radius:50%;display:flex;align-items:center;justify-content:center">2</span>
+                        <span style="font-size:12px;color:var(--gray-700);flex:1">神经内科</span>
+                        <span style="font-size:12px;font-weight:600;color:var(--gray-600)">42篇</span>
+                      </div>
+                      <div style="display:flex;align-items:center;gap:10px">
+                        <span style="width:20px;height:20px;background:var(--warning);color:#fff;font-size:11px;border-radius:50%;display:flex;align-items:center;justify-content:center">3</span>
+                        <span style="font-size:12px;color:var(--gray-700);flex:1">骨科</span>
+                        <span style="font-size:12px;font-weight:600;color:var(--warning)">38篇</span>
+                      </div>
+                      <div style="display:flex;align-items:center;gap:10px">
+                        <span style="width:20px;height:20px;background:var(--gray-300);color:#fff;font-size:11px;border-radius:50%;display:flex;align-items:center;justify-content:center">4</span>
+                        <span style="font-size:12px;color:var(--gray-700);flex:1">肿瘤科</span>
+                        <span style="font-size:12px;font-weight:600;color:var(--gray-500)">32篇</span>
+                      </div>
+                      <div style="display:flex;align-items:center;gap:10px">
+                        <span style="width:20px;height:20px;background:var(--gray-300);color:#fff;font-size:11px;border-radius:50%;display:flex;align-items:center;justify-content:center">5</span>
+                        <span style="font-size:12px;color:var(--gray-700);flex:1">呼吸内科</span>
+                        <span style="font-size:12px;font-weight:600;color:var(--gray-500)">28篇</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" style="margin-top:14px">
+            <div class="card-header">
+              <h3>等级评审指标</h3>
+            </div>
+            <div class="card-body">
+              <div class="stats-row">
+                <div class="stat-card">
+                  <div class="stat-icon blue"><svg viewBox="0 0 20 20" width="20" height="20"><circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 3v6l4 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+                  <div class="stat-info">
+                    <div class="value">92%</div>
+                    <div class="label">评审指标完成率</div>
+                  </div>
+                </div>
+                <div class="stat-card">
+                  <div class="stat-icon green"><svg viewBox="0 0 20 20" width="20" height="20"><path d="M2 10h16M10 2l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+                  <div class="stat-info">
+                    <div class="value">28</div>
+                    <div class="label">单病种质控数量</div>
+                  </div>
+                </div>
+                <div class="stat-card">
+                  <div class="stat-icon yellow"><svg viewBox="0 0 20 20" width="20" height="20"><path d="M3 3h14v14H3z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="10" cy="10" r="3" fill="currentColor"/></svg></div>
+                  <div class="stat-info">
+                    <div class="value">8</div>
+                    <div class="label">胸痛中心达标率</div>
+                  </div>
+                </div>
+                <div class="stat-card">
+                  <div class="stat-icon purple"><svg viewBox="0 0 20 20" width="20" height="20"><path d="M10 2l3 6h6l-5 4 2 6-6-3-6 3 2-6-5-4h6l3-6z" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></div>
+                  <div class="stat-info">
+                    <div class="value">4</div>
+                    <div class="label">高级卒中中心</div>
+                  </div>
+                </div>
+              </div>
+
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px">
+                <div class="card" style="margin-bottom:0">
+                  <div class="card-header" style="padding:12px 16px">
+                    <h4 style="font-size:14px">评审指标进度</h4>
+                  </div>
+                  <div class="card-body" style="padding:16px">
+                    <div style="display:flex;flex-direction:column;gap:12px">
+                      <div>
+                        <div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:4px">
+                          <span style="color:var(--gray-600)">医疗技术管理</span>
+                          <span style="color:var(--gray-500)">95/100</span>
+                        </div>
+                        <div style="height:8px;background:var(--gray-100);border-radius:4px;overflow:hidden">
+                          <div style="width:95%;height:100%;background:var(--success);border-radius:4px"></div>
+                        </div>
+                      </div>
+                      <div>
+                        <div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:4px">
+                          <span style="color:var(--gray-600)">质量控制管理</span>
+                          <span style="color:var(--gray-500)">88/100</span>
+                        </div>
+                        <div style="height:8px;background:var(--gray-100);border-radius:4px;overflow:hidden">
+                          <div style="width:88%;height:100%;background:var(--primary);border-radius:4px"></div>
+                        </div>
+                      </div>
+                      <div>
+                        <div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:4px">
+                          <span style="color:var(--gray-600)">教学管理</span>
+                          <span style="color:var(--gray-500)">82/100</span>
+                        </div>
+                        <div style="height:8px;background:var(--gray-100);border-radius:4px;overflow:hidden">
+                          <div style="width:82%;height:100%;background:var(--warning);border-radius:4px"></div>
+                        </div>
+                      </div>
+                      <div>
+                        <div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:4px">
+                          <span style="color:var(--gray-600)">科研管理</span>
+                          <span style="color:var(--gray-500)">78/100</span>
+                        </div>
+                        <div style="height:8px;background:var(--gray-100);border-radius:4px;overflow:hidden">
+                          <div style="width:78%;height:100%;background:var(--danger);border-radius:4px"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="card" style="margin-bottom:0">
+                  <div class="card-header" style="padding:12px 16px">
+                    <h4 style="font-size:14px">标准化指标概览</h4>
+                  </div>
+                  <div class="card-body" style="padding:16px">
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+                      <div style="display:flex;align-items:center;gap:8px">
+                        <span style="width:10px;height:10px;border-radius:50%;background:var(--success)"></span>
+                        <span style="font-size:11px;color:var(--gray-600)">急性心梗救治时间达标</span>
+                      </div>
+                      <div style="display:flex;align-items:center;gap:8px">
+                        <span style="width:10px;height:10px;border-radius:50%;background:var(--success)"></span>
+                        <span style="font-size:11px;color:var(--gray-600)">脑梗死溶栓率达标</span>
+                      </div>
+                      <div style="display:flex;align-items:center;gap:8px">
+                        <span style="width:10px;height:10px;border-radius:50%;background:var(--success)"></span>
+                        <span style="font-size:11px;color:var(--gray-600)">手术部位感染率控制</span>
+                      </div>
+                      <div style="display:flex;align-items:center;gap:8px">
+                        <span style="width:10px;height:10px;border-radius:50%;background:var(--warning)"></span>
+                        <span style="font-size:11px;color:var(--gray-600)">抗菌药物使用强度</span>
+                      </div>
+                      <div style="display:flex;align-items:center;gap:8px">
+                        <span style="width:10px;height:10px;border-radius:50%;background:var(--success)"></span>
+                        <span style="font-size:11px;color:var(--gray-600)">电子病历系统功能</span>
+                      </div>
+                      <div style="display:flex;align-items:center;gap:8px">
+                        <span style="width:10px;height:10px;border-radius:50%;background:var(--warning)"></span>
+                        <span style="font-size:11px;color:var(--gray-600)">医学影像AI辅助诊断</span>
+                      </div>
+                      <div style="display:flex;align-items:center;gap:8px">
+                        <span style="width:10px;height:10px;border-radius:50%;background:var(--success)"></span>
+                        <span style="font-size:11px;color:var(--gray-600)">临床路径覆盖率</span>
+                      </div>
+                      <div style="display:flex;align-items:center;gap:8px">
+                        <span style="width:10px;height:10px;border-radius:50%;background:var(--success)"></span>
+                        <span style="font-size:11px;color:var(--gray-600)">DRG/DIP付费执行</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div class="card" style="margin-top:14px">
             <div class="card-header">
               <h3>待办中心</h3>
             </div>
             <div class="card-body">
-              <!-- 待办统计 -->
               <div class="stats-row">
                 <div class="stat-card">
                   <div class="stat-icon blue"><svg viewBox="0 0 20 20" width="20" height="20"><rect x="2" y="7" width="16" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M7 7V5a2 2 0 012-2h2a2 2 0 012 2v2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M2 11h16" stroke="currentColor" stroke-width="1.2"/></svg></div>
@@ -239,7 +569,6 @@
                 </div>
               </div>
 
-              <!-- 优先级和任务分布 -->
               <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px">
                 <div class="card" style="margin-bottom:0">
                   <div class="card-header" style="padding:12px 16px">
@@ -286,7 +615,6 @@
                 </div>
               </div>
 
-              <!-- 待办任务列表 -->
               <div style="margin-top:16px">
                 <div class="todo-item">
                   <div class="todo-priority high"></div>
@@ -294,7 +622,7 @@
                     <div class="todo-title">审核急性心肌梗死患者病历</div>
                     <div class="todo-desc">患者王建国，需要在2小时内完成病历质量审核</div>
                     <div class="todo-meta">
-                      <span>2026-06-26 14:00</span>
+                      <span>2026-06-30 14:00</span>
                       <span>心内科</span>
                       <span class="tag tag-danger">紧急</span>
                     </div>
@@ -309,7 +637,7 @@
                     <div class="todo-title">质控整改 - 5份病历</div>
                     <div class="todo-desc">上月质控发现的问题需要在本周内完成整改</div>
                     <div class="todo-meta">
-                      <span>2026-06-26 16:00</span>
+                      <span>2026-06-30 16:00</span>
                       <span>质控中心</span>
                       <span class="tag tag-danger">紧急</span>
                     </div>
@@ -324,7 +652,7 @@
                     <div class="todo-title">随访 - 李雪梅（高血压）</div>
                     <div class="todo-desc">出院后2周随访，确认血压控制情况和服药依从性</div>
                     <div class="todo-meta">
-                      <span>2026-06-27 09:00</span>
+                      <span>2026-07-01 09:00</span>
                       <span>心内科</span>
                       <span class="tag tag-warning">中等</span>
                     </div>
@@ -339,7 +667,7 @@
                     <div class="todo-title">更新肺癌诊疗路径</div>
                     <div class="todo-desc">根据最新指南更新靶向治疗部分内容</div>
                     <div class="todo-meta">
-                      <span>2026-06-30</span>
+                      <span>2026-07-05</span>
                       <span>肿瘤科</span>
                       <span class="tag tag-info">普通</span>
                     </div>
@@ -352,7 +680,6 @@
             </div>
           </div>
 
-          <!-- 第三部分：病种快捷入口 -->
           <div class="card" style="margin-top:14px">
             <div class="card-header">
               <h3>病种快捷入口</h3>
@@ -419,5 +746,3 @@
               </div>
             </div>
           </div>
-
-</div>

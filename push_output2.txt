@@ -1,0 +1,11 @@
+﻿git.exe : fatal: unable to access 'https://github.com/Five-0505/modular-platfor
+m.git/': Failed to connect to github.com port 443 after 21095 ms: Couldn't conn
+ect to server
+所在位置 行:1 字符: 76
++ ... platform" ; & "C:\Program Files\Git\bin\git.exe" push -u origin maste ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (fatal: unable t...nnect to server 
+   :String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Pushing to https://github.com/Five-0505/modular-platform.git

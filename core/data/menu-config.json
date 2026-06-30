@@ -12,7 +12,8 @@
     { "id": "knowledge", "name": "专科知识管理", "icon": "book", "pageId": "knowledge/disease", "children": [
       { "id": "disease-knowledge", "name": "疾病知识管理", "pageId": "knowledge/disease" },
       { "id": "knowledge-graph", "name": "AI知识图谱", "pageId": "knowledge/graph" },
-      { "id": "contraindication", "name": "禁忌证清单", "pageId": "knowledge/contraindication" }
+      { "id": "contraindication", "name": "禁忌证清单", "pageId": "knowledge/contraindication" },
+      { "id": "pre-consultation", "name": "专科预问诊配置", "pageId": "patients/preconsult" }
     ]},
     { "id": "records", "name": "专科病历管理", "icon": "file-text", "pageId": "records/templates", "children": [
       { "id": "templates", "name": "病历模板管理", "pageId": "records/templates" },
@@ -29,8 +30,7 @@
       { "id": "ai-config", "name": "Dify智能体配置", "pageId": "ai/config" },
       { "id": "ai-prompt", "name": "提示词动态维护", "pageId": "ai/prompt" }
     ]},
-    { "id": "patients", "name": "患者管理中心", "icon": "users", "pageId": "patients/preconsult", "children": [
-      { "id": "pre-consultation", "name": "专科预问诊配置", "pageId": "patients/preconsult" },
+    { "id": "patients", "name": "患者管理中心", "icon": "users", "pageId": "patients/records", "children": [
       { "id": "records-folder", "name": "专科病历夹", "pageId": "patients/records" },
       { "id": "followup", "name": "患者随访管理", "pageId": "patients/followup" }
     ]},
