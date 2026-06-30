@@ -56,8 +56,8 @@
                 <table>
                   <thead>
                     <tr>
-                      <th>序号</th>
                       <th><input type="checkbox" id="diseaseSelectAll" onchange="DiseaseModule.toggleSelectAll(this)"></th>
+                      <th>序号</th>
                       <th>病种名称</th>
                       <th>病种代码</th>
                       <th>所属学科</th>
@@ -177,8 +177,8 @@
 
       tbody.innerHTML = filtered.map((d, index) => `
         <tr>
-          <td>${index + 1}</td>
           <td><input type="checkbox" class="disease-checkbox" value="${d.name}" onchange="DiseaseModule.toggleSelect('${d.name}')"></td>
+          <td>${index + 1}</td>
           <td><strong style="color:var(--primary);cursor:pointer;text-decoration:underline" onclick="DiseaseModule.showDetail('${d.name}')">${d.name}</strong></td>
           <td style="font-family:monospace;font-size:12px;color:var(--gray-600)">${d.code}</td>
           <td>${d.specialty}</td>
